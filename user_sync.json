@@ -1,0 +1,142 @@
+{
+  "seen": [
+    "VU-20260414-0531",
+    "VU-20260414-0533",
+    "VU-20260414-0530",
+    "VU-20260414-0534",
+    "VU-20260414-0532",
+    "VU-CALC-010",
+    "VU-CALC-004",
+    "VU-CALC-008",
+    "VU-CALC-003",
+    "VU-CALC-009",
+    "VU-CALC-006",
+    "VU-CALC-002",
+    "VU-CALC-001",
+    "VU-CALC-005",
+    "VU-CALC-007",
+    "VU-CUB-02",
+    "VU-TRP-01",
+    "VU-ADD-01",
+    "VU-MUL-02",
+    "VU-MIXAS-01",
+    "VU-MIXAS-02",
+    "VU-TRP-02",
+    "VU-SUB-01",
+    "VU-MIXMD-01",
+    "VU-ADD-02",
+    "VU-SQR-02",
+    "VU-MIXMD-02",
+    "VU-SUB-02",
+    "VU-DIV-02",
+    "VU-SQR-01",
+    "VU-DIV-01",
+    "VU-MUL-01",
+    "VU-CUB-01",
+    "VU-20260414-0538",
+    "VU-20260414-0539",
+    "VU-20260414-0536",
+    "VU-20260414-0537",
+    "CALC-MIX-02",
+    "CALC-MIX-01",
+    "VU-20260414-0535",
+    "CALC-ADD-01",
+    "CALC-CUB-02",
+    "CALC-DIV-01",
+    "CALC-ADDSUB-02",
+    "CALC-ADD-02",
+    "CALC-SQ-01",
+    "CALC-MUL-02",
+    "CALC-ADDSUB-01",
+    "CALC-MUL-01",
+    "CALC-MULDIV-01",
+    "CALC-TRIP-02",
+    "CALC-SUB-01",
+    "CALC-SUB-02",
+    "CALC-TRIP-01",
+    "CALC-DIV-02",
+    "CALC-MULDIV-02",
+    "CALC-CUB-01",
+    "CALC-SQ-02"
+  ],
+  "wrongMap": {
+    "VU-20260414-0530": 0,
+    "VU-20260414-0534": 0,
+    "VU-20260414-0532": 0,
+    "VU-20260414-0531": 1,
+    "VU-CUB-02": 1,
+    "VU-20260414-0539": 1,
+    "VU-20260414-0538": 3,
+    "VU-20260414-0535": 1,
+    "CALC-ADD-01": 1,
+    "VU-20260414-0537": 2
+  },
+  "images": {
+    "VU-20260414-0534": "https://raw.githubusercontent.com/the-vu-bot/exam-engine-vu/main/solutions/VU-20260414-0534.jpg?v=1776261973667"
+  },
+  "timeMap": {
+    "VU-20260414-0535": 49,
+    "VU-20260414-0534": 8,
+    "VU-20260414-0539": 7,
+    "VU-20260414-0531": 203,
+    "VU-20260414-0530": 24,
+    "VU-20260414-0538": 259,
+    "VU-20260414-0536": 10,
+    "CALC-MIX-02": 7,
+    "CALC-MUL-02": 27,
+    "CALC-DIV-02": 2,
+    "CALC-MUL-01": 7,
+    "CALC-DIV-01": 4,
+    "VU-20260414-0533": 412,
+    "VU-20260414-0532": 15,
+    "CALC-ADD-01": 6,
+    "VU-20260414-0537": 15
+  },
+  "settings": {
+    "subjects": [
+      "Maths",
+      "English",
+      "GS",
+      "Reasoning"
+    ],
+    "calcSubjects": [
+      "Division",
+      "Subtraction",
+      "Addition",
+      "Mixed",
+      "Multiplication",
+      "Mult & Div",
+      "Squares",
+      "Add & Sub",
+      "Cubes",
+      "Triplet Completion"
+    ],
+    "sprintTime": 15,
+    "sprintQs": 125,
+    "mockGlobalTime": 60,
+    "mockGlobalQs": 100,
+    "mockSplitMode": "auto",
+    "mockSecData": {
+      "Maths": {
+        "time": 15,
+        "qs": 25
+      },
+      "Reasoning": {
+        "time": 15,
+        "qs": 25
+      },
+      "English": {
+        "time": 15,
+        "qs": 25
+      },
+      "GS": {
+        "time": 15,
+        "qs": 25
+      },
+      "Hindi": {
+        "time": 12,
+        "qs": 25
+      }
+    }
+  }
+}
