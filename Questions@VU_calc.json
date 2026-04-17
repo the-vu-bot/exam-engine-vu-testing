@@ -1,0 +1,2460 @@
+[
+   {
+    "uid": "VU-20260414-0530",
+    "subject": "Maths",
+    "topic": "Percentage",
+    "q_en": "If the price of sugar increases by 25%, by what % should a family reduce consumption to keep expenditure the same?",
+    "q_hi": "यदि चीनी की कीमत में 25% की वृद्धि होती है, तो एक परिवार को अपना खर्च समान रखने के लिए खपत में कितने प्रतिशत की कमी करनी चाहिए?",
+    "options_en": ["25%", "20%", "15%", "33.33%"],
+    "options_hi": ["25%", "20%", "15%", "33.33%"],
+    "correct": 1,
+    "logic": "The 'Product Constancy' rule: If price increases by 1/4 (25%), consumption must decrease by 1/(4+1) = 1/5 = 20%.",
+    "trap": "Don't just pick 25%. If one goes up by x/y, the other goes down by x/(x+y)."
+    },
+    {
+    "uid": "VU-ENG-GRMR-0001",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: Every of the board members was given a thorough briefing before the critical merger.",
+    "q_hi": "",
+    "options_en": [
+      "Every of the",
+      "board members was given",
+      "a thorough briefing",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 0,
+    "logic": "\"Every\" can only function as an Adjective. It cannot act as a Pronoun followed by \"of the.\" \"Each,\" however, can act as a pronoun. The correct structure is \"Each of the board members\".",
+    "trap": "It sounds correct colloquially because people often conflate \"each of\" and \"every one of,\" but \"every of\" violates structural grammar rules."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0002",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: [Both the CEO and the CFO are not going] to approve the new marketing budget due to the recent revenue drop.",
+    "q_hi": "",
+    "options_en": [
+      "Neither the CEO nor the CFO is going",
+      "Neither the CEO nor the CFO are going",
+      "Both the CEO and the CFO isn't going",
+      "No improvement"
+    ],
+    "options_hi": [],
+    "correct": 0,
+    "logic": "The words \"Both\" and \"not\" cannot be used together in standard English grammar to form a negative statement. We must use \"Neither... nor,\" which takes a singular verb here because both subjects are singular.",
+    "trap": "The sentence logically makes sense to the listener, but mechanically, \"both\" affirms an inclusion, clashing with the negative \"not.\""
+  },
+  {
+    "uid": "VU-ENG-GRMR-0003",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: This is the exact same confidential report which the auditor requested last week.",
+    "q_hi": "",
+    "options_en": [
+      "This is the exact same",
+      "confidential report which",
+      "the auditor requested",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "Specific modifiers such as all, any, none, much, the few, the little, superlatives, and \"the same\" are strictly followed by the relative pronoun \"that,\" never \"which\" or \"who.\" It should be \"...report that the auditor...\".",
+    "trap": "\"Which\" is commonly used for non-living things (like a report), so the ear naturally accepts it, completely missing the restrictive modifier \"the same.\""
+  },
+  {
+    "uid": "VU-ENG-GRMR-0004",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: Had the compliance team identified the vulnerability earlier, this massive data breach [would be averted].",
+    "q_hi": "",
+    "options_en": [
+      "would have been averted",
+      "will be averted",
+      "would have averted",
+      "No improvement"
+    ],
+    "options_hi": [],
+    "correct": 0,
+    "logic": "This is an inverted Type III conditional sentence. The structure for a past perfect condition requires \"would + have + V3\" in the main clause. Since it is a passive action, it must be \"...would have been averted\".",
+    "trap": "\"Would be\" sounds like a valid hypothetical outcome, but it mixes a past impossible condition with a present/future hypothetical result."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0005",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: She is one of those dedicated scientists who is always working relentlessly to find a cure.",
+    "q_hi": "",
+    "options_en": [
+      "She is one of those",
+      "dedicated scientists who is",
+      "always working relentlessly",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "In the structure \"One of the + PLURAL NOUN + WHO/THAT,\" the relative pronoun refers to the plural noun immediately preceding it. \"Who\" refers to \"scientists,\" so it must take the plural verb \"are.\"",
+    "trap": "The subject \"She\" and the phrase \"One of\" trick the brain into looking for a singular verb, ignoring the relative pronoun's actual antecedent."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0006",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: The committee swiftly approved a [two-millions-dollar] project for the city's crumbling infrastructure.",
+    "q_hi": "",
+    "options_en": [
+      "two-million-dollars",
+      "two-million-dollar",
+      "two-millions-dollars",
+      "No improvement"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "When there is a combination of \"Number + Unit + Noun,\" the unit must always be in its singular form because it acts as a compound adjective modifying the noun. It should be \"a two-million-dollar project\".",
+    "trap": "Pluralizing numbers greater than one is a basic instinct (e.g., \"two millions\"), causing people to improperly pluralize the modifier."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0007",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: Five thousand rupees were spent on food and entertainment respectively.",
+    "q_hi": "",
+    "options_en": [
+      "Five thousand rupees",
+      "were spent on",
+      "food and entertainment respectively",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 3,
+    "logic": "Expressions of money/distance usually take a singular verb when used as a single unit. However, when the expression is used or covered in various ways (indicated by \"food and entertainment respectively\"), a plural verb (\"were\") is correct. There is no error.",
+    "trap": "Students rigidly memorize that money = singular verb, failing to analyze the context of how the money is distributed."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0008",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: Because of its unique chemical properties, platinum is more precious [than all metals] found on Earth.",
+    "q_hi": "",
+    "options_en": [
+      "than any metals",
+      "than any other metal",
+      "than all other metals",
+      "No improvement"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "Platinum is a metal. If you say it is more precious than \"all metals,\" you logically state it is more precious than itself. When comparing a noun with others in its own group, use \"any other.\" It should be \"...than any other metal...\".",
+    "trap": "It sounds like a strong, definitive statement. The logical paradox is invisible without strict structural analysis."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0009",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The multinational corporation had been negotiating the terms of the hostile settlement since five years.",
+    "q_hi": "",
+    "options_en": [
+      "The multinational corporation",
+      "had been negotiating the terms",
+      "since five years",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 2,
+    "logic": "\"Since\" is used to denote a specific \"point of start\" (e.g., since 2018). \"For\" is used for a duration or an amount of time. \"Five years\" is a duration, so it must be \"for five years\".",
+    "trap": "Direct translation from native languages often blurs the line between point-in-time and duration."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0010",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: The critically ill patient [died before the team] of specialized surgeons arrived at the hospital.",
+    "q_hi": "",
+    "options_en": [
+      "has died before the team",
+      "had died before the team",
+      "was dead before the team",
+      "No improvement"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "When two actions occur in the past, the action that happens first must be in the Past Perfect Tense (had + V3), and the subsequent action in the Simple Past (V2). The patient dying happened first.",
+    "trap": "Both actions are in the past, so standard Past Tense sounds perfectly fine to the untrained ear."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0011",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The board of directors did not appreciate him taking unilateral decisions without prior consultation.",
+    "q_hi": "",
+    "options_en": [
+      "The board of directors",
+      "did not appreciate him taking",
+      "unilateral decisions",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "We must use a Possessive Adjective (my, his, her, their) before a Gerund (V1+ing acting as a noun). The focus is on the action (taking), not the person (him). It should be \"...appreciate his taking...\".",
+    "trap": "\"Appreciate him\" sounds structurally complete because \"him\" works as a standard object pronoun, causing readers to miss the gerund attached to it."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0012",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: [Seldom the newly appointed regional manager goes out] of his way to accommodate employee requests.",
+    "q_hi": "",
+    "options_en": [
+      "Seldom does the newly appointed regional manager go out",
+      "Seldom do the newly appointed regional manager go out",
+      "Seldom is the newly appointed regional manager going out",
+      "No improvement"
+    ],
+    "options_hi": [],
+    "correct": 0,
+    "logic": "When a sentence begins with a negative or restrictive adverb (Seldom, Never, Hardly, Rarely), it triggers the Law of Inversion. The helping verb must be placed before the subject.",
+    "trap": "The sentence reads like a standard declarative statement, hiding the required inversion."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0013",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: After a lengthy trial, the notorious criminal was finally convicted and sent to the jail.",
+    "q_hi": "",
+    "options_en": [
+      "After a lengthy trial",
+      "the notorious criminal was finally",
+      "sent to the jail",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 2,
+    "logic": "Places like school, hospital, bed, and jail do not take the article \"the\" when used for their primary purpose. A criminal going to jail is the primary purpose. It should simply be \"...sent to jail\".",
+    "trap": "\"The jail\" refers to a specific physical location, which falsely justifies the definite article for many readers."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0014",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: No sooner had the central bank announced the aggressive interest rate cuts [when the stock market rallied].",
+    "q_hi": "",
+    "options_en": [
+      "than the stock market rallied",
+      "then the stock market rallied",
+      "while the stock market rallied",
+      "No improvement"
+    ],
+    "options_hi": [],
+    "correct": 0,
+    "logic": "The adverb phrase \"No sooner\" must always be paired with the conjunction \"than.\" Adverbs like \"hardly, scarcely, and barely\" are paired with \"when.\"",
+    "trap": "\"When\" logically signifies time, which fits the narrative flow perfectly, masking the hard syntax rule."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0015",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: Sensing a shift in management, the junior executive availed of the golden opportunity and secured a massive promotion.",
+    "q_hi": "",
+    "options_en": [
+      "Sensing a shift in management",
+      "the junior executive availed of",
+      "the golden opportunity",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "Certain verbs (avail, enjoy, absent, reconcile, resign) must be followed by an object. If no object is present, a reflexive pronoun must be used. \"Avail\" requires a reflexive pronoun. It must be \"...availed himself of...\".",
+    "trap": "\"Availed of\" is a highly common colloquial error that has bled into standard professional vernacular."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0016",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: To escape the sudden crossfire, the undercover agent hid himself in the abandoned warehouse.",
+    "q_hi": "",
+    "options_en": [
+      "To escape the sudden crossfire",
+      "the undercover agent hid himself",
+      "in the abandoned warehouse",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "While some verbs require reflexives, certain verbs are never followed by reflexive pronouns (hide, keep, stop, turn, bathe). The agent didn't hide his physical body as an object; the action of hiding is self-contained. It should be \"...the undercover agent hid in...\".",
+    "trap": "Using \"himself\" emphasizes the action, tricking the reader into thinking it adds necessary dramatic detail."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0017",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The seasoned publisher, along with multiple distinguished writers, have arrived at the convention center.",
+    "q_hi": "",
+    "options_en": [
+      "The seasoned publisher",
+      "along with multiple distinguished writers",
+      "have arrived at",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 2,
+    "logic": "When two subjects are connected by phrases like as well as, along with, together with, in addition to, the verb must agree with the first subject. The first subject is \"publisher\" (singular), so the verb must be \"has arrived\".",
+    "trap": "The proximity of the plural noun \"writers\" right next to the verb pulls the reader toward using a plural verb."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0018",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The senior legal counsel decided to advice the corporation against the hostile takeover attempt.",
+    "q_hi": "",
+    "options_en": [
+      "The senior legal counsel",
+      "decided to advice the corporation",
+      "against the hostile takeover attempt",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "\"Advice\" (with a c) is a Noun. \"Advise\" (with an s) is a Verb. After the infinitive marker \"to,\" we need the verb form. It should be \"...to advise the corporation...\".",
+    "trap": "They sound identical when spoken, making the visual typo easy to glide past."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0019",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: Despite having significantly less formal training, she proved that she is far more capable than him.",
+    "q_hi": "",
+    "options_en": [
+      "Despite having significantly less",
+      "she proved that she",
+      "is far more capable than him",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 2,
+    "logic": "Comparisons are made between the same cases. The sentence is comparing the subjective pronoun \"she\" to another entity. Therefore, the subjective case must be used. It should be \"...more capable than he (is)\".",
+    "trap": "\"Than him\" is how almost all modern English speakers talk naturally. Subjective cases at the end of a sentence sound artificially stiff to modern ears."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0020",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The hiring committee was deeply unsure about whom they thought might be the best fit for the executive role.",
+    "q_hi": "",
+    "options_en": [
+      "The hiring committee was deeply",
+      "unsure about whom they thought",
+      "might be the best fit",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "\"Who\" is a subjective pronoun; \"Whom\" is an objective pronoun. To test, substitute he/him. Look at the subordinate clause: \"they thought [he] might be the best fit.\" Since \"he\" fits, the subjective case is required. It should be \"...about who they thought...\".",
+    "trap": "Because the pronoun follows the preposition \"about,\" the brain automatically assumes an objective case (\"whom\") is required, ignoring that the pronoun is the subject of the following clause."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0021",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: His mention in the devastating financial report caused the company's stock to plummet overnight.",
+    "q_hi": "",
+    "options_en": [
+      "His mention in the",
+      "devastating financial report caused",
+      "the company's stock to plummet",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 0,
+    "logic": "Words like separation, excuse, mention, favour, pardon, and report do not take a possessive case (his, your, my) before them. It must be \"The mention of him in the...\".",
+    "trap": "\"His mention\" sounds like a standard noun phrase indicating ownership, masking the structural prohibition."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0022",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: After the heated debate, the two bitter political rivals glared at one another across the podium.",
+    "q_hi": "",
+    "options_en": [
+      "After the heated debate",
+      "the two bitter political rivals",
+      "glared at one another",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 2,
+    "logic": "\"Each other\" is used for two people, and \"one another\" is used for more than two. Since there are \"two\" rivals, it should be \"glared at each other\".",
+    "trap": "In modern speech, these are used interchangeably, making the error invisible to the casual ear."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0023",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: Seldom or ever does the reclusive billionaire grant interviews to the mainstream media.",
+    "q_hi": "",
+    "options_en": [
+      "Seldom or ever does",
+      "the reclusive billionaire grant",
+      "interviews to the mainstream media",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 0,
+    "logic": "The phrase must either be \"Seldom or never\" or \"Seldom, if ever\". The combination \"Seldom or ever\" is grammatically incorrect.",
+    "trap": "Blending two correct phrases creates a phantom idiom that sounds sophisticated."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0024",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: Despite her lack of experience, she is very the best candidate for this high-stakes executive role.",
+    "q_hi": "",
+    "options_en": [
+      "Despite her lack of experience",
+      "she is very the best candidate",
+      "for this high-stakes executive role",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "When using \"very\" with a superlative degree, the article \"the\" must precede \"very\" (i.e., \"the very best\"). If using \"much\", it precedes \"the\" (i.e., \"much the best\").",
+    "trap": "The sequencing strictly dictates correctness, though both modifiers are valid."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0025",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The newly proposed architectural design is not enough spacious to accommodate the expanding workforce.",
+    "q_hi": "",
+    "options_en": [
+      "The newly proposed architectural design",
+      "is not enough spacious",
+      "to accommodate the expanding workforce",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "When \"enough\" plays the role of an Adverb qualifying an adjective (\"spacious\"), it must be placed *after* the adjective. It should be \"spacious enough\".",
+    "trap": "Because \"enough\" precedes nouns (e.g., \"enough money\"), we habitually place it before adjectives too."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0026",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: During the emergency meeting, the board of directors elected him as the new interim CEO.",
+    "q_hi": "",
+    "options_en": [
+      "During the emergency meeting",
+      "the board of directors elected him",
+      "as the new interim CEO",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 2,
+    "logic": "The adverb \"as\" cannot be used with verbs like elect, name, think, consider, call, make, choose, and appoint. It must be \"...elected him the new interim CEO\".",
+    "trap": "\"Elected as\" is heavily utilized in journalism, making it feel structurally sound."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0027",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: Although the central bank's fiscal deficit was narrowing, [but the inflation rate] remained dangerously high.",
+    "q_hi": "",
+    "options_en": [
+      "yet the inflation rate",
+      "and the inflation rate",
+      "so the inflation rate",
+      "No improvement"
+    ],
+    "options_hi": [],
+    "correct": 0,
+    "logic": "\"Although\" is a subordinating conjunction. It can take \"yet\" in the main clause, but it can *never* take \"but\".",
+    "trap": "\"But\" is the most common contrast word, so adding it feels like double-emphasizing the contrast."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0028",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The mysterious estate situated on the cliff is belonging to a highly secretive overseas trust.",
+    "q_hi": "",
+    "options_en": [
+      "The mysterious estate",
+      "situated on the cliff is belonging",
+      "to a highly secretive overseas trust",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "Verbs showing possession (own, belong, have) do not exist in the continuous \"-ing\" form. It must be \"...cliff belongs to...\".",
+    "trap": "It attempts to describe an ongoing state, tricking the reader into accepting present continuous."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0029",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The lead investigator did not compile the final forensic evidence up to now.",
+    "q_hi": "",
+    "options_en": [
+      "The lead investigator",
+      "did not compile the final",
+      "forensic evidence up to now",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "Words like \"up to now,\" \"already,\" \"yet,\" and \"lately\" strictly require the Perfect Tense. It should be \"has not compiled\".",
+    "trap": "\"Did not compile\" is standard past tense and sounds flawless without knowing the specific trigger rules."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0030",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: The jury [was sharply divided in its] opinion regarding the defendant's ultimate motive.",
+    "q_hi": "",
+    "options_en": [
+      "was sharply divided in their",
+      "were sharply divided in their",
+      "were sharply dividing in its",
+      "No improvement"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "When a collective noun shows the group is working on different tasks or divided, we use a plural verb and plural pronoun.",
+    "trap": "\"Jury\" feels singular, naturally pulling \"was\" and \"its\"."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0031",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The newly launched enterprise software is vastly superior than the obsolete legacy system.",
+    "q_hi": "",
+    "options_en": [
+      "The newly launched enterprise software",
+      "is vastly superior than",
+      "the obsolete legacy system",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "Any word suffixed with \"-ior\" (superior, inferior, junior) will always be followed by the preposition \"to\", not \"than\".",
+    "trap": "It implies comparison, so the brain automatically supplies \"than\"."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0032",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: Despite aggressive marketing, the new subsidiary company [is so profitable as] the established parent company.",
+    "q_hi": "",
+    "options_en": [
+      "is as profitable as",
+      "is so profitable like",
+      "is as profitable than",
+      "No improvement"
+    ],
+    "options_hi": [],
+    "correct": 0,
+    "logic": "\"So... as\" can only be used to denote negative sentences. Affirmative sentences must use \"as... as\".",
+    "trap": "\"So\" feels like an intensifier to native ears in affirmative comparisons."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0033",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The upgraded server processor is almost three times faster than the previous generation model.",
+    "q_hi": "",
+    "options_en": [
+      "The upgraded server processor",
+      "is almost three times faster than",
+      "the previous generation model",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "Whenever the word \"times\" comes up, it is never followed by a comparative degree. It must be \"...three times as fast as...\".",
+    "trap": "Multiplying a comparative degree is standard colloquial math/speech, but redundant mechanically."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0034",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: The aggressive journalist boldly asked the politician [what was his hidden agenda] behind the new tax law.",
+    "q_hi": "",
+    "options_en": [
+      "what his hidden agenda was",
+      "that what his hidden agenda was",
+      "what his hidden agenda had",
+      "No improvement"
+    ],
+    "options_hi": [],
+    "correct": 0,
+    "logic": "Indirect Speech is always a statement. The helping verb comes after the subject.",
+    "trap": "Retaining the interrogative word order is common because the original dialogue was a question."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0035",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: Neither the regional managers nor the rogue executive are willing to take responsibility for the catastrophic failure.",
+    "q_hi": "",
+    "options_en": [
+      "Neither the regional managers",
+      "nor the rogue executive are willing",
+      "to take responsibility",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "For subjects connected by \"Neither/nor\", the verb must agree with the nearest subject. \"Executive\" is singular, so it should be \"is willing\".",
+    "trap": "The earlier plural \"managers\" tricks the reader into assuming a compound plural subject."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0036",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: The board concluded that the CEO's proposed marketing strategy was [riskier than innovative].",
+    "q_hi": "",
+    "options_en": [
+      "more riskier than innovative",
+      "more risky than innovative",
+      "most risky than innovative",
+      "No improvement"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "Whenever two qualities of an object are compared, we always use the word \"more\" instead of the comparative \"-er\" degree.",
+    "trap": "\"Riskier\" is a valid comparative adjective, but strictly for comparing two different objects."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0037",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: More than one prominent scientists have raised concerns about the long-term effects of the experimental drug.",
+    "q_hi": "",
+    "options_en": [
+      "More than one prominent",
+      "scientists have raised concerns",
+      "about the long-term effects",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "\"More than one\" is always followed by a singular noun and a singular verb. It should be \"scientist has raised\".",
+    "trap": "Logically, \"more than one\" implies a plural quantity, driving instincts toward a plural noun/verb."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0038",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: The major stakeholders have no doubt [if the ambitious tech startup will] dominate the market next year.",
+    "q_hi": "",
+    "options_en": [
+      "whether the ambitious tech startup will",
+      "that the ambitious tech startup will",
+      "then the ambitious tech startup will",
+      "No improvement"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "With words like \"no doubt\" and \"not doubtful\", we use the connector \"that\". \"If/whether\" are for affirmative \"doubt\".",
+    "trap": "\"If\" introduces a condition which contextually sounds acceptable for future predictions."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0039",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The renowned astrophysicist explained to the audience that the Earth revolved around the Sun at a staggering speed.",
+    "q_hi": "",
+    "options_en": [
+      "The renowned astrophysicist",
+      "explained to the audience that",
+      "the Earth revolved around the Sun",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 2,
+    "logic": "The tense of the verb does not change even if the Reporting verb is in past tense for Universal Truths. It remains \"revolves\".",
+    "trap": "The reporting verb \"explained\" sets a past-tense anchor, making \"revolved\" feel grammatically aligned."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0040",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: The stranded mountaineers had [a little rations left], which meant they were almost certain to face starvation.",
+    "q_hi": "",
+    "options_en": [
+      "little rations left",
+      "a few rations left",
+      "few rations left",
+      "No improvement"
+    ],
+    "options_hi": [],
+    "correct": 2,
+    "logic": "\"Rations\" is countable, so we use \"few\". Since they face starvation, we need the negative meaning \"Hardly any\", which is \"few\" without the \"a\".",
+    "trap": "\"A little\" is misapplied to countable nouns in colloquial speech, and the subtle difference between \"a few\" (positive) and \"few\" (negative) is easily missed."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0041",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The board members agreed that everyone except he should be held accountable for the accounting discrepancies.",
+    "q_hi": "",
+    "options_en": [
+      "The board members agreed",
+      "that everyone except he",
+      "should be held accountable",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 1,
+    "logic": "When \"except\", \"but\", or \"between\" act as prepositions, they must be followed by the objective case of the pronoun (me, him, her, us, them). It must be \"...everyone except him...\".",
+    "trap": "\"He should be held accountable\" sounds like a perfectly standard subject-verb pairing if you ignore the prepositional function of \"except.\""
+  },
+  {
+    "uid": "VU-ENG-GRMR-0042",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: After the audit revealed massive fraud, the investigator declared that [you, he, and I are] equally guilty.",
+    "q_hi": "",
+    "options_en": [
+      "I, you, and he are",
+      "he, you, and I are",
+      "I, he, and you are",
+      "No improvement"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 0,
+    "logic": "When multiple pronouns act as the subject in a sentence expressing a negative sense (guilt, mistake, blame), the sequence must strictly be First Person (I), Second Person (you), Third Person (he) — 123.",
+    "trap": "The sequence 231 (You, he, and I) is the standard rule for positive sentences, so it feels polite and structurally correct."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0043",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The army hastily retreated back from the conflict zone after the ceasefire agreement was signed.",
+    "q_hi": "",
+    "options_en": [
+      "The army hastily retreated back",
+      "from the conflict zone after",
+      "the ceasefire agreement was signed",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 0,
+    "logic": "\"Retreat\" itself means to withdraw or go back. Adding \"back\" creates a superfluous error. It should simply be \"retreated from\".",
+    "trap": "\"Retreated back\", \"return back\", and \"final destination\" are extremely common redundant phrases in everyday speech."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0044",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The historic mansion's roof was severely damaged during the unprecedented hurricane last week.",
+    "q_hi": "",
+    "options_en": [
+      "The historic mansion's roof",
+      "was severely damaged during",
+      "the unprecedented hurricane last week",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 0,
+    "logic": "Apostrophe ('s) is generally not used with non-living things (with exceptions for time, weight, distance, idioms). It must be rewritten as \"The roof of the historic mansion...\".",
+    "trap": "We use apostrophes for possession so frequently with people that applying them to objects feels completely natural."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0045",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: The company's volatile shares [have dived by] 90p to 165p on the stock market last week.",
+    "q_hi": "",
+    "options_en": [
+      "had dived by",
+      "dived by",
+      "diving by",
+      "No improvement"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 1,
+    "logic": "Whenever a specific point of time in the past is mentioned (e.g., \"last week\", \"yesterday\"), the Simple Past tense (V2) must be used, not the Present Perfect.",
+    "trap": "The Present Perfect (\"have dived\") sounds highly formal and journalistic, masking the tense clash with \"last week.\""
+  },
+  {
+    "uid": "VU-ENG-GRMR-0046",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The lead architect submitted what the committee considered the most unique blueprint they had ever seen.",
+    "q_hi": "",
+    "options_en": [
+      "The lead architect submitted",
+      "what the committee considered",
+      "the most unique blueprint",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 2,
+    "logic": "Words like unique, excellent, perfect, ideal, and entire are absolute. Something is either unique or it isn't; it cannot be \"most\" unique. It should be \"a unique blueprint\".",
+    "trap": "People frequently use \"most unique\" or \"very unique\" to add emphasis to something highly unusual."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0047",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: After the rigorous training camp, the head coach noted that the athletes had [done quite all the] required drills.",
+    "q_hi": "",
+    "options_en": [
+      "quite done all the",
+      "done all the",
+      "quite doing all the",
+      "No improvement"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 1,
+    "logic": "The words \"Quite\" and \"all\" are never used together in a sentence because it causes redundancy. It should just be \"done all the required drills\".",
+    "trap": "\"Quite\" acts as an intensifier in colloquial speech, so chaining it with \"all\" feels like emphasizing completion."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0048",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The critically acclaimed author had submitted his final manuscript to the publisher five hours ago.",
+    "q_hi": "",
+    "options_en": [
+      "The critically acclaimed author",
+      "had submitted his final manuscript",
+      "to the publisher five hours ago",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 1,
+    "logic": "The word \"ago\" dictates the use of the Simple Past tense, whereas \"before\" triggers the Past Perfect. It should be \"submitted his final manuscript\".",
+    "trap": "\"Had submitted\" sounds appropriately distant in the past, but \"ago\" strictly locks the verb into Simple Past."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0049",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: Ram's and Shyam's car is being decorated extensively for the upcoming grand royal wedding.",
+    "q_hi": "",
+    "options_en": [
+      "Ram's and Shyam's car is",
+      "being decorated extensively",
+      "for the upcoming grand royal wedding",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 0,
+    "logic": "When separate possession is implied (indicated by putting 's on both nouns), it means there are multiple cars (one belonging to Ram, one to Shyam). Therefore, the noun and verb must be plural: \"Ram's and Shyam's cars are...\".",
+    "trap": "The singular \"car is\" sounds correct if the reader assumes they share one car, but the double apostrophe mechanically forbids joint possession."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0050",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: Despite the heavy turbulence, the automated drone maintained [it's trajectory and safely] landed.",
+    "q_hi": "",
+    "options_en": [
+      "its trajectory and safely",
+      "its' trajectory and safely",
+      "its trajectory and safe",
+      "No improvement"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 0,
+    "logic": "\"It's\" is a contraction for \"It is\" or \"It has.\" \"Its\" (without the apostrophe) is the possessive adjective meaning belonging to it. The drone maintained *its* trajectory.",
+    "trap": "Because apostrophes usually show possession (e.g., John's), putting one in \"its\" feels like standard possessive grammar."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0051",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The number of employees taking legal action over the toxic work environment are increasing exponentially.",
+    "q_hi": "",
+    "options_en": [
+      "The number of employees",
+      "taking legal action over",
+      "the toxic work environment are increasing",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 2,
+    "logic": "The structure \"The number of + Plural Noun\" takes a Singular Verb because it refers to the specific mathematical figure. \"A number of\" takes a plural verb. It should be \"...is increasing\".",
+    "trap": "The proximity of the plural noun \"employees\" tricks the ear into wanting the plural verb \"are.\""
+  },
+  {
+    "uid": "VU-ENG-GRMR-0052",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: The deadline is rapidly approaching; it is high time [we start working on] the final presentation.",
+    "q_hi": "",
+    "options_en": [
+      "we starts working on",
+      "we worked on",
+      "we started working on",
+      "No improvement"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 2,
+    "logic": "When the phrases \"It is time\" or \"It is high time\" are directly followed by a Subject (\"we\"), the verb must be in the past tense (V2) to refer to the present moment.",
+    "trap": "Because the urgency is happening right now, the present tense \"start\" feels logically correct."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0053",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The local residents were visibly angry with the sudden lack of subsidized parking spaces downtown.",
+    "q_hi": "",
+    "options_en": [
+      "The local residents were visibly",
+      "angry with the sudden lack of",
+      "subsidized parking spaces downtown",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 1,
+    "logic": "We use the preposition \"with\" after \"angry\" when referring to a living person. We use \"at\" when referring to a thing or situation. It should be \"...angry at the sudden lack...\".",
+    "trap": "\"Angry with\" is the default phrasing most people reach for, regardless of whether the object is a human or a policy."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0054",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: Despite reading the intricate manual, the junior technician did not know to calibrate the sensitive machinery.",
+    "q_hi": "",
+    "options_en": [
+      "Despite reading the intricate manual",
+      "the junior technician did not",
+      "know to calibrate the sensitive machinery",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 2,
+    "logic": "The verb \"know\" is never directly followed by the infinitive \"to.\" It requires an interrogative word (how, when, where, why) in between. It should be \"...know how to calibrate...\".",
+    "trap": "Other verbs take the infinitive directly (e.g., \"want to calibrate,\" \"learn to calibrate\"), so \"know to\" slips by unnoticed."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0055",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: The executive committee realized that the severe financial loss was [nothing else than mere] foolishness.",
+    "q_hi": "",
+    "options_en": [
+      "nothing else but mere",
+      "nothing other but mere",
+      "nothing else except mere",
+      "No improvement"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 0,
+    "logic": "The adverb \"else\" is structurally paired with \"but\". The adverbs \"other\" and \"rather\" are followed by \"than\".",
+    "trap": "\"Else than\" sounds like a valid comparative exclusion to the modern ear."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0056",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The regulatory agency warned that this type of unauthorized medical devices are strictly prohibited.",
+    "q_hi": "",
+    "options_en": [
+      "The regulatory agency warned",
+      "that this type of unauthorized",
+      "medical devices are strictly prohibited",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 2,
+    "logic": "The words \"sort, type, kind\" are singular and are always followed by a singular verb, regardless of the plural noun following \"of\". It should be \"...medical devices is strictly prohibited.\"",
+    "trap": "The plural noun \"devices\" sits right next to the verb, overriding the true singular subject \"type.\""
+  },
+  {
+    "uid": "VU-ENG-GRMR-0057",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: Sensing the imminent danger, the heroic bystander unhesitatingly [jumped in the raging] river to save the child.",
+    "q_hi": "",
+    "options_en": [
+      "jumped inside the raging",
+      "jumped into the raging",
+      "jumping in the raging",
+      "No improvement"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 1,
+    "logic": "\"In\" implies a static position already inside something. \"Into\" implies movement toward or entering a state/position. Since the act of jumping is a movement from outside to inside, \"into\" must be used.",
+    "trap": "In conversational English, \"jumped in\" is widely accepted, blurring the structural distinction."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0058",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The encrypted hard drive was violently smashed by a heavy iron hammer to destroy the evidence.",
+    "q_hi": "",
+    "options_en": [
+      "The encrypted hard drive was",
+      "violently smashed by a heavy",
+      "iron hammer to destroy the evidence",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 1,
+    "logic": "We use \"by\" for living doers of an action, and \"with\" for non-living instruments or tools. A hammer is an instrument. It should be \"...smashed with a heavy iron hammer...\".",
+    "trap": "Passive voice (\"was smashed by\") conditions us to expect \"by\" before the agent, ignoring whether the agent is living or an inanimate tool."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0059",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The intensive corporate restructuring process will definitively start from Monday morning.",
+    "q_hi": "",
+    "options_en": [
+      "The intensive corporate restructuring",
+      "process will definitively",
+      "start from Monday morning",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 2,
+    "logic": "The preposition \"from\" implies continuation (starting and restarting). An event only \"starts\" once. We must use \"on\" for days. It should be \"...start on Monday morning.\"",
+    "trap": "\"Starts from\" is incredibly common in Indian English vernacular, directly translating the local idiom into English."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0060",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: The board of directors is actively [looking forward to expand] its operations into the European market.",
+    "q_hi": "",
+    "options_en": [
+      "looking forward to expanding",
+      "looking forward for expanding",
+      "looked forward to expand",
+      "No improvement"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 0,
+    "logic": "In specific special cases, the infinitive \"to\" is followed by a Gerund (V1+ing) instead of the base verb. Phrases like \"look forward to\", \"with a view to\", and \"prone to\" require this structure.",
+    "trap": "Standard infinitive rules state \"to + V1\" (to expand), making the gerund \"to expanding\" look like a glaring mistake to those who don't know the phrase exceptions."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0061",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: Despite its extensive lobbying efforts, the corporation failed to secure an European patent.",
+    "q_hi": "",
+    "options_en": [
+      "Despite its extensive",
+      "lobbying efforts, the corporation",
+      "failed to secure an European patent",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 2,
+    "logic": "The choice between \"a\" and \"an\" is determined by phonetic sound, not just the written letter. \"European\" starts with a consonant \"Y\" sound (yu-ro-pee-an), so it must be preceded by \"a\". It should be \"...a European patent.\"",
+    "trap": "The word visibly starts with the vowel 'E', which aggressively triggers the basic grade-school rule of \"use 'an' before vowels.\""
+  },
+  {
+    "uid": "VU-ENG-GRMR-0062",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: The lead developer warned that the more complex the algorithm becomes, [harder it is to debug].",
+    "q_hi": "",
+    "options_en": [
+      "the hardest it is to debug",
+      "the harder it is to debug",
+      "harder is it to debug",
+      "No improvement"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 1,
+    "logic": "In parallel comparative structures showing proportional change (e.g., The higher you go, the cooler it is), the definite article \"the\" must precede both comparative adjectives. It must be \"the harder it is...\".",
+    "trap": "Dropping the second \"the\" sounds casual and conversational, making the structural omission very easy to overlook."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0063",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: While dinner is usually casual, dinner we had at the ambassador's residence was exceptionally formal.",
+    "q_hi": "",
+    "options_en": [
+      "While dinner is usually casual",
+      "dinner we had at the ambassador's",
+      "residence was exceptionally formal",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 1,
+    "logic": "We normally do not use articles before names of meals. However, when we particularize the meal (a specific dinner at a specific place), the definite article \"the\" must be used. It should be \"the dinner we had...\".",
+    "trap": "The first \"dinner\" correctly lacks an article, setting a false precedent for the second \"dinner\" in the reader's mind."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0064",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: During the severe economic recession, [the wealthy is often insulated] from the immediate financial impacts.",
+    "q_hi": "",
+    "options_en": [
+      "the wealthy are often insulated",
+      "the wealthies are often insulated",
+      "wealthy is often insulated",
+      "No improvement"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 0,
+    "logic": "Whenever the article \"the\" is placed before an adjective to denote a whole class of people (e.g., the poor, the rich, the wealthy), it acts as a plural noun. Thus, it requires a plural verb.",
+    "trap": "\"The wealthy\" looks singular because it lacks a plural 's', drawing the reader toward the singular verb \"is\"."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0065",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: During the hostile takeover, city after city were systematically dismantled by the relentless corporate giant.",
+    "q_hi": "",
+    "options_en": [
+      "During the hostile takeover",
+      "city after city were",
+      "systematically dismantled by the relentless corporate giant",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 1,
+    "logic": "Whenever the same nouns are connected by a preposition (e.g., city after city, page after page), both nouns must be singular, and the entire phrase takes a singular verb. It should be \"city after city was...\".",
+    "trap": "\"City after city\" implies multiple cities conceptually, so the brain instinctively reaches for the plural verb \"were.\""
+  },
+  {
+    "uid": "VU-ENG-GRMR-0066",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The new military protocol requires all Commander-in-chiefs to submit their quarterly strategic reports.",
+    "q_hi": "",
+    "options_en": [
+      "The new military protocol requires",
+      "all Commander-in-chiefs to submit",
+      "their quarterly strategic reports",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 1,
+    "logic": "To form the plural of hyphenated compound nouns, the \"s\" is attached to the principal word, not the end. The principal word is \"Commander.\" It must be \"Commanders-in-chief.\"",
+    "trap": "In English, we default to adding an 's' to the absolute end of a word to make it plural, which creates this error."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0067",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: The prestigious hospital appointed a [female surgeon to lead] the newly established pediatric wing.",
+    "q_hi": "",
+    "options_en": [
+      "females surgeon to lead",
+      "woman surgeon to lead",
+      "female's surgeon to lead",
+      "No improvement"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 1,
+    "logic": "When describing a post or profession (like doctor, soldier, or student), we use \"man\" or \"woman\" (e.g., woman doctor). We use \"male/female\" only when describing characteristics intended for that gender (e.g., female shoes).",
+    "trap": "\"Female surgeon\" is overwhelmingly common in everyday vernacular, but structurally, it means \"a surgeon meant for females\" rather than \"a surgeon who is a woman.\""
+  },
+  {
+    "uid": "VU-ENG-GRMR-0068",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The frustrated manager offered the highly lucrative promotion to whomever was willing to relocate immediately.",
+    "q_hi": "",
+    "options_en": [
+      "The frustrated manager offered",
+      "the highly lucrative promotion to",
+      "whomever was willing to relocate immediately",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 2,
+    "logic": "When there is no antecedent before the relative pronoun, we use whoever/whomever based on its role in its own clause. Here, the pronoun is the *subject* of the verb \"was willing.\" Therefore, the subjective case is needed. It should be \"whoever was willing...\".",
+    "trap": "The preposition \"to\" acts as a powerful magnet, pulling the reader toward the objective case \"whomever,\" obscuring the pronoun's true role as a subject."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0069",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The newly implemented tax reforms haven't actually benefited the middle class, haven't they?",
+    "q_hi": "",
+    "options_en": [
+      "The newly implemented tax reforms",
+      "haven't actually benefited the middle class,",
+      "haven't they?",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 2,
+    "logic": "A question tag must be the opposite polarity of the main statement. If the statement is negative (\"haven't benefited\"), the tag must be positive. It should be \"...have they?\".",
+    "trap": "Matching the tag's negative polarity to the statement's negative polarity sounds like rhythmic agreement to an untrained ear."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0070",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: I am undeniably the most qualified candidate for this promotion, [amn't I]?",
+    "q_hi": "",
+    "options_en": [
+      "isn't I?",
+      "aren't I?",
+      "don't I?",
+      "No improvement"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 1,
+    "logic": "In formal English grammar, the negative question tag for \"I am\" is always \"aren't I?\" because the contraction \"amn't\" does not exist in standard usage.",
+    "trap": "Logically, \"am I not\" contracts to \"amn't I,\" making the correct \"aren't I\" feel grammatically bizarre since \"are\" doesn't agree with \"I\" in standard declarative sentences."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0071",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The reclusive director scarcely attends international film festivals, doesn't he?",
+    "q_hi": "",
+    "options_en": [
+      "The reclusive director",
+      "scarcely attends international film festivals,",
+      "doesn't he?",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 2,
+    "logic": "Words like seldom, barely, hardly, scarcely, and never impart a negative meaning to the statement. Because the statement is structurally negative, it requires a positive tag. It should be \"...does he?\".",
+    "trap": "The verb \"attends\" lacks a visible \"not,\" so the brain processes the sentence as affirmative and automatically applies a negative tag."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0072",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The executive team is reviewing the controversial merger proposal right now, don't they?",
+    "q_hi": "",
+    "options_en": [
+      "The executive team is reviewing",
+      "the controversial merger proposal",
+      "right now, don't they?",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 2,
+    "logic": "The question tag must match the tense and helping verb of the main statement. The main statement is in the Present Continuous (\"is reviewing\"), so the tag must use the corresponding \"to be\" verb. It should be \"...aren't they?\".",
+    "trap": "\"Don't they?\" is used as a generic, catch-all tag in conversational speech."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0073",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: Every intern in the highly competitive program is expected to work overtime, [isn't he]?",
+    "q_hi": "",
+    "options_en": [
+      "aren't he?",
+      "aren't they?",
+      "isn't they?",
+      "No improvement"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 1,
+    "logic": "While \"Every\" takes a singular noun and singular verb in the main statement, question tag rules dictate that the noun/pronoun following \"Each\" or \"Every\" is considered plural in the tag. Thus, we use a plural verb and plural pronoun.",
+    "trap": "The main clause strictly establishes a singular subject and verb (\"Every intern... is\"), making a plural tag feel like a massive agreement error."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0074",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: After hours of deliberation, the jury took their respective seats in the courtroom, didn't it?",
+    "q_hi": "",
+    "options_en": [
+      "After hours of deliberation",
+      "the jury took their respective",
+      "seats in the courtroom, didn't it?",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 2,
+    "logic": "When a collective noun acts as a unified whole, the tag uses \"it.\" However, when the units act individually (taking *their respective* seats), it is considered plural. The tag must reflect this plurality: \"...didn't they?\".",
+    "trap": "\"Jury\" is a single entity noun, which reflexively triggers the singular \"it\" in the mind."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0075",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: Let us finalize the operational budget before the end of the fiscal quarter, won't we?",
+    "q_hi": "",
+    "options_en": [
+      "Let us finalize the",
+      "operational budget before the end",
+      "of the fiscal quarter, won't we?",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 2,
+    "logic": "When dealing with imperative sentences that are proposals (starting with \"Let us\" or \"Let's\"), the question tag is invariably \"shall we?\".",
+    "trap": "\"Won't we?\" projects future intent, which aligns well with the narrative context of finalizing a budget."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0076",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The highly anticipated software update will be deployed globally on the coming Monday.",
+    "q_hi": "",
+    "options_en": [
+      "The highly anticipated",
+      "software update will be deployed",
+      "globally on the coming Monday",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 2,
+    "logic": "Generally, we use \"on\" for days of the week. However, there are certain modifier words before which we NEVER use a preposition, including *last, coming, today, tomorrow,* and *yesterday*. It must be \"...deployed globally coming Monday.\"",
+    "trap": "\"On Monday\" is deeply hardwired into our syntax, so slipping \"coming\" into the phrase doesn't intuitively trigger the omission rule."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0077",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: The comprehensive insurance policy covers [both structural damage as well as] liability claims.",
+    "q_hi": "",
+    "options_en": [
+      "both structural damage or",
+      "both structural damage and",
+      "both structural damage along with",
+      "No improvement"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 1,
+    "logic": "The conjunction \"Both\" is always, exclusively followed by the correlative \"and\". It is never followed by \"as well as\".",
+    "trap": "\"As well as\" means the exact same thing as \"and\" contextually, making the error purely mechanical, not logical."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0078",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The administration encrypted the classified files lest they would fall into enemy hands.",
+    "q_hi": "",
+    "options_en": [
+      "The administration encrypted",
+      "the classified files lest",
+      "they would fall into enemy hands",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 2,
+    "logic": "The conjunction \"lest\" (meaning \"otherwise\") is structurally rigid: it must be followed either by the modal verb \"should\" or no helping verb at all (V1 base form). It must be \"...lest they should fall...\".",
+    "trap": "\"Would\" denotes a hypothetical future outcome, which makes perfect sense narratively but violates the strict \"lest\" pairing."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0079",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: Until the central bank slashes interest rates, the housing market will remain completely stagnant.",
+    "q_hi": "",
+    "options_en": [
+      "Until the central bank",
+      "slashes interest rates, the housing market",
+      "will remain completely stagnant",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 0,
+    "logic": "\"Until\" is strictly time-oriented. \"Unless\" is action/condition-oriented. The slashing of interest rates is a conditional action, not a specific point in time. It should be \"Unless the central bank slashes...\".",
+    "trap": "In common speech, \"until\" is frequently used to mean \"up to the point that an action occurs,\" blending the two concepts."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0080",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: The CEO's core philosophy centers on increasing transparency, reducing debt, [and to foster innovation].",
+    "q_hi": "",
+    "options_en": [
+      "and to fostering innovation",
+      "and foster innovation",
+      "and fostering innovation",
+      "No improvement"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 2,
+    "logic": "The Rule of Parallelism requires that sentence elements alike in function must be structurally identical. The list uses gerunds (\"increasing\", \"reducing\"), so the final element must also be a gerund (\"fostering\").",
+    "trap": "\"To foster\" is a valid infinitive that perfectly expresses the intent, but it breaks the established rhythmic structure of the list."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0081",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The committee noted that the new policy is entirely different and significantly more effective than the previous one.",
+    "q_hi": "",
+    "options_en": [
+      "The committee noted that",
+      "the new policy is entirely different and",
+      "significantly more effective than the previous one",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 1,
+    "logic": "When two adjectives require different prepositions, both must be explicitly stated. \"Different\" requires \"from,\" while \"more effective\" requires \"than.\" It should be \"...entirely different from and significantly more effective than...\".",
+    "trap": "The single preposition \"than\" at the end of the phrase acts as a blanket for both adjectives in colloquial speech, hiding the missing \"from.\""
+  },
+  {
+    "uid": "VU-ENG-GRMR-0082",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The structural integrity of the bridge is too much weak to support the weight of commercial freight trains.",
+    "q_hi": "",
+    "options_en": [
+      "The structural integrity of the bridge",
+      "is too much weak to support",
+      "the weight of commercial freight trains",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 1,
+    "logic": "\"Too much\" acts as an adjective and modifies a noun (e.g., too much sugar). \"Much too\" acts as an adverb and modifies an adjective. \"Weak\" is an adjective, so it must be \"much too weak\".",
+    "trap": "\"Too much\" is a highly common phrase that native speakers frequently misuse as a universal intensifier."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0083",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: After the devastating factory fire, the worker realized that all [his belonging were] completely destroyed.",
+    "q_hi": "",
+    "options_en": [
+      "his belonging was",
+      "his belongings was",
+      "his belongings were",
+      "No improvement"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 2,
+    "logic": "The possessive case (\"his\") must be followed by a noun. Certain nouns derived from verbs, like \"belonging,\" must take the plural 's' form (\"belongings\") to act as a noun, and they take a plural verb.",
+    "trap": "\"Belonging\" looks like a singular noun that should take \"was,\" but as a possession, it strictly exists in the plural form."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0084",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: Her politics has become increasingly radical over the past few years, alienating her moderate supporters.",
+    "q_hi": "",
+    "options_en": [
+      "Her politics has become",
+      "increasingly radical over the past few years",
+      "alienating her moderate supporters",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 0,
+    "logic": "When the word \"Politics\" is used as a field of study, it is singular. However, when it refers to a set of political beliefs (as indicated by the possessive \"Her\"), it is plural. It should be \"Her politics have become...\".",
+    "trap": "\"Politics\" ends in an 's' but is widely taught as a singular exception noun, causing people to apply the singular rule unconditionally."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0085",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: The recent [statistics shows that] customer retention is dropping at an alarming rate.",
+    "q_hi": "",
+    "options_en": [
+      "statistic show that",
+      "statistics show that",
+      "statistics is showing that",
+      "No improvement"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 1,
+    "logic": "Similar to \"politics,\" when \"Statistics\" refers to the academic subject, it is singular. When it means \"data\" (as it does here), it is plural and requires a plural verb. It must be \"statistics show\".",
+    "trap": "Treating \"Statistics\" universally as a singular academic subject leads to the incorrect verb \"shows.\""
+  },
+  {
+    "uid": "VU-ENG-GRMR-0086",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: During the corporate gala, the sister of me casually mentioned her upcoming expedition to the Arctic.",
+    "q_hi": "",
+    "options_en": [
+      "During the corporate gala",
+      "the sister of me casually mentioned",
+      "her upcoming expedition to the Arctic",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 1,
+    "logic": "\"The [noun] of me\" strictly implies there is *only one* of that noun. To say \"one of many,\" we use \"A [noun] of mine\". The structurally superior phrasing for \"one of my sisters\" is \"a sister of mine\".",
+    "trap": "Direct translations from other languages often result in \"the [noun] of me\", which is structurally awkward and limits quantity in English."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0087",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: The ambitious tech startup secured massive seed funding and finalized their strategic partnerships [also].",
+    "q_hi": "",
+    "options_en": [
+      "as well",
+      "also too",
+      "together",
+      "No improvement"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 0,
+    "logic": "While \"too\", \"as well\", and \"also\" all denote addition, \"also\" cannot be used at the absolute end of a sentence. We must use \"as well\" or \"too\" in the terminal position.",
+    "trap": "\"Also\" is frequently tacked onto the end of spoken sentences as an afterthought."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0088",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: Long lives the newly appointed monarch who brought peace to the fractured kingdom.",
+    "q_hi": "",
+    "options_en": [
+      "Long lives the",
+      "newly appointed monarch who",
+      "brought peace to the fractured kingdom",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 0,
+    "logic": "This is an Optative Sentence (expressing a wish/prayer). In optative sentences, regardless of whether the subject is singular or plural, we must use the base form of the verb (V1). It must be \"Long live the newly appointed monarch\".",
+    "trap": "The subject \"monarch\" is singular, which triggers the standard subject-verb agreement rule requiring \"lives,\" completely ignoring the optative mood."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0089",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: [Being a highly volatile market], the cautious investor decided to hold off on purchasing the tech stocks.",
+    "q_hi": "",
+    "options_en": [
+      "It being a highly volatile market",
+      "The market being highly volatile",
+      "Both A and B are correct",
+      "No improvement"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 2,
+    "logic": "In the original sentence, \"Being\" lacks a subject, so it incorrectly attaches to \"the cautious investor\" (meaning the investor is the volatile market—a dangling modifier). We must introduce a pseudo subject (\"It being...\") or an absolute phrase (\"The market being...\").",
+    "trap": "The brain easily bridges the logical gap without realizing the syntax attaches the opening phrase to the wrong noun."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0090",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The impoverished refugees barely had enough food to eat or a safe bed to sleep.",
+    "q_hi": "",
+    "options_en": [
+      "The impoverished refugees",
+      "barely had enough food to eat",
+      "or a safe bed to sleep",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 2,
+    "logic": "Whenever an infinitive (to + V1) in a sentence is used to describe a noun (bed), and that verb is intransitive in context, it must be followed by a preposition. One doesn't sleep a bed; one sleeps *in* a bed. It must be \"...a safe bed to sleep in.\"",
+    "trap": "\"To sleep\" feels complete because infinitives generally don't require prepositions unless modifying specific nouns."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0091",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: The veteran senator [has never and will never support] the controversial tax reform bill.",
+    "q_hi": "",
+    "options_en": [
+      "has never support and will never support",
+      "has never supported and will never support",
+      "never supported and will never",
+      "No improvement"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 1,
+    "logic": "When two different helping verbs (\"has\" and \"will\") require different forms of the main verb (V3 for \"has\", V1 for \"will\"), the main verb must be explicitly stated in both cases. \"Has never supported and will never support\".",
+    "trap": "To avoid repetition, speakers naturally drop the first main verb, assuming the second one covers both helping verbs."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0092",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: All the proceeds from the charity auction was immediately donated to the local children's hospital.",
+    "q_hi": "",
+    "options_en": [
+      "All the proceeds from",
+      "the charity auction was",
+      "immediately donated to the local children's hospital",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 1,
+    "logic": "Certain words like proceeds, surroundings, scissors, and belongings are strictly plural and must take a plural verb. It should be \"...charity auction were immediately donated...\".",
+    "trap": "\"Auction\" acts as a proximity trap. Being singular and right next to the verb, it masks the true plural subject \"proceeds.\""
+  },
+  {
+    "uid": "VU-ENG-GRMR-0093",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The devastating news were broadcasted across all major international networks within minutes of the incident.",
+    "q_hi": "",
+    "options_en": [
+      "The devastating news were",
+      "broadcasted across all major",
+      "international networks within minutes of the incident",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 0,
+    "logic": "Certain words ending in 's' (News, Innings, Summons, Athletics) are strictly singular and require singular verbs. It must be \"The devastating news was...\".",
+    "trap": "The 's' on \"news\" tricks the eye into treating it as a standard plural noun."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0094",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: The expedition team quickly realized that their heavy [luggages were severely delaying] their ascent up the mountain.",
+    "q_hi": "",
+    "options_en": [
+      "luggage were severely delaying",
+      "luggage was severely delaying",
+      "luggages was severely delaying",
+      "No improvement"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 1,
+    "logic": "Words like luggage, baggage, equipment, furniture, and scenery are uncountable nouns. They do not have plural 's' forms and must take singular verbs. It should be \"luggage was severely delaying\".",
+    "trap": "Because luggage consists of multiple bags, it feels logically plural, leading to the incorrect \"luggages were.\""
+  },
+  {
+    "uid": "VU-ENG-GRMR-0095",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: Had the structural engineers calculated the wind resistance correctly, the suspension bridge would not collapse.",
+    "q_hi": "",
+    "options_en": [
+      "Had the structural engineers calculated",
+      "the wind resistance correctly",
+      "the suspension bridge would not collapse",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 2,
+    "logic": "This is an inverted Type III Conditional (Past Perfect Condition). A past impossible condition (\"Had they calculated\") must yield a past impossible result (\"would have + V3\"). It should be \"...would not have collapsed.\"",
+    "trap": "\"Would not collapse\" is a Type II (present conditional) result, which feels narratively acceptable if the strict conditional pairings are ignored."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0096",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: My both colleagues were suddenly promoted to senior management after the massive corporate restructuring.",
+    "q_hi": "",
+    "options_en": [
+      "My both colleagues were suddenly",
+      "promoted to senior management",
+      "after the massive corporate restructuring",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 0,
+    "logic": "In English syntax, possessive adjectives (my, his, her) must be placed *after* the words \"all\" and \"both\". It should be \"Both my colleagues were...\".",
+    "trap": "Adjectives usually precede the noun they modify, so \"My both\" feels structurally aligned with phrases like \"My two colleagues.\""
+  },
+  {
+    "uid": "VU-ENG-GRMR-0097",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: [Due to the reason that] the global supply chain was disrupted, the factory halted all production.",
+    "q_hi": "",
+    "options_en": [
+      "Due to the reason of",
+      "Because of the reason that",
+      "Because",
+      "No improvement"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 2,
+    "logic": "\"Due to\" means \"caused by\" and cannot be used redundantly with \"the reason.\" You must either use \"Because\" or restructure to \"Due to the disruption...\".",
+    "trap": "\"Due to the reason that\" is heavily overused in business writing to sound formal and bureaucratic."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0098",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: A surprisingly little quantity of the experimental chemical was required to neutralize the toxic spill.",
+    "q_hi": "",
+    "options_en": [
+      "A surprisingly little quantity",
+      "of the experimental chemical was required",
+      "to neutralize the toxic spill",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 0,
+    "logic": "When the specific word \"quantity\" is used, we cannot modify it with \"little\" or \"few\". We must use \"small\". It should be \"A surprisingly small quantity...\".",
+    "trap": "Because the chemical is an uncountable liquid, the quantifier \"little\" feels grammatically appropriate."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0099",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The notorious wartime traitor was hung at dawn for his central role in the failed assassination plot.",
+    "q_hi": "",
+    "options_en": [
+      "The notorious wartime traitor",
+      "was hung at dawn for his central role",
+      "in the failed assassination plot",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 1,
+    "logic": "The verb \"hang\" has two V2/V3 forms. \"Hung\" is used for objects (pictures, clocks). \"Hanged\" is exclusively used for the execution of a living person. It should be \"...was hanged at dawn...\".",
+    "trap": "\"Hung\" is the standard past tense for 99% of daily usage, making \"hanged\" sound like a child's grammatical error rather than the precise legal term."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0100",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: Exhausted from the relentless ultra-marathon, the runner laid down on the grass to rest.",
+    "q_hi": "",
+    "options_en": [
+      "Exhausted from the relentless ultra-marathon",
+      "the runner laid down",
+      "on the grass to rest",
+      "No error"
+    ],
+    "options_hi": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "correct": 1,
+    "logic": "\"Lay\" (V2: laid, V3: laid) is a transitive verb meaning to put or place something down. \"Lie\" (V2: lay, V3: lain) is an intransitive verb meaning to rest horizontally. The runner rested horizontally. The V2 of \"lie\" is \"lay.\" It should be \"...the runner lay down...\".",
+    "trap": "Because \"lay\" is both the present tense of \"to place\" and the past tense of \"to rest horizontally,\" English speakers constantly conflate the two and incorrectly use \"laid\" for resting."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0101",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The prominent political figure unfortunately died from tuberculosis during the severe winter outbreak.",
+    "q_hi": "",
+    "options_en": [
+      "The prominent political figure",
+      "unfortunately died from tuberculosis",
+      "during the severe winter outbreak",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "We use the preposition \"of\" with the word \"die\" when someone dies of a disease. We use \"from\" when talking about a reason (like overwork or acid rain). It must be \"...died of tuberculosis\".",
+    "trap": "\"Died from\" sounds logically correct because a disease is technically a cause of death, but the grammar idiom is highly specific."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0102",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: [Beside being a renowned surgeon], Dr. Evans is also a highly accomplished classical pianist.",
+    "q_hi": "",
+    "options_en": [
+      "Besides being a renowned surgeon",
+      "Beside a renowned surgeon",
+      "Besides to be a renowned surgeon",
+      "No improvement"
+    ],
+    "options_hi": [],
+    "correct": 0,
+    "logic": "\"Beside\" is a preposition meaning \"next to.\" \"Besides\" is a linking adverb meaning \"in addition to\" or \"also\". He is a pianist *in addition to* being a surgeon.",
+    "trap": "The single \"s\" difference is easily overlooked visually, and they are frequently confused in spoken English."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0103",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: Despite the hostile negotiations, the foreign diplomat behaved extremely friendly toward the press.",
+    "q_hi": "",
+    "options_en": [
+      "Despite the hostile negotiations",
+      "the foreign diplomat behaved",
+      "extremely friendly toward the press",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 2,
+    "logic": "Words like friendly, miserly, and cowardly are strictly adjectives, not adverbs. To modify the verb \"behaved\", we must use an adverbial phrase. It should be \"...behaved in an extremely friendly manner\".",
+    "trap": "Because the word ends in \"-ly\", the brain automatically and incorrectly catalogs it as an adverb."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0104",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The senior compliance officer reviews often the financial statements before they are sent to the board.",
+    "q_hi": "",
+    "options_en": [
+      "The senior compliance officer",
+      "reviews often the financial statements",
+      "before they are sent to the board",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "An adverb can never be placed directly between the main verb (\"reviews\") and its object (\"statements\"). It should be placed between the helping verb and main verb, or before the main verb. It must be \"...often reviews the financial statements...\".",
+    "trap": "If you translate directly from certain other languages, placing the adverb right after the verb is standard syntax."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0105",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: After the alarm sounded, the security guards [ran yesterday quickly down the corridor].",
+    "q_hi": "",
+    "options_en": [
+      "ran quickly yesterday down the corridor",
+      "ran quickly down the corridor yesterday",
+      "ran down the corridor yesterday quickly",
+      "No improvement"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "When multiple adverbs are used, they must follow the MPT order: Manner (quickly) -> Place (down the corridor) -> Time (yesterday).",
+    "trap": "Dropping multiple adverbs randomly into the end of a sentence feels conversational, hiding the strict MPT sequence."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0106",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The structural analysis revealed that the new alloy is very weaker than the traditional steel.",
+    "q_hi": "",
+    "options_en": [
+      "The structural analysis revealed",
+      "that the new alloy is",
+      "very weaker than the traditional steel",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 2,
+    "logic": "\"Very\" is used with the positive degree of adjectives. \"Much\" is used with the comparative degree. \"Weaker\" is a comparative, so it must be \"...much weaker than...\".",
+    "trap": "\"Very\" is the ultimate universal intensifier in modern slang, so using it before a comparative feels natural to native speakers."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0107",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: The exclusive interview with the CEO will be broadcasted live [between 8 PM to 9 PM].",
+    "q_hi": "",
+    "options_en": [
+      "from 8 PM and 9 PM",
+      "between 8 PM and 9 PM",
+      "between 8 PM until 9 PM",
+      "No improvement"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "The preposition \"between\" is always strictly paired with the conjunction \"and\", never \"to\". (\"From\" is paired with \"to\").",
+    "trap": "\"Between X to Y\" is incredibly common in spoken corporate jargon and scheduling, but it violates basic correlative structures."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0108",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The judge sternly ordered that the heavy iron of the dangerous under-trial prisoner should be removed.",
+    "q_hi": "",
+    "options_en": [
+      "The judge sternly ordered that",
+      "the heavy iron of the dangerous",
+      "under-trial prisoner should be removed",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "\"Iron\" as a singular uncountable noun refers to the metal. To mean chains or fetters, the pluralized form \"irons\" must be used. It should be \"...the heavy irons of the...\".",
+    "trap": "The reader knows \"iron\" is an uncountable material, so seeing it in singular form here looks perfectly compliant with uncountable rules."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0109",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: All his family members were evacuated safely during the unprecedented coastal flooding.",
+    "q_hi": "",
+    "options_en": [
+      "All his family members",
+      "were evacuated safely during",
+      "the unprecedented coastal flooding",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 0,
+    "logic": "\"Family members\" is grammatically considered a slang use that structurally means \"members made up of a family\". The correct standard form is \"All the members of his family\".",
+    "trap": "\"Family members\" is universally used in spoken English across all demographics, making the structural error practically invisible."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0110",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: In times of severe economic crisis, [one should fulfill his duty] to the community.",
+    "q_hi": "",
+    "options_en": [
+      "one should fulfill her duty",
+      "one should fulfill one's duty",
+      "one should fulfill their duty",
+      "No improvement"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "When the subject of a sentence is the indefinite pronoun \"One\", the possessive adjective must be \"one's\", not \"his\" or \"her\".",
+    "trap": "\"His\" is traditionally used as a generic, gender-neutral placeholder in older English, making it look formally correct."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0111",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The strict compliance audit revealed that no less than fifty senior managers bypassed the security protocol.",
+    "q_hi": "",
+    "options_en": [
+      "The strict compliance audit revealed",
+      "that no less than fifty senior managers",
+      "bypassed the security protocol",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "\"Less\" is used with uncountable nouns (e.g., less water). \"Fewer\" is used with countable nouns. Managers are countable, so it must be \"...no fewer than fifty senior managers...\".",
+    "trap": "Supermarkets with \"10 items or less\" lines have permanently damaged this grammar rule in the public consciousness."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0112",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: A colleague of mine in the corporate strategy department is slightly elder than me.",
+    "q_hi": "",
+    "options_en": [
+      "A colleague of mine in the",
+      "corporate strategy department",
+      "is slightly elder than me",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 2,
+    "logic": "\"Elder\" is strictly reserved for comparing people within one's own family. \"Older\" is used for someone outside the family. It should be \"...is slightly older than me\".",
+    "trap": "\"Elder\" sounds more polite, respectful, and sophisticated, which tricks writers into applying it to senior coworkers."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0113",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: The researchers discovered that the climate of the coastal region is [far milder than the desert].",
+    "q_hi": "",
+    "options_en": [
+      "far milder than that of the desert",
+      "far more mild than the desert",
+      "far milder compared to the desert",
+      "No improvement"
+    ],
+    "options_hi": [],
+    "correct": 0,
+    "logic": "When comparing, we must compare the same things. You cannot compare \"the climate\" of one region to the geographical \"desert\" itself. You must compare the climate to the climate: \"...far milder than *that of* the desert\".",
+    "trap": "The listener easily implies the missing context, but structurally, it's an asymmetrical comparison."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0114",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The CEO announced that one of the flagship store will be permanently closed next month.",
+    "q_hi": "",
+    "options_en": [
+      "The CEO announced that",
+      "one of the flagship store",
+      "will be permanently closed next month",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "The phrase \"One of the\" (along with either of, neither of, each of) strictly selects a singular item *out of a plural group*. Therefore, it must be followed by a plural noun. It must be \"one of the flagship stores\".",
+    "trap": "The leading word \"one\" primes the brain for a singular subject, causing the writer to drop the plural 's'."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0115",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The frustrated manager dictated that all but he were responsible for the disastrous product launch.",
+    "q_hi": "",
+    "options_en": [
+      "The frustrated manager dictated",
+      "that all but he were responsible",
+      "for the disastrous product launch",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "When \"but\", \"except\", or \"between\" are used as prepositions, they must be followed by the objective case pronoun (me, him, her, them), not the subjective. It must be \"all but him were responsible\".",
+    "trap": "\"He was responsible\" sounds like the natural subjective phrasing if the reader fails to recognize \"but\" acting as a preposition."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0116",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: Following the highly successful merger, the chairman proudly announced, \"[It is us who have] secured the company's future.\"",
+    "q_hi": "",
+    "options_en": [
+      "It is we whom have",
+      "It is we who have",
+      "It are us who have",
+      "No improvement"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "When using a pseudo subject (\"It is...\"), the pronoun following it acts as the semantic subject of the sentence and must be in the subjective case (I, he, she, we), not the objective case.",
+    "trap": "\"It is me\" or \"It is us\" is universally accepted in spoken English, making the correct \"It is we\" sound archaic and overly stiff."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0117",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: He is exactly such a meticulous analyst that the board mentioned during the previous quarter's briefing.",
+    "q_hi": "",
+    "options_en": [
+      "He is exactly such a",
+      "meticulous analyst that the board",
+      "mentioned during the previous quarter's briefing",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "When the word \"such\" is used as a determiner, it must strictly be paired with the connector \"as\", not \"that\". It must be \"...such a meticulous analyst as the board mentioned...\".",
+    "trap": "\"Such... that\" is a common construction for showing extreme extent (e.g., \"He was such a fool that he fell\"), but here \"such\" is a determiner of a category."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0118",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The aggressive expansion of the prominent boys's academy caused a massive uproar in the local community.",
+    "q_hi": "",
+    "options_en": [
+      "The aggressive expansion of",
+      "the prominent boys's academy caused",
+      "a massive uproar in the local community",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "When showing possession with a plural noun ending in 's', adding an extra 's' (e.g., boys's) creates an awkward hissing sound. In English grammar, we only add the trailing apostrophe. It must be \"the prominent boys' academy\".",
+    "trap": "Using 's for possession is so automatic that writers blindly append it to plural nouns without checking phonetics."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0119",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Improve the bracketed part: The lawyer confirmed that the lucrative offshore accounts are [rightfully your's and mine].",
+    "q_hi": "",
+    "options_en": [
+      "rightfully your and mine",
+      "rightfully yours and mine",
+      "rightfully yours' and mine",
+      "No improvement"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "We absolutely never use an apostrophe to show possession with pronouns (yours, ours, hers, theirs). They are already possessive by nature. It must be \"yours and mine\".",
+    "trap": "Noun possession relies on apostrophes (John's), so writers logically but mistakenly project that rule onto pronouns."
+  },
+  {
+    "uid": "VU-ENG-GRMR-0120",
+    "subject": "English",
+    "topic": "Grammar",
+    "q_en": "Identify the error: The highly classified documents were discovered by an asleep guard during the late-night shift.",
+    "q_hi": "",
+    "options_en": [
+      "The highly classified documents",
+      "were discovered by an asleep guard",
+      "during the late-night shift",
+      "No error"
+    ],
+    "options_hi": [],
+    "correct": 1,
+    "logic": "Certain predicate adjectives like afraid, asleep, awake, alone, glad, and ill can never be placed directly before a noun to modify it. They must be used after a linking verb. It should be \"a sleeping guard\" or \"a guard who was asleep\".",
+    "trap": "Most adjectives (e.g., \"tired guard\") comfortably precede nouns, making the structural limitation of \"asleep\" hard to detect."
+  },
+  {
+    "uid": "VU-20260414-0531",
+    "subject": "Reasoning",
+    "topic": "Blood Relations",
+    "q_en": "Pointing to a photograph, a man said, 'I have no brother or sister but that man’s father is my father’s son.' Whose photograph was it?",
+    "q_hi": "एक तस्वीर की ओर इशारा करते हुए एक आदमी ने कहा, 'मेरा कोई भाई या बहन नहीं है, लेकिन उस आदमी का पिता मेरे पिता का बेटा है।' वह तस्वीर किसकी थी?",
+    "options_en": ["His own", "His son's", "His father's", "His nephew's"],
+    "options_hi": ["उसकी अपनी", "उसके बेटे की", "उसके पिता की", "उसके भतीजे की"],
+    "correct": 1,
+    "logic": "'My father's son' = ME (since I have no siblings). So, 'That man's father is ME.'",
+    "trap": "Most people panic and answer 'His own'. Draw the tree: Father -> Me -> My Son."
+  },
+  {
+    "uid": "VU-20260414-0532",
+    "subject": "English",
+    "topic": "Noun Errors",
+    "q_en": "Find the error: 'The furniture / in this room / are / made of teak.'",
+    "options_en": ["The furniture", "in this room", "are", "made of teak"],
+    "correct": 2,
+    "logic": "'Furniture' is an uncountable noun and always takes a singular verb (is).",
+    "trap": "Don't be fooled by the 's' sound. Words like Scenery, Poetry, and Furniture never take 'are'."
+  },
+  {
+    "uid": "VU-20260414-0533",
+    "subject": "GS",
+    "topic": "Indian Polity",
+    "q_en": "Which Article of the Indian Constitution deals with the 'Abolition of Untouchability'?",
+    "q_hi": "भारतीय संविधान का कौन सा अनुच्छेद 'अस्पृश्यता के उन्मूलन' से संबंधित है?",
+    "options_en": ["Article 14", "Article 15", "Article 17", "Article 18"],
+    "options_hi": ["अनुच्छेद 14", "अनुच्छेद 15", "अनुच्छेद 17", "अनुच्छेद 18"],
+    "correct": 2,
+    "logic": "Memory Anchor: 17 = 'Un-Sattrah' (Untouchability).",
+    "trap": "Confusing it with Art 18 (Abolition of Titles) or Art 15 (Discrimination)."
+  },
+  {
+    "uid": "VU-20260414-0534",
+    "subject": "GS",
+    "topic": "Geography (UP)",
+    "q_en": "In which district of Uttar Pradesh is the 'Dudhwa National Park' located?",
+    "q_hi": "उत्तर प्रदेश के किस जिले में 'दुधवा राष्ट्रीय उद्यान' स्थित है?",
+    "options_en": ["Sitapur", "Lakhimpur Kheri", "Bahraich", "Pilibhit"],
+    "options_hi": ["सीतापुर", "लखीमपुर खीरी", "बहराइच", "पीलीभीत"],
+    "correct": 1,
+    "logic": "It's the only National Park in UP, located in the Terai region bordering Nepal.",
+    "trap": "Don't confuse it with Pilibhit Tiger Reserve."
+  },
+  {
+    "uid": "VU-20260414-0535",
+    "subject": "Hindi",
+    "topic": "Samas",
+    "q_en": "Identify the Samas in the word 'Pratyek' (प्रत्येक).",
+    "q_hi": "'प्रत्येक' शब्द में कौन सा समास है?",
+    "options_en": ["Tatpurush", "Avyayibhav", "Dvigu", "Bahuvrihi"],
+    "options_hi": ["तत्पुरुष समास", "अव्ययीभाव समास", "द्विगु समास", "बहुव्रीहि समास"],
+    "correct": 1,
+    "logic": "Words starting with prefixes like 'Prati', 'Yatha', or 'Aa' are typically Avyayibhav.",
+    "trap": "Don't confuse it with Tatpurush. Break it down: Prati + Ek."
+  },
+  {
+    "uid": "VU-20260414-0536",
+    "subject": "GS",
+    "topic": "Computer Basics",
+    "q_en": "In the context of 'O' Level networking, what does the 'S' in HTTPS stand for?",
+    "q_hi": "नेटवर्किंग के संदर्भ में, HTTPS में 'S' का क्या अर्थ है?",
+    "options_en": ["Standard", "Secure", "Socket", "Service"],
+    "options_hi": ["स्टैंडर्ड (Standard)", "सिक्योर (Secure)", "सॉकेट (Socket)", "सर्विस (Service)"],
+    "correct": 1,
+    "logic": "HTTPS = HyperText Transfer Protocol Secure. It uses SSL/TLS for encryption.",
+    "trap": "Don't pick 'Standard'. Encryption is the primary purpose of the S."
+  },
+  {
+    "uid": "VU-20260414-0537",
+    "subject": "Maths",
+    "topic": "Profit & Loss",
+    "q_en": "A shopkeeper sells an item at a 10% loss. If he had sold it for ₹45 more, he would have gained 5%. What is the Cost Price?",
+    "q_hi": "एक दुकानदार एक वस्तु को 10% हानि पर बेचता है। यदि उसने इसे ₹45 अधिक में बेचा होता, तो उसे 5% का लाभ होता। क्रय मूल्य क्या है?",
+    "options_en": ["₹250", "₹300", "₹350", "₹400"],
+    "options_hi": ["₹250", "₹300", "₹350", "₹400"],
+    "correct": 1,
+    "logic": "Total % difference = 10% (loss) + 5% (gain) = 15%. If 15% = ₹45, then 100% = (45/15) * 100 = ₹300.",
+    "trap": "Don't subtract the percentages (10-5=5%). Since it moves from loss to gain, you must add them."
+  },
+  {
+    "uid": "VU-20260414-0538",
+    "subject": "Reasoning",
+    "topic": "Coding-Decoding",
+    "q_en": "If 'WATER' is coded as 'XBUFS', how is 'TIGER' coded?",
+    "q_hi": "यदि 'WATER' को 'XBUFS' के रूप में कोडित किया जाता है, तो 'TIGER' को कैसे कोडित किया जाएगा?",
+    "options_en": ["UJHFS", "UJHFT", "SFHDS", "UIHFS"],
+    "options_hi": ["UJHFS", "UJHFT", "SFHDS", "UIHFS"],
+    "correct": 0,
+    "logic": "Simple +1 logic for each letter: T+1=U, I+1=J, G+1=H, E+1=F, R+1=S.",
+    "trap": "Watch the last letter carefully. Some patterns use -1 at the end."
+  },
+  {
+    "uid": "VU-20260414-0539",
+    "subject": "GS",
+    "topic": "UP Static GK",
+    "q_en": "Who was the first Chief Minister of Uttar Pradesh?",
+    "q_hi": "उत्तर प्रदेश के प्रथम मुख्यमंत्री कौन थे?",
+    "options_en": ["Chaudhary Charan Singh", "Govind Ballabh Pant", "Sucheta Kripalani", "Mulayam Singh Yadav"],
+    "options_hi": ["चौधरी चरण सिंह", "गोविंद बल्लभ पंत", "सुचेता कृपलानी", "मुलायम सिंह यादव"],
+    "correct": 1,
+    "logic": "Govind Ballabh Pant served from 1950 to 1954.",
+    "trap": "Don't confuse him with Sucheta Kripalani, who was the first *female* CM of UP."
+  }
+]
