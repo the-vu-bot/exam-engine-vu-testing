@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXAM ENGINE: The VU Power</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="pause-overlay">
+        <div class="pause-card">
+            <h2 style="margin-top:0; color:var(--text);">Test Paused ⏸️</h2>
+            <p style="color:#666; margin-bottom:25px;">Your timer and progress are suspended.</p>
+            <button class="btn btn-blue" style="width:100%; font-size:1.1rem; padding: 12px;" onclick="resumeTest()">Resume Test</button>
+        </div>
+    </div>
+
+    <button class="floating-gear" onclick="openSettings()" title="Engine Settings">⚙️</button>
+
+    <div id="settings-overlay">
+        <div class="settings-card">
+            <div class="settings-header">
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    Engine Settings <span style="cursor:pointer; color:#888;" onclick="closeSettings()">✖</span>
+                </div>
+                <div class="master-tab-container">
+                    <div id="tab-tests" class="master-tab active" onclick="switchSettingsTab('tests')">📝 Tests</div>
+                    <div id="tab-calc" class="master-tab" onclick="switchSettingsTab('calc')">🧮 Calc</div>
+                </div>
+            </div>
+            
+            <div class="settings-body">
+                <div id="pane-tests" class="settings-pane active">
+                    <div class="settings-section">
+                        <div class="settings-section-title" style="color: var(--cbt-purple);">🎯 Active Subjects Filter (Global)</div>
+                        <div class="subject-toggle-container" id="modal-subject-toggles"></div>
+                    </div>
+
+                    <div class="settings-section">
+                        <div class="settings-section-title" style="color: #d9a05b;">⚡ Sprint Configuration</div>
+                        <div class="settings-row" style="background:#fcfcfc; padding:8px 12px; border-radius:6px; border:1px solid #eee;">
+                            <div style="flex:1;"><strong style="color:#333;">Sprint Limits</strong><div style="font-size:0.75rem; color:#888;">Mins & Qs per sprint.</div></div>
+                            <div class="aligned-input-grid">
+                                <input type="number" id="set-sprint-time" class="settings-input" value="15">
+                                <span style="font-size:0.8rem; color:#888;">Min</span>
+                                <input type="number" id="set-sprint-qs" class="settings-input" value="25">
+                                <span style="font-size:0.8rem; color:#888;">Qs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <div class="settings-section-title" style="color: #d9534f;">🏆 Full Mock Configuration</div>
+                        <div class="settings-row" style="background:#fcfcfc; padding:8px 12px; border-radius:6px; border:1px solid #eee;">
+                            <div style="flex:1;"><strong style="color:#333;">Global Mock Limits</strong><div style="font-size:0.75rem; color:#888;">Total Stopwatch & Qs.</div></div>
+                            <div class="aligned-input-grid">
+                                <input type="number" id="set-mock-global-time" class="settings-input" value="60" oninput="syncFromGlobal()">
+                                <span style="font-size:0.8rem; color:#888;">Min</span>
+                                <input type="number" id="set-mock-global-qs" class="settings-input" value="100" oninput="syncFromGlobal()">
+                                <span style="font-size:0.8rem; color:#888;">Qs</span>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top:15px;">
+                            <strong style="color:#333; font-size:0.9rem;">Sectional Distribution</strong>
+                            <div style="display:flex; margin-top:8px; border-radius:6px; overflow:hidden; border: 1px solid var(--border);">
+                                <div id="btn-auto-split" style="flex:1; text-align:center; padding:8px; font-size:0.85rem; font-weight:bold; cursor:pointer; background:var(--cbt-blue); color:white;" onclick="setSplitMode('auto')">Auto-Split Time</div>
+                                <div id="btn-custom-split" style="flex:1; text-align:center; padding:8px; font-size:0.85rem; font-weight:bold; cursor:pointer; background:#eee; color:#555;" onclick="setSplitMode('custom')">Custom Split Time</div>
+                            </div>
+                            <div id="sectional-distribution-container" style="margin-top: 10px; display:flex; flex-direction:column; gap:5px;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="pane-calc" class="settings-pane">
+                    <div class="settings-section">
+                        <div class="settings-section-title" style="color: var(--cbt-blue);">🧮 Active Calc Topics Filter</div>
+                        <div style="font-size:0.8rem; color:#888; margin-bottom:10px;">Select which operations to include in your Calculation Drills.</div>
+                        <div class="subject-toggle-container" id="modal-calc-toggles"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="settings-footer">
+                <button class="btn btn-outline" onclick="closeSettings()">Cancel</button>
+                <button class="btn btn-blue" onclick="saveSettings()">Save & Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="lock-screen">
+        <div class="lock-card">
+            <h2 style="margin-top:0; color:var(--text); letter-spacing: 1px;">VU POWER VAULT</h2>
+            <div style="color:#666; font-size:0.9rem; margin-bottom:20px;">Enter Secret Access Key</div>
+            <input type="password" id="pin-input" class="lock-input" placeholder="Enter Key...">
+            <button id="unlock-btn" class="btn btn-blue" style="width:100%; font-size:1.1rem; padding: 12px;" onclick="verifyPin()">Unlock Engine</button>
+        </div>
+    </div>
+
+    <div id="home-screen" style="display: none;">
+        <div class="home-card">
+            <div class="home-header-row">
+                <div class="header-titles">
+                    <div class="logo-container">
+                        <div id="home-logo-wrapper" class="logo-placeholder">VU</div>
+                        <img id="home-logo" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                    </div>
+                    <div>
+                        <h1 class="home-title">EXAM ENGINE</h1>
+                        <div class="home-tagline">The VU Power</div>
+                        <div class="home-subtitle" id="db-stats" style="margin-bottom:0;">Loading Intelligence...</div>
+                    </div>
+                </div>
+                <div class="settings-vault">
+                    <div class="lock-vault-btn" onclick="lockEngine()" title="Lock Vault">🔒 Lock</div>
+                    <div class="lang-vault-btn">
+                        🌐 <select id="default-lang-select" onchange="saveTestState()">
+                            <option value="hi">Hindi</option>
+                            <option value="en">English</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modes-grid">
+                <button class="revision-block" onclick="openRevisionPage()">
+                    <div style="font-size: 1.4rem; font-weight: 900; letter-spacing: 2px;">THE VU REVISION</div>
+                    <div style="font-size: 0.85rem; opacity: 0.9;">High-Velocity Weakness Correction</div>
+                </button>
+                
+                <div class="mode-section lang-section-full sync-container" style="background: #fdfaf4; border-color: #f5e6d3; flex-direction: row; justify-content: space-between; align-items: center; gap: 15px; flex-wrap: wrap;">
+                    <div>
+                        <div class="mode-title">☁️ Auto-Merge Cloud Sync</div>
+                        <div class="mode-desc" style="margin-bottom:0;">Securely merges device data with GitHub Vault.</div>
+                    </div>
+                    <div>
+                        <button id="cloud-push-btn" class="btn btn-outline" style="border-color: #d9a05b; color: #b87a29;" onclick="pushToCloud()">↑ Push / Sync</button>
+                        <button id="cloud-pull-btn" class="btn btn-outline" style="border-color: #5b9bd9; color: #297ab8;" onclick="pullFromCloud()">↓ Pull / Restore</button>
+                    </div>
+                </div>
+
+                <div class="mode-section">
+                    <div class="mode-title">🏆 Full Mock Test</div>
+                    <div class="mode-desc">Strict Sectional Timing • Excludes unselected global subjects</div>
+                    <button class="btn btn-blue" style="width:100%;" onclick="startExam('mock', 'all')">Start Full Mock</button>
+                </div>
+
+                <div class="mode-section">
+                    <div class="mode-title">⚡ Sectional Sprint</div>
+                    <div class="mode-desc">Specific Subject • Uses custom limits</div>
+                    <select id="sprint-subject"><option>Loading...</option></select>
+                    <button class="btn btn-blue" style="width:100%;" onclick="startExam('sprint', document.getElementById('sprint-subject').value)">Start Sprint</button>
+                </div>
+
+                <div class="mode-section">
+                    <div class="mode-title">🧠 Practice & Revise</div>
+                    <div class="mode-desc">Specific Subject • Focuses on previous mistakes • 50 Question Cap</div>
+                    <select id="practice-subject"><option>Loading...</option></select>
+                    <button class="btn btn-outline" style="width:100%; border-color: var(--cbt-blue); color: var(--cbt-blue);" onclick="startExam('practice', document.getElementById('practice-subject').value)">Start Practice</button>
+                </div>
+
+                <div class="mode-section">
+                    <div class="mode-title">🧮 Calculation Drills</div>
+                    <div class="mode-desc">Independent speed practice based on your Calc settings.</div>
+                    <button id="calc-btn" class="btn btn-outline" style="width:100%; border-color: var(--cbt-purple); color: var(--cbt-purple);" onclick="startCalculationMode()">Start Drills</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="revision-screen">
+        <div class="rev-fixed-header">
+            <div class="content-wrapper" style="display: flex; flex-direction: column; gap: 10px;">
+                <div class="header" style="margin-bottom: 0;">
+                    <div class="header-left">
+                        <div class="home-icon" onclick="exitRevisionPage()">🏠</div>
+                        <div style="font-size: 1.2rem; font-weight: bold; margin-left: 10px;">The VU Revision <span style="font-size:0.8rem; color:#888;">(vu)</span></div>
+                    </div>
+                </div>
+                <div class="filter-bar">
+                    <select id="rev-subj-filter" class="filter-chip" onchange="updateTopicDropdown(); resetRevPage(); renderRevisionFeed()" style="width:auto; margin:0;">
+                        <option value="all">All Active Subjects</option>
+                    </select>
+                    <select id="rev-topic-filter" class="filter-chip" onchange="resetRevPage(); renderRevisionFeed()" style="width:auto; margin:0;">
+                        <option value="all">All Topics</option>
+                    </select>
+                    <button class="filter-chip" id="filter-wrong" onclick="toggleRevFilter('wrong')">⚠️ Most Wrong</button>
+                    <button class="filter-chip" id="filter-slow" onclick="toggleRevFilter('slow')">⏱️ Slowest</button>
+                    <button class="filter-chip" id="filter-unattended" onclick="toggleRevFilter('unattended')">👀 Unattended</button>
+                    <button class="filter-chip" id="filter-unseen" onclick="toggleRevFilter('unseen')">🙈 Unseen</button>
+                    <div class="toggle-container">
+                        <input type="checkbox" id="rev-auto-show" checked> Auto-Sol
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="revision-feed-scroll-area">
+            <div id="revision-feed-container" class="content-wrapper" style="padding: 0 15px 20px 15px;"></div>
+        </div>
+        <div class="rev-fixed-footer">
+            <div id="rev-pagination-container" class="content-wrapper" style="display:flex; justify-content:center;"></div>
+        </div>
+    </div>
+
+    <div id="revision-slider" class="rev-slider">
+        <div onclick="closeSlider()" style="display: flex; justify-content: center; align-items: center; height: 40px; background: var(--cbt-blue); color: white; font-weight: bold; cursor: pointer; border-radius: 20px 20px 0 0; flex-shrink: 0;">
+            ▼ Hide Solution
+        </div>
+        <div id="slider-content" style="padding: 20px; overflow-y: auto; flex: 1;"></div>
+    </div>
+
+    <div id="analysis-screen">
+        <div class="header" style="background: white; padding: 10px 20px; border-bottom: 2px solid var(--border); position: sticky; top: 0; z-index: 100;">
+            <div class="header-left" style="flex: unset;">
+                <div class="home-icon" onclick="goHomeAlert()">🏠</div>
+            </div>
+            <div style="font-size: 1.2rem; font-weight: bold; flex: 1; text-align: center;">VU || Analytics</div>
+            <div>
+                <button class="btn btn-blue" style="padding: 6px 12px; font-size: 0.9rem; margin: 0;" onclick="startReviewMode()">👁 Solutions</button>
+            </div>
+        </div>
+
+        <div class="analysis-content">
+            <div class="dashboard-card">
+                <h2 style="color: var(--cbt-blue); margin-top:0; text-align:center;">Postmortem Report</h2>
+                <div class="stat-grid">
+                    <div class="stat-box"><div>Net Score</div><div class="stat-value" id="dash-score" style="color:var(--cbt-blue);">0</div></div>
+                    <div class="stat-box"><div>Correct</div><div class="stat-value" id="dash-correct" style="color:var(--cbt-green);">0</div></div>
+                    <div class="stat-box"><div>Wrong</div><div class="stat-value" id="dash-wrong" style="color:var(--cbt-red);">0</div></div>
+                    <div class="stat-box"><div>Accuracy</div><div class="stat-value" id="dash-acc">0%</div></div>
+                    <div class="stat-box"><div>Attempted</div><div class="stat-value" id="dash-att">0</div></div>
+                    <div class="stat-box"><div>Total Time</div><div class="stat-value" id="dash-time">0s</div></div>
+                </div>
+                
+                <div class="subject-analysis" id="detailed-stats-area"></div>
+
+                <div class="insights-area">
+                    <div style="font-weight:bold; margin-bottom:10px; color:var(--cbt-blue);">Copy Record for Document</div>
+                    <textarea class="insight-box" id="insight-text" readonly></textarea>
+                    <button class="btn btn-outline" onclick="copyInsights(this)">📋 Copy to Clipboard</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cbt-screen" style="display: none; flex-direction: column; height: 100%;">
+        <div class="header">
+            <div class="header-left">
+                <div class="home-icon" onclick="goHomeAlert()">🏠</div>
+                <div style="font-size: 1.2rem; font-weight: bold; margin-left: 10px;" id="cbt-title">Exam Engine</div>
+                <button id="mobile-submit-btn" class="btn btn-green mobile-submit-btn" onclick="submitExamManually()">Submit</button>
+            </div>
+            <div class="timer-container" id="header-timer-area">
+                <div class="timer-module" id="sectional-timer-wrapper" style="display:none;">
+                    <div class="timer-label">Section</div>
+                    <div class="timer-display display-sec" id="sec-timer">15:00</div>
+                </div>
+                <div class="timer-module">
+                    <div class="timer-label" id="global-timer-label">Total</div>
+                    <div class="timer-display display-total" id="timer">00:00</div>
+                </div>
+                <button class="pause-btn-fixed" onclick="pauseTest()" title="Pause Test">⏸</button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="left-panel">
+                <div class="top-action-bar" id="action-bar-test">
+                    <button class="btn btn-outline" onclick="loadPrevious()">Previous</button>
+                    <button class="btn btn-blue" onclick="markForReview()">Mark for Review</button>
+                    <button class="btn btn-blue" onclick="saveAndNext()">Save & Next</button>
+                    <button class="btn btn-green desktop-submit-btn" onclick="submitExamManually()" id="btn-submit">Submit Test</button>
+                </div>
+                
+                <div class="top-action-bar" id="action-bar-review" style="display: none; background: var(--review-bg);">
+                    <button class="btn btn-outline" onclick="showDashboard()">← Back</button>
+                    <button class="btn" style="background:#24292e; color: white;" onclick="editJsonOnGithub()">✏️ Edit JSON</button>
+                    <button class="btn btn-outline" onclick="loadPrevious()">Previous</button>
+                    <button class="btn btn-blue" onclick="loadNext()">Next →</button>
+                </div>
+
+                <div class="filter-bar" id="review-filter-bar" style="display: none; padding: 10px 20px; background: #fff; border-bottom: 1px solid var(--border); overflow-x: auto; gap: 10px; align-items: center; flex-shrink: 0;">
+                    <select id="review-subj-filter" class="filter-chip" onchange="updateReviewTopicDropdown(); applyReviewFilters()" style="width:auto; margin:0; padding:4px 10px;">
+                        <option value="all">All Subjects</option>
+                    </select>
+                    <select id="review-topic-filter" class="filter-chip" onchange="applyReviewFilters()" style="width:auto; margin:0; padding:4px 10px;">
+                        <option value="all">All Topics</option>
+                    </select>
+                    <button class="filter-chip" id="rev-filt-correct" onclick="toggleReviewStatusFilter('correct')">✅ Correct</button>
+                    <button class="filter-chip" id="rev-filt-wrong" onclick="toggleReviewStatusFilter('wrong')">❌ Wrong</button>
+                    <button class="filter-chip" id="rev-filt-skipped" onclick="toggleReviewStatusFilter('skipped')">⏭️ Skipped</button>
+                    <button class="filter-chip" id="rev-filt-sluggish" onclick="toggleReviewSort('sluggish')">⏱️ Sluggish</button>
+                </div>
+
+                <div class="q-header">
+                    <div style="display: flex; align-items: center;">
+                        <div>Question No. <span id="q-num-display">1</span></div>
+                        <div id="q-status-badge"></div>
+                    </div>
+                    
+                    <div id="lang-toggle-container">
+                        <select id="lang-select" onchange="toggleLanguage()" style="padding: 2px 4px; border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; outline: none; cursor: pointer; background: #fff; font-weight: bold; color: var(--text); margin: 0; width: max-content;">
+                            <option value="hi">H</option>
+                            <option value="en">E</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="q-body">
+                    <div id="q-text" style="font-weight: bold; margin-bottom: 20px;">Loading...</div>
+                    <div id="options-container"></div>
+                    <div id="solution-container" style="display: none;"></div>
+                </div>
+            </div>
+
+            <div class="right-panel" id="right-panel-id">
+                <div class="mobile-palette-toggle" onclick="toggleMobilePalette()">
+                    <span id="palette-toggle-text">▲ Show Question Palette</span>
+                </div>
+                <div class="palette-header" id="palette-title">▶ Question Palette</div>
+                
+                <div class="palette-legend" id="legend-test-mode">
+                    <div class="legend-item"><div class="legend-stat-box status-answered" id="count-answered">0</div> Answered</div>
+                    <div class="legend-item"><div class="legend-stat-box status-not-answered" id="count-not-answered">0</div> Unattempted</div>
+                    <div class="legend-item"><div class="legend-stat-box status-review" id="count-review">0</div> Review</div>
+                    <div class="legend-item"><div class="legend-stat-box" style="background: white; color: #333;" id="count-unvisited">0</div> Not Visited</div>
+                </div>
+                
+                <div class="palette-legend" id="legend-review-mode" style="display: none;">
+                    <div class="legend-item"><div class="legend-stat-box rev-correct" id="count-correct">0</div> Correct</div>
+                    <div class="legend-item"><div class="legend-stat-box rev-incorrect" id="count-wrong">0</div> Wrong</div>
+                    <div class="legend-item"><div class="legend-stat-box rev-skipped" id="count-skipped">0</div> Skipped</div>
+                    <div class="legend-item"><div class="legend-stat-box" style="background: white; color: #333;" id="count-rev-unvisited">0</div> Not Visited</div>
+                </div>
+
+                <div class="palette-container-wrapper" id="palette-wrapper"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
