@@ -16,6 +16,7 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0; 
 }
 input[type=number] {
+    appearance: textfield;
     -moz-appearance: textfield; 
 }
 
@@ -98,12 +99,13 @@ input[type=number] {
 .rev-slider.open { transform: translateY(0); }
 
 .modes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; width: 100%; margin-top: 20px; }
-.mode-section { background: #f9f9f9; border: 1px solid #eee; padding: 20px; border-radius: 8px; text-align: left; display: flex; flex-direction: column; margin: 0; }
+.mode-section { background: #f9f9f9; border: 1px solid #eee; padding: 20px; border-radius: 8px; text-align: left; display: flex; flex-direction: column; margin: 0; min-height: 240px; }
 .mode-section button { margin-top: auto; }
 .lang-section-full { grid-column: 1 / -1; }
 
 .mode-title { font-weight: bold; color: #333; margin-bottom: 5px; font-size: 1.1rem; }
-.mode-desc { font-size: 0.85rem; color: #666; margin-bottom: 15px; }
+.mode-desc { font-size: 0.85rem; color: #666; margin-bottom: 10px; line-height: 1.4; min-height: 2.4em; }
+.mode-section select { margin-bottom: 10px; }
 select { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid var(--border); border-radius: 4px; outline: none;}
 
 /* CBT Layout - Desktop */
