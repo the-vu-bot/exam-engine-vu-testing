@@ -115,56 +115,58 @@
         </div>
     </div>
 
-    <div id="home-screen" style="display: none;" class="h-full w-full bg-[#0f172a] text-slate-200 font-sans overflow-y-auto">
-        <header class="w-full border-b border-slate-700/50 bg-[#0f172a] px-6 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-4">
-                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center font-black text-xl text-white shadow-lg shadow-blue-500/20">VU</div>
+    <div id="home-screen" style="display: none;" class="h-full w-full bg-[#0f172a] text-slate-200 font-sans overflow-y-auto pb-20">
+        
+        <header class="w-full max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-4 w-full md:w-auto">
+                <img id="home-logo" src="VU-logo.jpg" alt="VU Logo" class="w-16 h-16 object-cover rounded-xl shadow-lg border border-slate-600">
                 <div>
-                    <h1 class="text-xl font-black tracking-tight text-white leading-tight">EXAM ENGINE</h1>
+                    <h1 class="text-2xl md:text-3xl font-black tracking-tight text-white leading-tight">EXAM ENGINE</h1>
                     <p class="text-xs text-slate-400 font-medium" id="db-stats">Loading Intelligence...</p>
                 </div>
             </div>
             
-            <div class="flex items-center gap-3">
-                <div class="bg-slate-800/50 border border-slate-700 rounded-lg px-3 py-1.5 flex items-center gap-2">
-                    <span class="text-lg">🌐</span>
-                    <select id="default-lang-select" onchange="saveTestState()" class="bg-transparent text-sm font-bold focus:outline-none cursor-pointer text-white">
+            <div class="flex items-center justify-end gap-3 w-full md:w-auto">
+                <div class="h-10 bg-slate-800/80 border border-slate-600 rounded-full px-4 flex items-center gap-2">
+                    <span class="text-white text-sm">🌐</span>
+                    <select id="default-lang-select" onchange="saveTestState()" class="bg-transparent text-sm font-bold focus:outline-none cursor-pointer text-white h-full outline-none">
                         <option value="hi" class="bg-slate-900">Hindi</option>
                         <option value="en" class="bg-slate-900">English</option>
                     </select>
                 </div>
-                <button onclick="lockEngine()" class="bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white px-4 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2">
-                    🔒 Lock
+                <button onclick="lockEngine()" class="h-10 w-10 bg-slate-800/80 border border-slate-600 text-red-400 hover:bg-red-400/20 hover:border-red-400 rounded-full flex items-center justify-center transition-all focus:outline-none group">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <rect x="3" y="11" width="18" height="11" rx="2" fill="currentColor" stroke="currentColor" stroke-width="1.5"/><path d="M7 11V7a5 5 0 1110 0v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="16" r="1.5" fill="#181b2d"/>
+                    </svg>
                 </button>
             </div>
         </header>
 
-        <main class="max-w-7xl mx-auto p-6 space-y-8">
-            <button onclick="openRevisionPage()" class="w-full group relative overflow-hidden rounded-2xl bg-gradient-to-r from-purple-800 via-purple-600 to-indigo-700 p-8 text-left transition-all hover:scale-[1.01] hover:shadow-2xl hover:shadow-purple-500/20 active:scale-95 border-none">
-                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-150 transition-transform duration-500 text-8xl">✨</div>
-                <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-                    <div>
-                        <h2 class="text-3xl md:text-4xl font-black tracking-widest text-white">THE VU REVISION</h2>
-                        <p class="text-purple-200 mt-2 font-medium">High-Velocity Weakness Correction.</p>
+        <main class="max-w-7xl mx-auto px-6 space-y-6">
+            <button onclick="openRevisionPage()" class="w-full group relative overflow-hidden rounded-2xl bg-gradient-to-r from-purple-800 via-purple-600 to-indigo-700 p-8 text-center transition-all hover:scale-[1.01] hover:shadow-2xl hover:shadow-purple-500/20 active:scale-95 border-none">
+                <div class="absolute -inset-0.5 bg-gradient-to-tr from-fuchsia-600 to-blue-600 opacity-40 blur-lg z-0 pointer-events-none"></div>
+                <div class="relative z-10 flex flex-col justify-center items-center py-4">
+                    <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center mb-4 shadow-md">
+                        <span class="text-3xl">✨</span>
                     </div>
-                    <div class="bg-white/10 backdrop-blur-md px-6 py-3 rounded-xl border border-white/20 font-bold text-white group-hover:bg-white/20 transition-colors">
-                        Try Now →
-                    </div>
+                    <h2 class="text-3xl md:text-4xl font-black tracking-widest text-white drop-shadow-lg">THE VU REVISION</h2>
+                    <p class="text-purple-200 mt-2 font-medium">High-Velocity Weakness Correction</p>
                 </div>
             </button>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="lg:col-span-3 bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-indigo-500/20 rounded-full flex items-center justify-center text-2xl text-indigo-400">☁️</div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="md:col-span-3 bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+                    <div class="flex items-center gap-4 w-full md:w-auto">
+                        <div class="w-12 h-12 bg-indigo-500/20 rounded-full flex items-center justify-center text-2xl text-indigo-400 shrink-0">☁️</div>
                         <div>
                             <h3 class="font-bold text-lg text-indigo-200">Auto-Merge Cloud Sync</h3>
                             <p class="text-sm text-indigo-300">Securely merges device data with GitHub Vault.</p>
                         </div>
                     </div>
                     <div class="flex gap-3 w-full md:w-auto">
-                        <button id="cloud-push-btn" onclick="pushToCloud()" class="flex-1 md:flex-none border border-amber-400 text-amber-400 hover:bg-amber-400/10 font-bold px-6 py-2 rounded-xl transition-all">↑ Push / Sync</button>
-                        <button id="cloud-pull-btn" onclick="pullFromCloud()" class="flex-1 md:flex-none border border-sky-400 text-sky-400 hover:bg-sky-400/10 font-bold px-6 py-2 rounded-xl transition-all">↓ Restore</button>
+                        <button id="cloud-push-btn" onclick="pushToCloud()" class="flex-1 md:w-32 border border-amber-400 text-amber-400 hover:bg-amber-400/10 font-bold py-3 md:py-2 rounded-xl transition-all">↑ Push</button>
+                        <button id="cloud-pull-btn" onclick="pullFromCloud()" class="flex-1 md:w-32 border border-sky-400 text-sky-400 hover:bg-sky-400/10 font-bold py-3 md:py-2 rounded-xl transition-all">↓ Restore</button>
                     </div>
                 </div>
 
@@ -204,14 +206,14 @@
                     </div>
                 </div>
 
-                <div class="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-6 flex flex-col hover:border-purple-500/50 transition-colors group lg:col-span-3">
+                <div class="md:col-span-3 bg-slate-800/40 border border-slate-700/50 rounded-2xl p-6 flex flex-col hover:border-purple-500/50 transition-colors group">
                     <div class="flex items-center gap-3 mb-2">
                         <div class="text-3xl text-purple-400">🧮</div>
                         <h3 class="text-xl font-bold text-purple-400">Calculation Drills</h3>
                     </div>
-                    <p class="text-slate-400 text-sm mb-4">Independent speed practice based on your Calc settings.</p>
+                    <p class="text-slate-400 text-sm mb-6">Independent speed practice based on your Calc settings.</p>
                     
-                    <div class="mt-auto w-full">
+                    <div class="mt-auto w-full md:w-1/3 mx-auto">
                         <button id="calc-btn" onclick="startCalculationMode()" class="w-full border border-purple-500 text-purple-400 hover:bg-purple-500/10 font-bold py-3 rounded-xl transition-all">Start Drills</button>
                     </div>
                 </div>
