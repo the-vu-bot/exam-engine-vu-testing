@@ -172,27 +172,36 @@
                     <div class="text-3xl mb-4 text-yellow-300 w-fit">🏆</div>
                     <h3 class="text-xl font-bold text-yellow-300 mb-2">Full Mock Test</h3>
                     <p class="text-slate-400 text-sm mb-6">Strict Sectional Timing • Excludes unselected global subjects</p>
-                    <button onclick="startExam('mock', 'all')" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-xl transition-all mt-auto">Start Full Mock</button>
+                    
+                    <div class="mt-auto w-full">
+                        <button onclick="startExam('mock', 'all')" class="w-full border border-yellow-500 text-yellow-400 hover:bg-yellow-500/10 font-bold py-3 rounded-xl transition-all">Start Full Mock</button>
+                    </div>
                 </div>
 
                 <div class="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-6 flex flex-col hover:border-pink-500/50 transition-colors group">
                     <div class="text-3xl mb-4 text-pink-300 w-fit">⚡</div>
                     <h3 class="text-xl font-bold text-pink-300 mb-2">Sectional Sprint</h3>
                     <p class="text-slate-400 text-sm mb-4">Specific Subject • Uses custom limits</p>
-                    <select id="sprint-subject" class="bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm font-bold text-white focus:outline-none mb-4 w-full">
-                        <option>Loading...</option>
-                    </select>
-                    <button onclick="startExam('sprint', document.getElementById('sprint-subject').value)" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-xl transition-all mt-auto">Start Sprint</button>
+                    
+                    <div class="mt-auto w-full space-y-4">
+                        <select id="sprint-subject" class="bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm font-bold text-white focus:outline-none w-full">
+                            <option>Loading...</option>
+                        </select>
+                        <button onclick="startExam('sprint', document.getElementById('sprint-subject').value)" class="w-full border border-pink-500 text-pink-400 hover:bg-pink-500/10 font-bold py-3 rounded-xl transition-all">Start Sprint</button>
+                    </div>
                 </div>
 
                 <div class="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-6 flex flex-col hover:border-green-500/50 transition-colors group">
                     <div class="text-3xl mb-4 text-green-300 w-fit">🧠</div>
                     <h3 class="text-xl font-bold text-green-300 mb-2">Practice & Revise</h3>
                     <p class="text-slate-400 text-sm mb-4">Specific Subject • Focuses on previous mistakes • 50 Qs</p>
-                    <select id="practice-subject" class="bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm font-bold text-white focus:outline-none mb-4 w-full">
-                        <option>Loading...</option>
-                    </select>
-                    <button onclick="startExam('practice', document.getElementById('practice-subject').value)" class="w-full border border-green-500 text-green-400 hover:bg-green-500/10 font-bold py-3 rounded-xl transition-all mt-auto">Start Practice</button>
+                    
+                    <div class="mt-auto w-full space-y-4">
+                        <select id="practice-subject" class="bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm font-bold text-white focus:outline-none w-full">
+                            <option>Loading...</option>
+                        </select>
+                        <button onclick="startExam('practice', document.getElementById('practice-subject').value)" class="w-full border border-green-500 text-green-400 hover:bg-green-500/10 font-bold py-3 rounded-xl transition-all">Start Practice</button>
+                    </div>
                 </div>
 
                 <div class="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-6 flex flex-col hover:border-purple-500/50 transition-colors group lg:col-span-3">
@@ -201,7 +210,10 @@
                         <h3 class="text-xl font-bold text-purple-400">Calculation Drills</h3>
                     </div>
                     <p class="text-slate-400 text-sm mb-4">Independent speed practice based on your Calc settings.</p>
-                    <button id="calc-btn" onclick="startCalculationMode()" class="w-full border border-purple-500 text-purple-400 hover:bg-purple-500/10 font-bold py-3 rounded-xl transition-all mt-auto">Start Drills</button>
+                    
+                    <div class="mt-auto w-full">
+                        <button id="calc-btn" onclick="startCalculationMode()" class="w-full border border-purple-500 text-purple-400 hover:bg-purple-500/10 font-bold py-3 rounded-xl transition-all">Start Drills</button>
+                    </div>
                 </div>
             </div>
         </main>
