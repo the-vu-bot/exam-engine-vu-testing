@@ -33,32 +33,10 @@ input[type=number] {
 .lock-input { font-size: 1.2rem; padding: 12px; width: 100%; text-align: center; letter-spacing: 2px; margin-bottom: 20px; border: 2px solid var(--border); border-radius: 6px; outline: none; transition: 0.2s;}
 .lock-input:focus { border-color: var(--cbt-blue); }
 
-/* Home Dashboard Redesign */
-#home-screen { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; height: 100%; padding: 20px; overflow-y: auto; }
-.home-card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); max-width: 800px; width: 100%; text-align: center; border-top: 5px solid var(--cbt-blue); margin: auto; position: relative; }
-
-.home-header-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; gap: 10px; }
-.header-titles { text-align: left; flex: 1; min-width: 0; display: flex; gap: 15px; align-items: center; }
-
-.logo-container { width: 70px; height: 70px; flex-shrink: 0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 2px solid var(--cbt-blue); position: relative; background: var(--cbt-light-blue); }
-.logo-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--cbt-blue); font-weight: 900; font-size: 1.5rem; }
-
-.home-title { color: var(--text); font-size: 2rem; margin: 0; font-weight: 900; letter-spacing: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.home-tagline { color: var(--cbt-blue); font-size: 1rem; font-weight: bold; margin: 0; }
-.home-subtitle { color: #888; margin: 0; font-size: 0.85rem; }
-
-.settings-vault { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; flex-shrink: 0; }
-.lock-vault-btn, .lang-vault-btn { height: 34px; width: 100px; box-sizing: border-box; font-size: 0.85rem; padding: 0 8px; cursor: pointer; background: #eee; border-radius: 5px; font-weight: bold; border: 1px solid #ddd; display: flex; align-items: center; justify-content: center; gap: 6px; color: #333; }
-.lang-vault-btn select { background: transparent; border: none; font-weight: bold; cursor: pointer; outline: none; padding: 0; margin: 0; height: 100%; width: 100%; text-align: center; }
-.lock-vault-btn:hover { background: #ddd; }
-
 /* Global Subject Toggles */
 .subject-toggle-container { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 10px;}
 .sub-toggle-btn { padding: 6px 14px; border-radius: 20px; border: 1px solid var(--cbt-blue); background: white; color: var(--cbt-blue); cursor: pointer; font-size: 0.85rem; font-weight: bold; transition: 0.2s; }
 .sub-toggle-btn.active { background: var(--cbt-blue); color: white; }
-
-.revision-block { grid-column: 1 / -1; background: linear-gradient(135deg, #7030a0, #4a235a); color: white; padding: 25px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(112, 48, 160, 0.3); margin-bottom: 10px; cursor: pointer; border: none; transition: 0.2s; }
-.revision-block:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(112, 48, 160, 0.4); }
 
 /* CONSTAINED CONTENT WRAPPER FOR FULL-WIDTH SCREENS */
 .content-wrapper { max-width: 1000px; width: 100%; margin: 0 auto; }
@@ -96,15 +74,6 @@ input[type=number] {
     z-index: 9999; display: flex; flex-direction: column; padding: 0; 
 }
 .rev-slider.open { transform: translateY(0); }
-
-.modes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; width: 100%; margin-top: 20px; }
-.mode-section { background: #f9f9f9; border: 1px solid #eee; padding: 20px; border-radius: 8px; text-align: left; display: flex; flex-direction: column; margin: 0; }
-.mode-section button { margin-top: auto; }
-.lang-section-full { grid-column: 1 / -1; }
-
-.mode-title { font-weight: bold; color: #333; margin-bottom: 5px; font-size: 1.1rem; }
-.mode-desc { font-size: 0.85rem; color: #666; margin-bottom: 15px; }
-select { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid var(--border); border-radius: 4px; outline: none;}
 
 /* CBT Layout - Desktop */
 .header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; border-bottom: 2px solid var(--border); box-shadow: 0 2px 5px rgba(0,0,0,0.1); flex-shrink: 0; background: white; flex-wrap: wrap;}
@@ -214,11 +183,6 @@ textarea.insight-box { width: 100%; height: 120px; border: 1px solid #ccc; borde
 .mobile-palette-toggle { display: none; }
 
 @media (max-width: 768px) {
-    #home-screen { padding: 8px; }
-    .home-card { padding: 15px; }
-    .home-title { font-size: 1.5rem; }
-    .logo-container { width: 55px; height: 55px; }
-    
     .header { padding: 8px 12px; }
     .header-left { gap: 8px; }
     #cbt-title { display: none; } 
@@ -226,10 +190,6 @@ textarea.insight-box { width: 100%; height: 120px; border: 1px solid #ccc; borde
     .timer-module { width: 70px; }
     .timer-display { font-size: 1rem; }
     .pause-btn-fixed { width: 34px; height: 34px; margin-left: 2px;}
-
-    .sync-container { flex-direction: column !important; align-items: stretch !important; gap: 10px; }
-    .sync-container > div:last-child { width: 100%; justify-content: space-between; display: flex; gap: 10px; }
-    .sync-container button { flex: 1; padding: 10px 4px; font-size: 0.85rem;}
 
     .mobile-submit-btn { display: block !important; padding: 4px 10px; font-size: 0.85rem; margin-left: 0; border-radius: 4px; }
     .desktop-submit-btn { display: none !important; }
@@ -343,7 +303,7 @@ textarea.insight-box { width: 100%; height: 120px; border: 1px solid #ccc; borde
 
 /* Ensure the body doesn't show scrollbars for the main page */
 body {
-    background-color: #0f172a; /* Match the dark theme */
+    background-color: #0f172a; 
     min-height: 100vh;
 }
 
@@ -353,16 +313,3 @@ body {
 ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: #64748b; }
 
-// --- PASSWORD VISIBILITY TOGGLE ---
-function togglePassword() {
-    const input = document.getElementById('pin-input');
-    const icon = document.getElementById('eye-icon');
-    
-    if (input.type === 'password') {
-        input.type = 'text';
-        icon.innerText = '🙈'; // Closed eye when visible
-    } else {
-        input.type = 'password';
-        icon.innerText = '👁️'; // Open eye when hidden
-    }
-}
