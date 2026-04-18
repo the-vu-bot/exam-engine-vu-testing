@@ -244,7 +244,7 @@
              headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
              body: JSON.stringify({ message: `Vault Sync: ${new Date().toISOString()}`, content: contentBase64, sha: sha })
          });
-         if (response.ok) { btn.innerHTML = "✅ Synced to GitHub!"; setTimeout(() => btn.innerHTML = origText, 3000); } 
+         if (response.ok) { btn.innerHTML = "✅ Synced!"; setTimeout(() => btn.innerHTML = origText, 3000); } 
          else { alert("GitHub Sync Failed. Check token permissions."); btn.innerHTML = origText; }
      } catch (e) { console.error(e); alert("Network Error."); btn.innerHTML = origText; }
  }
@@ -287,7 +287,7 @@
                  updateDashboardDropdowns();
                  if(document.getElementById('settings-overlay').style.display === 'flex') openSettings(); 
              }
-             btn.innerHTML = "✅ Vault Restored!"; setTimeout(() => btn.innerHTML = origText, 3000);
+             btn.innerHTML = "✅ Restored!"; setTimeout(() => btn.innerHTML = origText, 3000);
          } else { alert("Failed to pull GitHub backup."); btn.innerHTML = origText; }
      } catch (e) { console.error(e); alert("Network Error during Pull."); btn.innerHTML = origText; }
  }
@@ -427,7 +427,6 @@
          localStorage.setItem('vu_global_subjects', JSON.stringify(globalActiveSubjects));
      }
      updateDashboardDropdowns();
-     fetchPrivateImage(`https://raw.githubusercontent.com/the-vu-bot/exam-engine-vu/main/solutions/VU-logo.jpg?v=${Date.now()}`, 'home-logo');
  }
 
  function toggleGlobalSubject(sub, btn) {
@@ -482,7 +481,7 @@
      const session = {
          questions, state, currentQ, totalSeconds, sectionalSeconds, 
          activeSectionIndex, examType, defaultLang, currentLang, 
-         mockBoundaries, timeSpentGlobal, currentMode, forcedEn, isCalcDrill,
+         mockBoundaries, timeSpentGlobal, currentMode, forcedEn, isCalcDrill, isPaused,
          revFilters, revCurrentPage, revSubjectState, revTopicState, globalActiveSubjects
      };
      localStorage.setItem(STORAGE_SESSION, JSON.stringify(session));
@@ -497,13 +496,14 @@
          examType = s.examType; defaultLang = s.defaultLang; currentLang = s.currentLang; 
          mockBoundaries = s.mockBoundaries; timeSpentGlobal = s.timeSpentGlobal; currentMode = s.currentMode;
          forcedEn = s.forcedEn || false; isCalcDrill = s.isCalcDrill || false; 
+         isPaused = s.isPaused || false;
+         
          if(s.globalActiveSubjects && s.globalActiveSubjects.length > 0) globalActiveSubjects = s.globalActiveSubjects;
          
          if (currentMode === 'home') return false; 
 
          document.getElementById('lock-screen').style.display = 'none';
          document.getElementById('home-screen').style.display = 'none';
-         fetchPrivateImage(`https://raw.githubusercontent.com/the-vu-bot/exam-engine-vu/main/solutions/VU-logo.jpg`, 'home-logo');
          
          if (currentMode === 'revision') {
              let optionsHtml = `<option value="all">Active Subjects</option>`;
@@ -514,7 +514,7 @@
              updateTopicDropdown();
              document.getElementById('rev-topic-filter').value = revTopicState;
              
-             document.getElementById('exam-screen') && (document.getElementById('exam-screen').style.display = 'none');
+             if(document.getElementById('exam-screen')) document.getElementById('exam-screen').style.display = 'none';
              document.getElementById('cbt-screen').style.display = 'none';
              document.getElementById('analysis-screen').style.display = 'none';
              document.getElementById('revision-screen').style.display = 'flex';
@@ -544,11 +544,17 @@
              document.getElementById('action-bar-review').style.display = 'flex';
              document.getElementById('review-filter-bar').style.display = 'flex';
              document.getElementById('mobile-submit-btn').classList.add('hide-for-review');
-             setupReviewFilters(); // Re-init filters
+             setupReviewFilters();
          } else {
              document.getElementById('review-filter-bar').style.display = 'none';
              document.getElementById('mobile-submit-btn').classList.remove('hide-for-review');
-             loadQuestion(currentQ); pauseTest(); 
+             loadQuestion(currentQ);
+             // THE PAUSE FIX:
+             if(isPaused) {
+                 document.getElementById('pause-overlay').style.display = 'flex';
+             } else {
+                 startTestTimer(); 
+             }
          }
          return true;
      }
@@ -601,7 +607,7 @@
  }
 
  function pauseTest() { isPaused = true; clearInterval(timerId); document.getElementById('pause-overlay').style.display = 'flex'; saveTestState(); }
- function resumeTest() { isPaused = false; document.getElementById('pause-overlay').style.display = 'none'; startTestTimer(); }
+ function resumeTest() { isPaused = false; document.getElementById('pause-overlay').style.display = 'none'; startTestTimer(); saveTestState(); }
 
  function startTestTimer() {
      clearInterval(timerId);
@@ -1342,6 +1348,20 @@
          btnEl.style.cssText = 'background-color:#f8d7da; border-color:#dc3545; color:#721c24;';
          if(btns[correctIdx]) btns[correctIdx].style.cssText = 'background-color:#d4edda; border-color:#28a745;';
          if (document.getElementById('rev-auto-show').checked) setTimeout(() => { openSlider(uid); }, 400); 
+     }
+ }
+
+ // --- PASSWORD VISIBILITY TOGGLE ---
+ function togglePassword() {
+     const input = document.getElementById('pin-input');
+     const icon = document.getElementById('eye-icon');
+     
+     if (input.type === 'password') {
+         input.type = 'text';
+         icon.innerText = '🙈';
+     } else {
+         input.type = 'password';
+         icon.innerText = '👁️'; 
      }
  }
 
