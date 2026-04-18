@@ -352,3 +352,17 @@ body {
 ::-webkit-scrollbar-track { background: #1e293b; }
 ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+// --- PASSWORD VISIBILITY TOGGLE ---
+function togglePassword() {
+    const input = document.getElementById('pin-input');
+    const icon = document.getElementById('eye-icon');
+    
+    if (input.type === 'password') {
+        input.type = 'text';
+        icon.innerText = '🙈'; // Closed eye when visible
+    } else {
+        input.type = 'password';
+        icon.innerText = '👁️'; // Open eye when hidden
+    }
+}
