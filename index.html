@@ -271,38 +271,63 @@
         <div id="slider-content" style="padding: 20px; overflow-y: auto; flex: 1;"></div>
     </div>
 
-    <div id="analysis-screen">
-        <div class="header" style="background: white; padding: 10px 20px; border-bottom: 2px solid var(--border); position: sticky; top: 0; z-index: 100;">
-            <div class="header-left" style="flex: unset;">
-                <div class="home-icon" onclick="goHomeAlert()">🏠</div>
-            </div>
-            <div style="font-size: 1.2rem; font-weight: bold; flex: 1; text-align: center;">VU || Analytics</div>
-            <div>
-                <button class="btn btn-blue" style="padding: 6px 12px; font-size: 0.9rem; margin: 0;" onclick="startReviewMode()">👁 Solutions</button>
-            </div>
-        </div>
+    <div id="analysis-screen" style="display: none;" class="h-full w-full bg-gradient-to-br from-[#181B2D] to-[#09111A] flex flex-col overflow-hidden">
+        <header class="w-full bg-[#181B2D]/95 backdrop-blur-md border-b border-[#394054]/80 shadow-md flex-shrink-0 z-50 px-4 py-4 flex items-center justify-between">
+            <button onclick="goHomeAlert()" class="flex items-center gap-2 text-slate-400 hover:text-white transition-colors bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-sm font-bold">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg> Back
+            </button>
+            <div class="text-lg md:text-xl font-black text-white tracking-widest">VU <span class="text-blue-500">||</span> ANALYTICS</div>
+            <button onclick="startReviewMode()" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-1.5 rounded-lg text-sm font-bold shadow-lg shadow-blue-500/20 transition-all flex items-center gap-2">
+                👁️ Solutions
+            </button>
+        </header>
 
-        <div class="analysis-content">
-            <div class="dashboard-card">
-                <h2 style="color: var(--cbt-blue); margin-top:0; text-align:center;">Postmortem Report</h2>
-                <div class="stat-grid">
-                    <div class="stat-box"><div>Net Score</div><div class="stat-value" id="dash-score" style="color:var(--cbt-blue);">0</div></div>
-                    <div class="stat-box"><div>Correct</div><div class="stat-value" id="dash-correct" style="color:var(--cbt-green);">0</div></div>
-                    <div class="stat-box"><div>Wrong</div><div class="stat-value" id="dash-wrong" style="color:var(--cbt-red);">0</div></div>
-                    <div class="stat-box"><div>Accuracy</div><div class="stat-value" id="dash-acc">0%</div></div>
-                    <div class="stat-box"><div>Attempted</div><div class="stat-value" id="dash-att">0</div></div>
-                    <div class="stat-box"><div>Total Time</div><div class="stat-value" id="dash-time">0s</div></div>
+        <main class="w-full flex-1 overflow-y-auto px-4 py-6 md:py-8 pb-24">
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="bg-slate-800/40 border border-slate-700/50 rounded-xl p-4 text-center shadow-lg backdrop-blur-sm">
+                        <div class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Net Score</div>
+                        <div class="text-3xl font-black text-blue-400" id="dash-score">0</div>
+                    </div>
+                    <div class="bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-4 text-center shadow-lg backdrop-blur-sm">
+                        <div class="text-xs text-emerald-500/70 font-bold uppercase tracking-wider mb-1">Correct</div>
+                        <div class="text-3xl font-black text-emerald-400" id="dash-correct">0</div>
+                    </div>
+                    <div class="bg-rose-500/10 border border-rose-500/20 rounded-xl p-4 text-center shadow-lg backdrop-blur-sm">
+                        <div class="text-xs text-rose-500/70 font-bold uppercase tracking-wider mb-1">Wrong</div>
+                        <div class="text-3xl font-black text-rose-400" id="dash-wrong">0</div>
+                    </div>
+                    <div class="bg-slate-800/40 border border-slate-700/50 rounded-xl p-4 text-center shadow-lg backdrop-blur-sm">
+                        <div class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Accuracy</div>
+                        <div class="text-3xl font-black text-white" id="dash-acc">0%</div>
+                    </div>
+                    <div class="bg-slate-800/40 border border-slate-700/50 rounded-xl p-4 text-center shadow-lg backdrop-blur-sm">
+                        <div class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Attempted</div>
+                        <div class="text-3xl font-black text-white" id="dash-att">0</div>
+                    </div>
+                    <div class="bg-slate-800/40 border border-slate-700/50 rounded-xl p-4 text-center shadow-lg backdrop-blur-sm">
+                        <div class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Total Time</div>
+                        <div class="text-3xl font-black text-purple-400" id="dash-time">0s</div>
+                    </div>
                 </div>
-                
-                <div class="subject-analysis" id="detailed-stats-area"></div>
 
-                <div class="insights-area">
-                    <div style="font-weight:bold; margin-bottom:10px; color:var(--cbt-blue);">Copy Record for Document</div>
-                    <textarea class="insight-box" id="insight-text" readonly></textarea>
-                    <button class="btn btn-outline" onclick="copyInsights(this)">📋 Copy to Clipboard</button>
+                <div>
+                    <h3 class="text-lg font-black text-white mb-4 flex items-center gap-2 mt-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                        Subject Performance Matrix
+                    </h3>
+                    <div id="detailed-stats-area"></div>
+                </div>
+
+                <div class="bg-[#0b101e] border border-slate-700 rounded-xl overflow-hidden shadow-xl mt-4">
+                    <div class="bg-slate-800/80 px-4 py-2 border-b border-slate-700 flex justify-between items-center">
+                        <span class="text-xs font-bold text-slate-400 font-mono">Terminal // Export Data</span>
+                        <button onclick="copyInsights(this)" class="text-xs font-bold text-blue-400 hover:text-blue-300 transition-colors">📋 Copy Record</button>
+                    </div>
+                    <textarea id="insight-text" readonly class="w-full bg-transparent text-emerald-400 font-mono text-xs p-4 focus:outline-none resize-y h-32 leading-relaxed tracking-tight selection:bg-emerald-900"></textarea>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
 
     <div id="cbt-screen" style="display: none; flex-direction: column; height: 100%;">
