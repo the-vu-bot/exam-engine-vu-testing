@@ -230,48 +230,7 @@
         </main>
     </div>
 
-    <div id="revision-screen">
-        <div class="rev-fixed-header">
-            <div class="content-wrapper" style="display: flex; flex-direction: column; gap: 10px;">
-                <div class="header" style="margin-bottom: 0;">
-                    <div class="header-left">
-                        <div class="home-icon" onclick="exitRevisionPage()">🏠</div>
-                        <div style="font-size: 1.2rem; font-weight: bold; margin-left: 10px;">The VU Revision <span style="font-size:0.8rem; color:#888;">(vu)</span></div>
-                    </div>
-                </div>
-                <div class="filter-bar">
-                    <select id="rev-subj-filter" class="filter-chip" onchange="updateTopicDropdown(); resetRevPage(); renderRevisionFeed()" style="width:auto; margin:0;">
-                        <option value="all">All Active Subjects</option>
-                    </select>
-                    <select id="rev-topic-filter" class="filter-chip" onchange="resetRevPage(); renderRevisionFeed()" style="width:auto; margin:0;">
-                        <option value="all">All Topics</option>
-                    </select>
-                    <button class="filter-chip" id="filter-wrong" onclick="toggleRevFilter('wrong')">⚠️ Most Wrong</button>
-                    <button class="filter-chip" id="filter-slow" onclick="toggleRevFilter('slow')">⏱️ Slowest</button>
-                    <button class="filter-chip" id="filter-unattended" onclick="toggleRevFilter('unattended')">👀 Unattended</button>
-                    <button class="filter-chip" id="filter-unseen" onclick="toggleRevFilter('unseen')">🙈 Unseen</button>
-                    <div class="toggle-container">
-                        <input type="checkbox" id="rev-auto-show" checked> Auto-Sol
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="revision-feed-scroll-area">
-            <div id="revision-feed-container" class="content-wrapper" style="padding: 0 15px 20px 15px;"></div>
-        </div>
-        <div class="rev-fixed-footer">
-            <div id="rev-pagination-container" class="content-wrapper" style="display:flex; justify-content:center;"></div>
-        </div>
-    </div>
-
-    <div id="revision-slider" class="rev-slider">
-        <div onclick="closeSlider()" style="display: flex; justify-content: center; align-items: center; height: 40px; background: var(--cbt-blue); color: white; font-weight: bold; cursor: pointer; border-radius: 20px 20px 0 0; flex-shrink: 0;">
-            ▼ Hide Solution
-        </div>
-        <div id="slider-content" style="padding: 20px; overflow-y: auto; flex: 1;"></div>
-    </div>
-
-    <div id="analysis-screen" style="display: none;" class="!h-full !w-full !bg-gradient-to-br !from-[#130724] !to-[#0a0310] !flex !flex-col !overflow-hidden">
+    <div id="analysis-screen" style="display: none;" class="!h-full !w-full !bg-gradient-to-br !from-[#130724] !to-[#0a0310] flex-col !overflow-hidden">
         <header class="!w-full !bg-[#130724]/95 !backdrop-blur-md !border-b !border-purple-900/50 !shadow-md !flex-shrink-0 !z-50 !px-4 !py-4 !flex !items-center !justify-between">
             <button onclick="goHomeAlert()" class="!flex !items-center !gap-2 !text-purple-200 hover:!text-white !transition-colors !bg-purple-900/30 !border !border-purple-700/50 !px-4 !py-2 !rounded-xl !text-sm !font-bold">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg> Dashboard
