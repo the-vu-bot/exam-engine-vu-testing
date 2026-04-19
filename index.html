@@ -115,107 +115,116 @@
         </div>
     </div>
 
-    <div id="home-screen" style="display: none;" class="h-full w-full bg-[#0f172a] text-slate-200 font-sans overflow-y-auto pb-20">
+    <div id="home-screen" style="display: none;" class="h-full w-full bg-gradient-to-br from-[#181B2D] to-[#09111A] flex flex-col overflow-hidden">
         
-        <header class="w-full max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-4 w-full md:w-auto">
-                <img id="home-logo" src="VU-logo.jpg" alt="VU Logo" class="w-16 h-16 object-cover rounded-xl shadow-lg border border-slate-600">
-                <div>
-                    <h1 class="text-2xl md:text-3xl font-black tracking-tight text-white leading-tight">EXAM ENGINE</h1>
-                    <p class="text-xs text-slate-400 font-medium" id="db-stats">Loading Intelligence...</p>
+        <header class="w-full bg-[#181B2D]/95 backdrop-blur-md border-b border-[#394054]/80 shadow-md flex-shrink-0 z-50">
+            <div class="max-w-5xl mx-auto px-4 py-4 md:px-6 md:py-5 flex items-center justify-between gap-4">
+                
+                <div class="flex items-center gap-3 md:gap-4">
+                    <div class="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-[#273C75] to-[#232946] shadow-lg rounded-xl flex items-center justify-center relative border border-white/10 shrink-0">
+                        <div id="home-logo-wrapper" class="logo-placeholder text-xl md:text-3xl tracking-widest font-extrabold font-mono text-[#c7d2fe] select-none">VU</div>
+                        <img id="home-logo" class="absolute inset-0 w-full h-full object-cover rounded-xl" style="display: none;">
+                    </div>
+                    <div>
+                        <h1 class="home-title text-xl md:text-3xl font-bold text-white tracking-wide leading-tight">EXAM ENGINE</h1>
+                        <div class="home-tagline text-[10px] md:text-sm text-violet-200 mb-0.5">The VU Power</div>
+                        <div class="home-subtitle" id="db-stats" style="margin-bottom:0;">
+                            <span class="text-[10px] md:text-xs text-gray-400">Loading Intelligence...</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="flex items-center justify-end gap-3 w-full md:w-auto">
-                <div class="h-10 bg-slate-800/80 border border-slate-600 rounded-full px-4 flex items-center gap-2">
-                    <span class="text-white text-sm">🌐</span>
-                    <select id="default-lang-select" onchange="saveTestState()" class="bg-transparent text-sm font-bold focus:outline-none cursor-pointer text-white h-full outline-none">
-                        <option value="hi" class="bg-slate-900">Hindi</option>
-                        <option value="en" class="bg-slate-900">English</option>
-                    </select>
+                
+                <div class="flex items-center gap-2 md:gap-3 shrink-0">
+                    <div class="lang-vault-btn flex items-center gap-1 text-white text-xs md:text-sm bg-white/5 border border-white/10 rounded-full px-2 md:px-3 py-1.5 md:py-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke="#fff" stroke-width="1.5" fill="#16191f"/><path d="M4 12h16" stroke="#fff" /><ellipse cx="12" cy="12" rx="4" ry="10" stroke="#fff" /><ellipse cx="12" cy="12" rx="10" ry="4" stroke="#fff" /></svg>
+                        <select id="default-lang-select" onchange="saveTestState()" class="bg-transparent text-inherit border-none focus:outline-none cursor-pointer outline-none font-semibold">
+                            <option value="hi" class="bg-[#181B2D]">Hindi</option>
+                            <option value="en" class="bg-[#181B2D]">English</option>
+                        </select>
+                    </div>
+                    <button class="lock-vault-btn flex items-center justify-center w-9 h-9 md:w-11 md:h-11 rounded-full bg-white/5 border border-white/10 text-[#f2b5d4] hover:bg-pink-500/20 hover:border-pink-400 hover:text-pink-300 transition-all focus:outline-none" onclick="lockEngine()" title="Lock Vault">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-5 md:h-5 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="3" y="11" width="18" height="11" rx="2" fill="#181b2d" stroke="currentColor" stroke-width="1.5"/><path d="M7 11V7a5 5 0 1110 0v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="16" r="1.5" fill="currentColor"/></svg>
+                    </button>
                 </div>
-                <button onclick="lockEngine()" class="h-10 w-10 bg-slate-800/80 border border-slate-600 text-red-400 hover:bg-red-400/20 hover:border-red-400 rounded-full flex items-center justify-center transition-all focus:outline-none group">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <rect x="3" y="11" width="18" height="11" rx="2" fill="currentColor" stroke="currentColor" stroke-width="1.5"/><path d="M7 11V7a5 5 0 1110 0v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="16" r="1.5" fill="#181b2d"/>
-                    </svg>
-                </button>
             </div>
         </header>
 
-        <main class="max-w-7xl mx-auto px-6 space-y-6">
-            <button onclick="openRevisionPage()" class="w-full group relative overflow-hidden rounded-2xl bg-gradient-to-r from-purple-800 via-purple-600 to-indigo-700 p-8 text-center transition-all hover:scale-[1.01] hover:shadow-2xl hover:shadow-purple-500/20 active:scale-95 border-none">
-                <div class="absolute -inset-0.5 bg-gradient-to-tr from-fuchsia-600 to-blue-600 opacity-40 blur-lg z-0 pointer-events-none"></div>
-                <div class="relative z-10 flex flex-col justify-center items-center py-4">
-                    <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center mb-4 shadow-md">
-                        <span class="text-3xl">✨</span>
-                    </div>
-                    <h2 class="text-3xl md:text-4xl font-black tracking-widest text-white drop-shadow-lg">THE VU REVISION</h2>
-                    <p class="text-purple-200 mt-2 font-medium">High-Velocity Weakness Correction</p>
-                </div>
-            </button>
+        <main class="w-full flex-1 overflow-y-auto px-4 py-6 md:py-8 pb-24">
+            <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                
-                <div class="md:col-span-3 bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
-                    <div class="flex items-center gap-4 w-full md:w-auto">
-                        <div class="w-12 h-12 bg-indigo-500/20 rounded-full flex items-center justify-center text-2xl text-indigo-400 shrink-0">☁️</div>
-                        <div>
-                            <h3 class="font-bold text-lg text-indigo-200">Auto-Merge Cloud Sync</h3>
-                            <p class="text-sm text-indigo-300">Securely merges device data with GitHub Vault.</p>
+                <button class="revision-block col-span-1 sm:col-span-2 xl:col-span-3 p-0 bg-gradient-to-r from-purple-800 via-purple-600 to-indigo-700 shadow-xl rounded-2xl relative overflow-hidden mb-3 transition-all duration-200 hover:scale-[1.02] focus:outline-none group border-none" onclick="openRevisionPage()">
+                    <div class="absolute -inset-0.5 bg-gradient-to-tr from-fuchsia-600 to-blue-600 opacity-40 blur-lg z-0 pointer-events-none"></div>
+                    <div class="relative z-10 flex flex-col justify-center items-center py-8">
+                        <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-3 shadow-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-purple-300 group-hover:text-white transition" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 2L13.09 8.26L19 8.27L14 12.14L15.18 18.09L12 14.77L8.82 18.09L10 12.14L5 8.27L10.91 8.26L12 2Z" fill="#c084fc" /></svg>
                         </div>
+                        <div class="text-2xl sm:text-3xl font-extrabold tracking-wider text-purple-100 drop-shadow-lg">THE VU REVISION</div>
+                        <div class="text-purple-300 font-medium text-base mt-2">High-Velocity Weakness Correction</div>
                     </div>
-                    <div class="flex gap-3 w-full md:w-auto">
-                        <button id="cloud-push-btn" onclick="pushToCloud()" class="flex-1 md:w-32 border border-amber-400 text-amber-400 hover:bg-amber-400/10 font-bold py-3 md:py-2 rounded-xl transition-all">↑ Push</button>
-                        <button id="cloud-pull-btn" onclick="pullFromCloud()" class="flex-1 md:w-32 border border-sky-400 text-sky-400 hover:bg-sky-400/10 font-bold py-3 md:py-2 rounded-xl transition-all">↓ Restore</button>
+                </button>
+
+                <div class="mode-section lang-section-full sync-container rounded-xl p-5 flex flex-col gap-3 glassy border border-[#394054] col-span-1 sm:col-span-2 xl:col-span-3 bg-white/5 shadow-md">
+                    <div>
+                        <div class="mode-title flex items-center gap-2 text-indigo-200 text-base font-semibold">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M7 15a5 5 0 119.9-1.43A3.5 3.5 0 1120.5 18H6.26" stroke="#c4b5fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21l3-3 3 3" stroke="#a5b4fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Auto-Merge Cloud Sync
+                        </div>
+                        <div class="mode-desc text-sm text-indigo-300 mb-0">Securely merges device data with GitHub Vault.</div>
+                    </div>
+                    <div class="flex gap-2 mt-1 flex-wrap">
+                        <button id="cloud-push-btn" class="btn btn-outline border border-amber-400 text-amber-300 hover:bg-amber-400/20 hover:text-amber-200 transition-colors px-4 py-2 rounded-lg font-semibold text-sm" onclick="pushToCloud()">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4 mr-1 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 17V7" stroke="#fed7aa" stroke-width="1.5" stroke-linecap="round"/><path d="M8 11l4-4 4 4" stroke="#fed7aa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="17" width="16" height="2" rx="1" fill="#fed7aa" opacity="0.2"/></svg> Push
+                        </button>
+                        <button id="cloud-pull-btn" class="btn btn-outline border border-sky-400 text-sky-300 hover:bg-sky-400/10 hover:text-sky-200 transition-colors px-4 py-2 rounded-lg font-semibold text-sm" onclick="pullFromCloud()">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-4 h-4 mr-1 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 7v10" stroke="#7dd3fc" stroke-width="1.5" stroke-linecap="round"/><path d="M16 13l-4 4-4-4" stroke="#7dd3fc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="5" width="16" height="2" rx="1" fill="#7dd3fc" opacity="0.1"/></svg> Restore
+                        </button>
                     </div>
                 </div>
 
-                <div class="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-6 flex flex-col hover:border-yellow-500/50 transition-colors group">
-                    <div class="text-3xl mb-4 text-yellow-300 w-fit">🏆</div>
-                    <h3 class="text-xl font-bold text-yellow-300 mb-2">Full Mock Test</h3>
-                    <p class="text-slate-400 text-sm mb-6">Strict Sectional Timing • Excludes unselected global subjects</p>
-                    
+                <div class="mode-section rounded-xl glassy p-5 flex flex-col gap-3 border border-[#384255] bg-white/5 shadow-md">
+                    <div class="mode-title flex items-center gap-2 text-yellow-300 font-semibold">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="5" y="3" width="14" height="9" rx="2" fill="#fde68a" opacity="0.13"/><path d="M12 17v3" stroke="#fde68a" stroke-width="1.5" stroke-linecap="round"/><rect x="8" y="15" width="8" height="2" rx="1" fill="#fde68a" opacity="0.18"/><path d="M7 3v2M17 3v2" stroke="#fde68a" stroke-width="1.2"/><path d="M3 7h2M19 7h2" stroke="#fde68a" stroke-width="1.2"/></svg>
+                        Full Mock Test
+                    </div>
+                    <div class="mode-desc text-sm text-yellow-200">Strict Sectional Timing • Excludes unselected global subjects</div>
+                    <button class="btn btn-blue w-full mt-auto font-semibold" onclick="startExam('mock', 'all')">Start Full Mock</button>
+                </div>
+
+                <div class="mode-section rounded-xl glassy p-5 flex flex-col gap-3 border border-[#454874] bg-white/5 shadow-md">
+                    <div class="mode-title flex items-center gap-2 text-pink-300 font-semibold">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="#f9a8d4" opacity="0.18"/><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#f9a8d4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Sectional Sprint
+                    </div>
+                    <div class="mode-desc text-sm text-pink-200">Specific Subject • Uses custom limits</div>
                     <div class="mt-auto w-full">
-                        <button onclick="startExam('mock', 'all')" class="w-full border border-yellow-500 text-yellow-400 hover:bg-yellow-500/10 font-bold py-3 rounded-xl transition-all">Start Full Mock</button>
-                    </div>
-                </div>
-
-                <div class="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-6 flex flex-col hover:border-pink-500/50 transition-colors group">
-                    <div class="text-3xl mb-4 text-pink-300 w-fit">⚡</div>
-                    <h3 class="text-xl font-bold text-pink-300 mb-2">Sectional Sprint</h3>
-                    <p class="text-slate-400 text-sm mb-4">Specific Subject • Uses custom limits</p>
-                    
-                    <div class="mt-auto w-full space-y-4">
-                        <select id="sprint-subject" class="bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm font-bold text-white focus:outline-none w-full">
+                        <select id="sprint-subject" class="rounded-md w-full bg-[#212C40]/50 text-white border border-[#363B4E] focus:ring-2 focus:ring-pink-600 focus:outline-none py-2 px-3 my-1 mb-3">
                             <option>Loading...</option>
                         </select>
-                        <button onclick="startExam('sprint', document.getElementById('sprint-subject').value)" class="w-full border border-pink-500 text-pink-400 hover:bg-pink-500/10 font-bold py-3 rounded-xl transition-all">Start Sprint</button>
+                        <button class="btn btn-blue w-full font-semibold" onclick="startExam('sprint', document.getElementById('sprint-subject').value)">Start Sprint</button>
                     </div>
                 </div>
 
-                <div class="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-6 flex flex-col hover:border-green-500/50 transition-colors group">
-                    <div class="text-3xl mb-4 text-green-300 w-fit">🧠</div>
-                    <h3 class="text-xl font-bold text-green-300 mb-2">Practice & Revise</h3>
-                    <p class="text-slate-400 text-sm mb-4">Specific Subject • Focuses on previous mistakes • 50 Qs</p>
-                    
-                    <div class="mt-auto w-full space-y-4">
-                        <select id="practice-subject" class="bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm font-bold text-white focus:outline-none w-full">
+                <div class="mode-section rounded-xl glassy p-5 flex flex-col gap-3 border border-[#276e78] bg-white/5 shadow-md">
+                    <div class="mode-title flex items-center gap-2 text-green-200 font-semibold">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor"><ellipse cx="9" cy="12" rx="7" ry="7" fill="#6ee7b7" opacity="0.08"/><path d="M9 6a6 6 0 100 12a7 7 0 100-14" stroke="#6ee7b7" stroke-width="1.5"/><circle cx="15" cy="12" r="6" stroke="#6ee7b7" stroke-width="1.5" opacity="0.92"/></svg>
+                        Practice & Revise
+                    </div>
+                    <div class="mode-desc text-sm text-green-100">Specific Subject • Focuses on previous mistakes • 50 Question Cap</div>
+                    <div class="mt-auto w-full">
+                        <select id="practice-subject" class="rounded-md w-full bg-[#1C2632]/40 text-white border border-[#1e474a] focus:ring-2 focus:ring-emerald-500 focus:outline-none py-2 px-3 my-1 mb-3">
                             <option>Loading...</option>
                         </select>
-                        <button onclick="startExam('practice', document.getElementById('practice-subject').value)" class="w-full border border-green-500 text-green-400 hover:bg-green-500/10 font-bold py-3 rounded-xl transition-all">Start Practice</button>
+                        <button class="btn btn-outline w-full border border-green-500 text-green-300 font-semibold hover:bg-emerald-900/20 hover:text-green-200" onclick="startExam('practice', document.getElementById('practice-subject').value)">Start Practice</button>
                     </div>
                 </div>
 
-                <div class="md:col-span-3 bg-slate-800/40 border border-slate-700/50 rounded-2xl p-6 flex flex-col hover:border-purple-500/50 transition-colors group">
-                    <div class="flex items-center gap-3 mb-2">
-                        <div class="text-3xl text-purple-400">🧮</div>
-                        <h3 class="text-xl font-bold text-purple-400">Calculation Drills</h3>
+                <div class="mode-section rounded-xl glassy p-5 flex flex-col gap-3 border border-[#8b5cf6] bg-white/5 shadow-md col-span-1 sm:col-span-2 xl:col-span-3">
+                    <div class="mode-title flex items-center gap-2 text-purple-300 font-semibold">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="3" fill="#a78bfa" opacity="0.07"/><rect x="7" y="7" width="10" height="10" rx="2" stroke="#a78bfa" stroke-width="1.5"/><circle cx="9.5" cy="10.5" r="1" fill="#c4b5fd"/><circle cx="14.5" cy="10.5" r="1" fill="#c4b5fd"/><rect x="9" y="14" width="6" height="1.5" rx="0.75" fill="#8b5cf6"/></svg>
+                        Calculation Drills
                     </div>
-                    <p class="text-slate-400 text-sm mb-6">Independent speed practice based on your Calc settings.</p>
-                    
-                    <div class="mt-auto w-full md:w-1/3 mx-auto">
-                        <button id="calc-btn" onclick="startCalculationMode()" class="w-full border border-purple-500 text-purple-400 hover:bg-purple-500/10 font-bold py-3 rounded-xl transition-all">Start Drills</button>
-                    </div>
+                    <div class="mode-desc text-sm text-purple-200 mb-6">Independent speed practice based on your Calc settings.</div>
+                    <button id="calc-btn" class="btn btn-outline md:w-1/3 md:mx-auto w-full mt-auto border border-purple-400 text-purple-200 font-semibold hover:bg-purple-900/30 hover:text-white" onclick="startCalculationMode()">Start Drills</button>
                 </div>
             </div>
         </main>
