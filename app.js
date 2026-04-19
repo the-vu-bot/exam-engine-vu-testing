@@ -1,4 +1,4 @@
- // GLOBAL VARIABLES
+// GLOBAL VARIABLES
  let masterBank = [];
  let questions = [];
  let state = []; 
