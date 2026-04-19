@@ -1145,34 +1145,34 @@
          let pSkipped = (skipped / data.total) * 100;
 
          cardsHtml += `
-             <div class="bg-slate-800/30 border border-slate-700/50 rounded-xl p-5 mb-4 shadow-lg backdrop-blur-sm">
-                 <div class="flex justify-between items-center mb-3">
-                     <h4 class="text-base md:text-lg font-bold text-white tracking-wide">${sub}</h4>
-                     <span class="text-xs md:text-sm font-bold px-3 py-1 rounded-full bg-blue-900/30 text-blue-400 border border-blue-500/30 shadow-[0_0_10px_rgba(59,130,246,0.1)]">Acc: ${subAcc}%</span>
+             <div class="bg-gradient-to-r from-purple-900/30 to-indigo-900/30 border border-purple-500/20 rounded-2xl p-5 mb-5 shadow-[0_8px_30px_rgba(0,0,0,0.2)] backdrop-blur-md">
+                 <div class="flex justify-between items-center mb-4">
+                     <h4 class="text-lg md:text-xl font-black text-white tracking-widest uppercase drop-shadow-md">${sub}</h4>
+                     <span class="text-xs md:text-sm font-bold px-3 py-1 rounded-full bg-fuchsia-900/40 text-fuchsia-300 border border-fuchsia-500/30 shadow-[0_0_10px_rgba(217,70,239,0.15)]">ACC: ${subAcc}%</span>
                  </div>
 
-                 <div class="w-full h-3 bg-slate-900 rounded-full overflow-hidden flex mb-5 border border-slate-700">
-                     <div style="width: ${pCorrect}%" class="bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.8)] transition-all duration-1000"></div>
+                 <div class="w-full h-3 md:h-4 bg-[#0b0514] rounded-full overflow-hidden flex mb-6 border border-purple-900/50 shadow-inner">
+                     <div style="width: ${pCorrect}%" class="bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.8)] transition-all duration-1000"></div>
                      <div style="width: ${pWrong}%" class="bg-rose-500 shadow-[0_0_10px_rgba(244,63,94,0.8)] transition-all duration-1000"></div>
-                     <div style="width: ${pSkipped}%" class="bg-slate-700 transition-all duration-1000"></div>
+                     <div style="width: ${pSkipped}%" class="bg-purple-900/50 transition-all duration-1000"></div>
                  </div>
 
                  <div class="grid grid-cols-4 gap-2 md:gap-4 text-center">
-                     <div class="bg-slate-900/50 rounded-lg py-2 border border-slate-700/50">
-                         <div class="text-slate-400 text-[10px] md:text-xs uppercase tracking-wider mb-1">Total</div>
-                         <div class="font-bold text-slate-200 text-sm md:text-base">${data.total}</div>
+                     <div class="bg-purple-950/40 rounded-xl py-3 border border-purple-700/30 shadow-sm">
+                         <div class="text-purple-300 text-[9px] md:text-xs uppercase tracking-widest mb-1 font-bold">Total</div>
+                         <div class="font-black text-white text-base md:text-lg">${data.total}</div>
                      </div>
-                     <div class="bg-emerald-500/10 rounded-lg py-2 border border-emerald-500/20">
-                         <div class="text-emerald-500/80 text-[10px] md:text-xs uppercase tracking-wider mb-1">Right</div>
-                         <div class="font-bold text-emerald-400 text-sm md:text-base">${data.correct}</div>
+                     <div class="bg-emerald-950/30 rounded-xl py-3 border border-emerald-700/30 shadow-sm">
+                         <div class="text-emerald-400 text-[9px] md:text-xs uppercase tracking-widest mb-1 font-bold">Right</div>
+                         <div class="font-black text-emerald-300 text-base md:text-lg">${data.correct}</div>
                      </div>
-                     <div class="bg-rose-500/10 rounded-lg py-2 border border-rose-500/20">
-                         <div class="text-rose-500/80 text-[10px] md:text-xs uppercase tracking-wider mb-1">Wrong</div>
-                         <div class="font-bold text-rose-400 text-sm md:text-base">${data.wrong}</div>
+                     <div class="bg-rose-950/30 rounded-xl py-3 border border-rose-700/30 shadow-sm">
+                         <div class="text-rose-400 text-[9px] md:text-xs uppercase tracking-widest mb-1 font-bold">Wrong</div>
+                         <div class="font-black text-rose-300 text-base md:text-lg">${data.wrong}</div>
                      </div>
-                     <div class="bg-blue-500/10 rounded-lg py-2 border border-blue-500/20">
-                         <div class="text-blue-400/80 text-[10px] md:text-xs uppercase tracking-wider mb-1">Time</div>
-                         <div class="font-bold text-blue-300 text-sm md:text-base">${formatTime(data.time)}</div>
+                     <div class="bg-indigo-950/30 rounded-xl py-3 border border-indigo-700/30 shadow-sm">
+                         <div class="text-indigo-400 text-[9px] md:text-xs uppercase tracking-widest mb-1 font-bold">Time</div>
+                         <div class="font-black text-indigo-300 text-base md:text-lg">${formatTime(data.time)}</div>
                      </div>
                  </div>
              </div>`;
