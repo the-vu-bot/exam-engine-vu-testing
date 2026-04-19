@@ -271,60 +271,60 @@
         <div id="slider-content" style="padding: 20px; overflow-y: auto; flex: 1;"></div>
     </div>
 
-    <div id="analysis-screen" style="display: none;" class="h-full w-full bg-gradient-to-br from-[#1a0b2e] to-[#0d0518] flex flex-col overflow-hidden">
-        <header class="w-full bg-[#1a0b2e]/95 backdrop-blur-md border-b border-purple-900/50 shadow-md flex-shrink-0 z-50 px-4 py-4 flex items-center justify-between">
-            <button onclick="goHomeAlert()" class="flex items-center gap-2 text-purple-300 hover:text-white transition-colors bg-purple-900/20 border border-purple-700/50 px-3 py-1.5 rounded-lg text-sm font-bold">
+    <div id="analysis-screen" style="display: none;" class="!h-full !w-full !bg-gradient-to-br !from-[#130724] !to-[#0a0310] !flex !flex-col !overflow-hidden">
+        <header class="!w-full !bg-[#130724]/95 !backdrop-blur-md !border-b !border-purple-900/50 !shadow-md !flex-shrink-0 !z-50 !px-4 !py-4 !flex !items-center !justify-between">
+            <button onclick="goHomeAlert()" class="!flex !items-center !gap-2 !text-purple-200 hover:!text-white !transition-colors !bg-purple-900/30 !border !border-purple-700/50 !px-4 !py-2 !rounded-xl !text-sm !font-bold">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg> Dashboard
             </button>
-            <div class="text-lg md:text-xl font-black text-white tracking-widest drop-shadow-[0_0_8px_rgba(168,85,247,0.5)]">VU <span class="text-fuchsia-500">||</span> ANALYTICS</div>
-            <button onclick="startReviewMode()" class="bg-gradient-to-r from-fuchsia-600 to-purple-600 hover:from-fuchsia-500 hover:to-purple-500 text-white px-4 py-1.5 rounded-lg text-sm font-bold shadow-lg shadow-purple-500/25 transition-all flex items-center gap-2 border border-fuchsia-400/30">
+            <div class="!text-xl md:!text-2xl !font-black !text-white !tracking-widest !drop-shadow-[0_0_10px_rgba(168,85,247,0.6)]">VU <span class="!text-fuchsia-500">||</span> ANALYTICS</div>
+            <button onclick="startReviewMode()" class="!bg-gradient-to-r !from-fuchsia-600 !to-purple-600 hover:!from-fuchsia-500 hover:!to-purple-500 !text-white !px-4 !py-2 !rounded-xl !text-sm !font-bold !shadow-lg !shadow-purple-500/30 !transition-all !flex !items-center !gap-2 !border !border-fuchsia-400/30">
                 👁️ Solutions
             </button>
         </header>
 
-        <main class="w-full flex-1 overflow-y-auto px-4 py-6 md:py-8 pb-24">
-            <div class="max-w-4xl mx-auto space-y-6">
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    <div class="bg-purple-900/20 border border-purple-500/20 rounded-xl p-4 text-center shadow-lg backdrop-blur-sm">
-                        <div class="text-[10px] md:text-xs text-purple-300 font-bold uppercase tracking-widest mb-1">Net Score</div>
-                        <div class="text-3xl md:text-4xl font-black text-white drop-shadow-md" id="dash-score">0</div>
+        <main class="!w-full !flex-1 !overflow-y-auto !px-4 !py-6 md:!py-8 !pb-24">
+            <div class="!max-w-4xl !mx-auto !space-y-6">
+                <div class="!grid !grid-cols-2 md:!grid-cols-3 !gap-4">
+                    <div class="!bg-[#1e103c] !border !border-purple-500/30 !rounded-xl !p-5 !text-center !shadow-lg">
+                        <div class="!text-[10px] md:!text-xs !text-purple-300 !font-black !uppercase !tracking-widest !mb-2">Net Score</div>
+                        <div class="!text-4xl md:!text-5xl !font-black !text-white !drop-shadow-md" id="dash-score">0</div>
                     </div>
-                    <div class="bg-fuchsia-900/20 border border-fuchsia-500/20 rounded-xl p-4 text-center shadow-lg backdrop-blur-sm">
-                        <div class="text-[10px] md:text-xs text-fuchsia-300 font-bold uppercase tracking-widest mb-1">Correct</div>
-                        <div class="text-3xl md:text-4xl font-black text-fuchsia-400 drop-shadow-md" id="dash-correct">0</div>
+                    <div class="!bg-[#152e23] !border !border-emerald-500/30 !rounded-xl !p-5 !text-center !shadow-lg">
+                        <div class="!text-[10px] md:!text-xs !text-emerald-400 !font-black !uppercase !tracking-widest !mb-2">Correct</div>
+                        <div class="!text-4xl md:!text-5xl !font-black !text-emerald-400 !drop-shadow-md" id="dash-correct">0</div>
                     </div>
-                    <div class="bg-rose-900/20 border border-rose-500/20 rounded-xl p-4 text-center shadow-lg backdrop-blur-sm">
-                        <div class="text-[10px] md:text-xs text-rose-300 font-bold uppercase tracking-widest mb-1">Wrong</div>
-                        <div class="text-3xl md:text-4xl font-black text-rose-400 drop-shadow-md" id="dash-wrong">0</div>
+                    <div class="!bg-[#35151e] !border !border-rose-500/30 !rounded-xl !p-5 !text-center !shadow-lg">
+                        <div class="!text-[10px] md:!text-xs !text-rose-400 !font-black !uppercase !tracking-widest !mb-2">Wrong</div>
+                        <div class="!text-4xl md:!text-5xl !font-black !text-rose-400 !drop-shadow-md" id="dash-wrong">0</div>
                     </div>
-                    <div class="bg-indigo-900/20 border border-indigo-500/20 rounded-xl p-4 text-center shadow-lg backdrop-blur-sm">
-                        <div class="text-[10px] md:text-xs text-indigo-300 font-bold uppercase tracking-widest mb-1">Accuracy</div>
-                        <div class="text-3xl md:text-4xl font-black text-indigo-400 drop-shadow-md" id="dash-acc">0%</div>
+                    <div class="!bg-[#161c3c] !border !border-indigo-500/30 !rounded-xl !p-5 !text-center !shadow-lg">
+                        <div class="!text-[10px] md:!text-xs !text-indigo-300 !font-black !uppercase !tracking-widest !mb-2">Accuracy</div>
+                        <div class="!text-4xl md:!text-5xl !font-black !text-indigo-400 !drop-shadow-md" id="dash-acc">0%</div>
                     </div>
-                    <div class="bg-violet-900/20 border border-violet-500/20 rounded-xl p-4 text-center shadow-lg backdrop-blur-sm">
-                        <div class="text-[10px] md:text-xs text-violet-300 font-bold uppercase tracking-widest mb-1">Attempted</div>
-                        <div class="text-3xl md:text-4xl font-black text-violet-400 drop-shadow-md" id="dash-att">0</div>
+                    <div class="!bg-[#22103c] !border !border-violet-500/30 !rounded-xl !p-5 !text-center !shadow-lg">
+                        <div class="!text-[10px] md:!text-xs !text-violet-300 !font-black !uppercase !tracking-widest !mb-2">Attempted</div>
+                        <div class="!text-4xl md:!text-5xl !font-black !text-violet-400 !drop-shadow-md" id="dash-att">0</div>
                     </div>
-                    <div class="bg-purple-900/20 border border-purple-500/20 rounded-xl p-4 text-center shadow-lg backdrop-blur-sm">
-                        <div class="text-[10px] md:text-xs text-purple-300 font-bold uppercase tracking-widest mb-1">Total Time</div>
-                        <div class="text-3xl md:text-4xl font-black text-purple-400 drop-shadow-md" id="dash-time">0s</div>
+                    <div class="!bg-[#1e103c] !border !border-purple-500/30 !rounded-xl !p-5 !text-center !shadow-lg">
+                        <div class="!text-[10px] md:!text-xs !text-purple-300 !font-black !uppercase !tracking-widest !mb-2">Total Time</div>
+                        <div class="!text-4xl md:!text-5xl !font-black !text-fuchsia-400 !drop-shadow-md" id="dash-time">0s</div>
                     </div>
                 </div>
 
                 <div>
-                    <h3 class="text-lg font-black text-purple-200 mb-4 flex items-center gap-2 mt-8 tracking-wide">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-fuchsia-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                    <h3 class="!text-lg md:!text-xl !font-black !text-purple-100 !mb-5 !flex !items-center !gap-3 !mt-10 !tracking-wide">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 !text-fuchsia-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
                         SUBJECT PERFORMANCE MATRIX
                     </h3>
                     <div id="detailed-stats-area"></div>
                 </div>
 
-                <div class="bg-[#0b0514] border border-purple-800/50 rounded-xl overflow-hidden shadow-[0_0_15px_rgba(107,33,168,0.2)] mt-6">
-                    <div class="bg-purple-950/80 px-4 py-2 border-b border-purple-800/50 flex justify-between items-center">
-                        <span class="text-xs font-bold text-purple-400 font-mono tracking-widest">TERMINAL // EXPORT</span>
-                        <button onclick="copyInsights(this)" class="text-xs font-bold text-fuchsia-400 hover:text-fuchsia-300 transition-colors uppercase tracking-wider">📋 Copy Record</button>
+                <div class="!bg-[#07020d] !border !border-purple-800/80 !rounded-xl !overflow-hidden !shadow-[0_0_20px_rgba(107,33,168,0.3)] !mt-8">
+                    <div class="!bg-[#150824] !px-4 !py-3 !border-b !border-purple-800/80 !flex !justify-between !items-center">
+                        <span class="!text-xs !font-black !text-purple-300 !font-mono !tracking-widest">TERMINAL // EXPORT</span>
+                        <button onclick="copyInsights(this)" class="!text-xs !font-black !text-fuchsia-400 hover:!text-fuchsia-300 !transition-colors !uppercase !tracking-wider">📋 Copy Record</button>
                     </div>
-                    <textarea id="insight-text" readonly class="w-full bg-transparent text-purple-200 font-mono text-xs p-4 focus:outline-none resize-y h-32 leading-relaxed tracking-tight selection:bg-purple-900"></textarea>
+                    <textarea id="insight-text" readonly class="!w-full !bg-transparent !text-emerald-400 !font-mono !text-xs md:!text-sm !p-5 !focus:outline-none !resize-y !h-40 !leading-relaxed !tracking-tight !selection:bg-purple-900"></textarea>
                 </div>
             </div>
         </main>
