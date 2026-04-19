@@ -244,7 +244,7 @@
              headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
              body: JSON.stringify({ message: `Vault Sync: ${new Date().toISOString()}`, content: contentBase64, sha: sha })
          });
-         if (response.ok) { btn.innerHTML = "✅ Synced!"; setTimeout(() => btn.innerHTML = origText, 3000); } 
+         if (response.ok) { btn.innerHTML = "✅ Synced to GitHub!"; setTimeout(() => btn.innerHTML = origText, 3000); } 
          else { alert("GitHub Sync Failed. Check token permissions."); btn.innerHTML = origText; }
      } catch (e) { console.error(e); alert("Network Error."); btn.innerHTML = origText; }
  }
@@ -287,7 +287,7 @@
                  updateDashboardDropdowns();
                  if(document.getElementById('settings-overlay').style.display === 'flex') openSettings(); 
              }
-             btn.innerHTML = "✅ Restored!"; setTimeout(() => btn.innerHTML = origText, 3000);
+             btn.innerHTML = "✅ Vault Restored!"; setTimeout(() => btn.innerHTML = origText, 3000);
          } else { alert("Failed to pull GitHub backup."); btn.innerHTML = origText; }
      } catch (e) { console.error(e); alert("Network Error during Pull."); btn.innerHTML = origText; }
  }
@@ -427,6 +427,7 @@
          localStorage.setItem('vu_global_subjects', JSON.stringify(globalActiveSubjects));
      }
      updateDashboardDropdowns();
+     fetchPrivateImage(`https://raw.githubusercontent.com/the-vu-bot/exam-engine-vu/main/solutions/VU-logo.jpg?v=${Date.now()}`, 'home-logo');
  }
 
  function toggleGlobalSubject(sub, btn) {
@@ -481,7 +482,7 @@
      const session = {
          questions, state, currentQ, totalSeconds, sectionalSeconds, 
          activeSectionIndex, examType, defaultLang, currentLang, 
-         mockBoundaries, timeSpentGlobal, currentMode, forcedEn, isCalcDrill, isPaused,
+         mockBoundaries, timeSpentGlobal, currentMode, forcedEn, isCalcDrill,
          revFilters, revCurrentPage, revSubjectState, revTopicState, globalActiveSubjects
      };
      localStorage.setItem(STORAGE_SESSION, JSON.stringify(session));
@@ -496,14 +497,13 @@
          examType = s.examType; defaultLang = s.defaultLang; currentLang = s.currentLang; 
          mockBoundaries = s.mockBoundaries; timeSpentGlobal = s.timeSpentGlobal; currentMode = s.currentMode;
          forcedEn = s.forcedEn || false; isCalcDrill = s.isCalcDrill || false; 
-         isPaused = s.isPaused || false;
-         
          if(s.globalActiveSubjects && s.globalActiveSubjects.length > 0) globalActiveSubjects = s.globalActiveSubjects;
          
          if (currentMode === 'home') return false; 
 
          document.getElementById('lock-screen').style.display = 'none';
          document.getElementById('home-screen').style.display = 'none';
+         fetchPrivateImage(`https://raw.githubusercontent.com/the-vu-bot/exam-engine-vu/main/solutions/VU-logo.jpg`, 'home-logo');
          
          if (currentMode === 'revision') {
              let optionsHtml = `<option value="all">Active Subjects</option>`;
@@ -514,7 +514,7 @@
              updateTopicDropdown();
              document.getElementById('rev-topic-filter').value = revTopicState;
              
-             if(document.getElementById('exam-screen')) document.getElementById('exam-screen').style.display = 'none';
+             document.getElementById('exam-screen') && (document.getElementById('exam-screen').style.display = 'none');
              document.getElementById('cbt-screen').style.display = 'none';
              document.getElementById('analysis-screen').style.display = 'none';
              document.getElementById('revision-screen').style.display = 'flex';
@@ -544,17 +544,11 @@
              document.getElementById('action-bar-review').style.display = 'flex';
              document.getElementById('review-filter-bar').style.display = 'flex';
              document.getElementById('mobile-submit-btn').classList.add('hide-for-review');
-             setupReviewFilters();
+             setupReviewFilters(); // Re-init filters
          } else {
              document.getElementById('review-filter-bar').style.display = 'none';
              document.getElementById('mobile-submit-btn').classList.remove('hide-for-review');
-             loadQuestion(currentQ);
-             // THE PAUSE FIX:
-             if(isPaused) {
-                 document.getElementById('pause-overlay').style.display = 'flex';
-             } else {
-                 startTestTimer(); 
-             }
+             loadQuestion(currentQ); pauseTest(); 
          }
          return true;
      }
@@ -607,7 +601,7 @@
  }
 
  function pauseTest() { isPaused = true; clearInterval(timerId); document.getElementById('pause-overlay').style.display = 'flex'; saveTestState(); }
- function resumeTest() { isPaused = false; document.getElementById('pause-overlay').style.display = 'none'; startTestTimer(); saveTestState(); }
+ function resumeTest() { isPaused = false; document.getElementById('pause-overlay').style.display = 'none'; startTestTimer(); }
 
  function startTestTimer() {
      clearInterval(timerId);
@@ -1143,15 +1137,43 @@
      for(const [sub, data] of Object.entries(subStats)) {
          if (data.total === 0) continue; 
          let subAcc = data.att > 0 ? Math.round((data.correct/data.att)*100) : 0;
+         let skipped = data.total - data.att;
+
+         // 📊 Calculating Graph Widths
+         let pCorrect = (data.correct / data.total) * 100;
+         let pWrong = (data.wrong / data.total) * 100;
+         let pSkipped = (skipped / data.total) * 100;
+
          cardsHtml += `
-             <div class="sub-card">
-                 <div class="sub-name">${sub}</div>
-                 <div class="sub-metrics">
-                     <div class="metric">Acc<span>${subAcc}%</span></div>
-                     <div class="metric">Att<span>${data.att}/${data.total}</span></div>
-                     <div class="metric" style="color:var(--cbt-green);">Right<span>${data.correct}</span></div>
-                     <div class="metric" style="color:var(--cbt-red);">Wrong<span>${data.wrong}</span></div>
-                     <div class="metric">Time<span>${formatTime(data.time)}</span></div>
+             <div class="bg-slate-800/30 border border-slate-700/50 rounded-xl p-5 mb-4 shadow-lg backdrop-blur-sm">
+                 <div class="flex justify-between items-center mb-3">
+                     <h4 class="text-base md:text-lg font-bold text-white tracking-wide">${sub}</h4>
+                     <span class="text-xs md:text-sm font-bold px-3 py-1 rounded-full bg-blue-900/30 text-blue-400 border border-blue-500/30 shadow-[0_0_10px_rgba(59,130,246,0.1)]">Acc: ${subAcc}%</span>
+                 </div>
+
+                 <div class="w-full h-3 bg-slate-900 rounded-full overflow-hidden flex mb-5 border border-slate-700">
+                     <div style="width: ${pCorrect}%" class="bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.8)] transition-all duration-1000"></div>
+                     <div style="width: ${pWrong}%" class="bg-rose-500 shadow-[0_0_10px_rgba(244,63,94,0.8)] transition-all duration-1000"></div>
+                     <div style="width: ${pSkipped}%" class="bg-slate-700 transition-all duration-1000"></div>
+                 </div>
+
+                 <div class="grid grid-cols-4 gap-2 md:gap-4 text-center">
+                     <div class="bg-slate-900/50 rounded-lg py-2 border border-slate-700/50">
+                         <div class="text-slate-400 text-[10px] md:text-xs uppercase tracking-wider mb-1">Total</div>
+                         <div class="font-bold text-slate-200 text-sm md:text-base">${data.total}</div>
+                     </div>
+                     <div class="bg-emerald-500/10 rounded-lg py-2 border border-emerald-500/20">
+                         <div class="text-emerald-500/80 text-[10px] md:text-xs uppercase tracking-wider mb-1">Right</div>
+                         <div class="font-bold text-emerald-400 text-sm md:text-base">${data.correct}</div>
+                     </div>
+                     <div class="bg-rose-500/10 rounded-lg py-2 border border-rose-500/20">
+                         <div class="text-rose-500/80 text-[10px] md:text-xs uppercase tracking-wider mb-1">Wrong</div>
+                         <div class="font-bold text-rose-400 text-sm md:text-base">${data.wrong}</div>
+                     </div>
+                     <div class="bg-blue-500/10 rounded-lg py-2 border border-blue-500/20">
+                         <div class="text-blue-400/80 text-[10px] md:text-xs uppercase tracking-wider mb-1">Time</div>
+                         <div class="font-bold text-blue-300 text-sm md:text-base">${formatTime(data.time)}</div>
+                     </div>
                  </div>
              </div>`;
          textLog += `[${sub.toUpperCase()}] Acc: ${subAcc}% | Att: ${data.att}/${data.total} | R: ${data.correct} | W: ${data.wrong} | Time: ${formatTime(data.time)}\n`;
@@ -1171,8 +1193,8 @@
      const text = document.getElementById('insight-text'); text.select();
      navigator.clipboard.writeText(text.value).then(() => {
          const originalText = btnElement.innerHTML; btnElement.innerHTML = "✅ Copied!";
-         btnElement.classList.replace('btn-outline', 'btn-green');
-         setTimeout(() => { btnElement.innerHTML = originalText; btnElement.classList.replace('btn-green', 'btn-outline'); }, 2000);
+         btnElement.classList.replace('text-blue-400', 'text-emerald-400');
+         setTimeout(() => { btnElement.innerHTML = originalText; btnElement.classList.replace('text-emerald-400', 'text-blue-400'); }, 2000);
      }).catch(err => {});
  }
 
@@ -1348,20 +1370,6 @@
          btnEl.style.cssText = 'background-color:#f8d7da; border-color:#dc3545; color:#721c24;';
          if(btns[correctIdx]) btns[correctIdx].style.cssText = 'background-color:#d4edda; border-color:#28a745;';
          if (document.getElementById('rev-auto-show').checked) setTimeout(() => { openSlider(uid); }, 400); 
-     }
- }
-
- // --- PASSWORD VISIBILITY TOGGLE ---
- function togglePassword() {
-     const input = document.getElementById('pin-input');
-     const icon = document.getElementById('eye-icon');
-     
-     if (input.type === 'password') {
-         input.type = 'text';
-         icon.innerText = '🙈';
-     } else {
-         input.type = 'password';
-         icon.innerText = '👁️'; 
      }
  }
 
