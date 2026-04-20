@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-[#0f172a]">
-
     <div id="pause-overlay" style="display:none;" class="fixed inset-0 z-[10000] bg-white/80 backdrop-blur-md flex items-center justify-center">
         <div class="bg-white p-10 rounded-2xl shadow-2xl text-center border-t-8 border-blue-600 max-w-sm w-full">
             <h2 class="text-2xl font-bold mb-4">Test Paused ⏸️</h2>
@@ -16,77 +15,6 @@
             <button class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold text-lg" onclick="resumeTest()">Resume Test</button>
         </div>
     </div>
-
-    <button class="floating-gear" onclick="openSettings()" title="Engine Settings">⚙️</button>
-    <div id="settings-overlay">
-        <div class="settings-card">
-            <div class="settings-header">
-                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                    Engine Settings <span style="cursor:pointer; color:#888;" onclick="closeSettings()">✖</span>
-                </div>
-                <div class="master-tab-container">
-                    <div id="tab-tests" class="master-tab active" onclick="switchSettingsTab('tests')">📝 Tests</div>
-                    <div id="tab-calc" class="master-tab" onclick="switchSettingsTab('calc')">🧮 Calc</div>
-                </div>
-            </div>
-            
-            <div class="settings-body">
-                <div id="pane-tests" class="settings-pane active">
-                    <div class="settings-section">
-                        <div class="settings-section-title" style="color: var(--cbt-purple);">🎯 Active Subjects Filter</div>
-                        <div class="subject-toggle-container" id="modal-subject-toggles"></div>
-                    </div>
-
-                    <div class="settings-section">
-                        <div class="settings-section-title" style="color: #d9a05b;">⚡ Sprint Configuration</div>
-                        <div class="settings-row" style="background:#fcfcfc; padding:8px 12px; border-radius:6px; border:1px solid #eee;">
-                            <div style="flex:1;"><strong style="color:#333;">Sprint Limits</strong></div>
-                            <div class="aligned-input-grid">
-                                <input type="number" id="set-sprint-time" class="settings-input" value="15">
-                                <span style="font-size:0.8rem; color:#888;">Min</span>
-                                <input type="number" id="set-sprint-qs" class="settings-input" value="25">
-                                <span style="font-size:0.8rem; color:#888;">Qs</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="settings-section">
-                        <div class="settings-section-title" style="color: #d9534f;">🏆 Full Mock Configuration</div>
-                        <div class="settings-row" style="background:#fcfcfc; padding:8px 12px; border-radius:6px; border:1px solid #eee;">
-                            <div style="flex:1;"><strong style="color:#333;">Global Mock Limits</strong></div>
-                            <div class="aligned-input-grid">
-                                <input type="number" id="set-mock-global-time" class="settings-input" value="60" oninput="syncFromGlobal()">
-                                <span style="font-size:0.8rem; color:#888;">Min</span>
-                                <input type="number" id="set-mock-global-qs" class="settings-input" value="100" oninput="syncFromGlobal()">
-                                <span style="font-size:0.8rem; color:#888;">Qs</span>
-                            </div>
-                        </div>
-                        
-                        <div style="margin-top:15px;">
-                            <strong style="color:#333; font-size:0.9rem;">Sectional Distribution</strong>
-                            <div style="display:flex; margin-top:8px; border-radius:6px; overflow:hidden; border: 1px solid var(--border);">
-                                <div id="btn-auto-split" style="flex:1; text-align:center; padding:8px; font-size:0.85rem; font-weight:bold; cursor:pointer; background:var(--cbt-blue); color:white;" onclick="setSplitMode('auto')">Auto-Split Time</div>
-                                <div id="btn-custom-split" style="flex:1; text-align:center; padding:8px; font-size:0.85rem; font-weight:bold; cursor:pointer; background:#eee; color:#555;" onclick="setSplitMode('custom')">Custom Split Time</div>
-                            </div>
-                            <div id="sectional-distribution-container" style="margin-top: 10px; display:flex; flex-direction:column; gap:5px;"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="pane-calc" class="settings-pane">
-                    <div class="settings-section">
-                        <div class="settings-section-title" style="color: var(--cbt-blue);">🧮 Active Calc Topics</div>
-                        <div class="subject-toggle-container" id="modal-calc-toggles"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="settings-footer">
-                <button class="btn btn-outline" onclick="closeSettings()">Cancel</button>
-                <button class="btn btn-blue" onclick="saveSettings()">Save & Close</button>
-            </div>
-        </div>
-    </div>
-
     <div id="lock-screen" style="display: flex;" class="fixed inset-0 z-[9999] bg-[#0f172a] items-center justify-center p-4">
         <div class="relative bg-slate-800/80 backdrop-blur-xl border border-slate-700 p-12 rounded-3xl shadow-2xl w-full max-w-xl text-center">
             <div class="w-20 h-20 mx-auto bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
@@ -104,7 +32,6 @@
             <button id="unlock-btn" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-black py-4 rounded-xl transition-all" onclick="verifyPin()">Initialize Engine</button>
         </div>
     </div>
-
     <div id="home-screen" style="display: none;" class="h-full w-full bg-gradient-to-br from-[#181B2D] to-[#09111A] flex flex-col overflow-hidden">
         <header class="w-full bg-[#181B2D]/95 backdrop-blur-md border-b border-[#394054] p-5 flex items-center justify-between z-50">
             <div class="flex items-center gap-4">
@@ -115,9 +42,7 @@
                 </div>
             </div>
             <div class="flex items-center gap-3">
-                <select id="default-lang-select" onchange="saveTestState()" class="bg-slate-800 text-white px-3 py-2 rounded-lg outline-none">
-                    <option value="hi">Hindi</option><option value="en">English</option>
-                </select>
+                <select id="default-lang-select" onchange="saveTestState()" class="bg-slate-800 text-white px-3 py-2 rounded-lg outline-none"><option value="hi">Hindi</option><option value="en">English</option></select>
                 <button onclick="lockEngine()" class="bg-red-500/10 text-red-400 border border-red-500/30 p-2 rounded-full">🔒</button>
             </div>
         </header>
@@ -127,168 +52,83 @@
                  <div class="md:col-span-3 bg-slate-800/40 p-6 rounded-2xl border border-slate-700 flex justify-between items-center">
                     <h3 class="text-indigo-200 font-bold">Cloud Sync</h3>
                     <div class="flex gap-2">
-                        <button onclick="pushToCloud()" id="cloud-push-btn" class="border border-amber-400 text-amber-400 px-6 py-2 rounded-xl hover:bg-amber-400/10">Push</button>
-                        <button onclick="pullFromCloud()" id="cloud-pull-btn" class="border border-sky-400 text-sky-400 px-6 py-2 rounded-xl hover:bg-sky-400/10">Restore</button>
+                        <button onclick="pushToCloud()" class="border border-amber-400 text-amber-400 px-6 py-2 rounded-xl">Push</button>
+                        <button onclick="pullFromCloud()" class="border border-sky-400 text-sky-400 px-6 py-2 rounded-xl">Restore</button>
                     </div>
                  </div>
                  <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700 text-center flex flex-col">
                     <h3 class="text-yellow-300 font-bold mb-4">Full Mock</h3>
-                    <button onclick="startExam('mock','all')" class="w-full bg-transparent border border-yellow-500 text-yellow-400 py-3 rounded-xl hover:bg-yellow-500/10 mt-auto">Start Mock</button>
+                    <button onclick="startExam('mock','all')" class="w-full bg-transparent border border-yellow-500 text-yellow-400 py-3 rounded-xl mt-auto">Start Mock</button>
                  </div>
                  <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700 text-center flex flex-col">
                     <h3 class="text-pink-300 font-bold mb-2">Sprint</h3>
                     <select id="sprint-subject" class="mb-4 bg-slate-900 text-white p-2 rounded w-full"></select>
-                    <button onclick="startExam('sprint', document.getElementById('sprint-subject').value)" class="w-full bg-transparent border border-pink-500 text-pink-400 py-3 rounded-xl hover:bg-pink-500/10 mt-auto">Start Sprint</button>
+                    <button onclick="startExam('sprint', document.getElementById('sprint-subject').value)" class="w-full border border-pink-500 text-pink-400 py-3 rounded-xl mt-auto">Start Sprint</button>
                  </div>
                  <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700 text-center flex flex-col">
                     <h3 class="text-green-300 font-bold mb-2">Practice</h3>
                     <select id="practice-subject" class="mb-4 bg-slate-900 text-white p-2 rounded w-full"></select>
-                    <button onclick="startExam('practice', document.getElementById('practice-subject').value)" class="w-full bg-transparent border border-green-500 text-green-400 py-3 rounded-xl hover:bg-green-500/10 mt-auto">Start Practice</button>
+                    <button onclick="startExam('practice', document.getElementById('practice-subject').value)" class="w-full border border-green-500 text-green-400 py-3 rounded-xl mt-auto">Start Practice</button>
                  </div>
-                 <button onclick="startCalculationMode()" id="calc-btn" class="md:col-span-3 border border-purple-500 text-purple-400 py-4 rounded-2xl font-black text-xl hover:bg-purple-500/10">START CALC DRILLS</button>
+                 <button onclick="startCalculationMode()" class="md:col-span-3 border border-purple-500 text-purple-400 py-4 rounded-2xl font-black text-xl">START CALC DRILLS</button>
             </div>
         </main>
     </div>
-
     <div id="analysis-screen" style="display: none;" class="h-full w-full bg-[#0a0310] flex-col overflow-hidden">
         <header class="p-5 border-b border-purple-900/50 flex justify-between items-center bg-[#130724]">
             <button onclick="goHomeAlert()" class="bg-purple-900/30 text-purple-200 border border-purple-700 px-4 py-2 rounded-xl text-sm font-bold">Dashboard</button>
-            <div class="text-xl font-black text-white tracking-widest drop-shadow-md">VU <span class="text-fuchsia-500">||</span> ANALYTICS</div>
-            <button onclick="startReviewMode()" class="bg-gradient-to-r from-fuchsia-600 to-purple-600 text-white px-4 py-2 rounded-xl text-sm font-bold">👁️ Solutions</button>
+            <div class="text-xl font-black text-white">VU || ANALYTICS</div>
+            <button onclick="startReviewMode()" class="bg-fuchsia-600 text-white px-4 py-2 rounded-xl text-sm font-bold">Solutions</button>
         </header>
         <main class="flex-1 overflow-y-auto p-6">
             <div class="max-w-4xl mx-auto">
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
-                    <div class="bg-[#1e103c] p-5 rounded-xl text-center border border-purple-500/30"><div class="text-xs text-purple-300 mb-1">SCORE</div><div id="dash-score" class="text-4xl font-black text-white">0</div></div>
-                    <div class="bg-[#152e23] p-5 rounded-xl text-center border border-emerald-500/30"><div class="text-xs text-emerald-300 mb-1">CORRECT</div><div id="dash-correct" class="text-4xl font-black text-emerald-400">0</div></div>
-                    <div class="bg-[#35151e] p-5 rounded-xl text-center border border-rose-500/30"><div class="text-xs text-rose-300 mb-1">WRONG</div><div id="dash-wrong" class="text-4xl font-black text-rose-400">0</div></div>
-                    <div class="bg-[#161c3c] p-5 rounded-xl text-center border border-indigo-500/30"><div class="text-xs text-indigo-300 mb-1">ACCURACY</div><div id="dash-acc" class="text-4xl font-black text-indigo-400">0%</div></div>
-                    <div class="bg-[#22103c] p-5 rounded-xl text-center border border-violet-500/30"><div class="text-xs text-violet-300 mb-1">ATTEMPTED</div><div id="dash-att" class="text-4xl font-black text-violet-400">0</div></div>
-                    <div class="bg-[#1e103c] p-5 rounded-xl text-center border border-purple-500/30"><div class="text-xs text-purple-300 mb-1">TIME</div><div id="dash-time" class="text-4xl font-black text-fuchsia-400">0s</div></div>
+                    <div class="bg-[#1e103c] p-5 rounded-xl text-center border border-purple-500/30"><div class="text-xs text-purple-300 mb-1 font-bold">SCORE</div><div id="dash-score" class="text-4xl font-black text-white">0</div></div>
+                    <div class="bg-[#152e23] p-5 rounded-xl text-center border border-emerald-500/30"><div class="text-xs text-emerald-300 mb-1 font-bold">CORRECT</div><div id="dash-correct" class="text-4xl font-black text-emerald-400">0</div></div>
+                    <div class="bg-[#35151e] p-5 rounded-xl text-center border border-rose-500/30"><div class="text-xs text-rose-300 mb-1 font-bold">WRONG</div><div id="dash-wrong" class="text-4xl font-black text-rose-400">0</div></div>
+                    <div class="bg-[#161c3c] p-5 rounded-xl text-center border border-indigo-500/30"><div class="text-xs text-indigo-300 mb-1 font-bold">ACCURACY</div><div id="dash-acc" class="text-4xl font-black text-indigo-400">0%</div></div>
+                    <div class="bg-[#22103c] p-5 rounded-xl text-center border border-violet-500/30"><div class="text-xs text-violet-300 mb-1 font-bold">ATTEMPTED</div><div id="dash-att" class="text-4xl font-black text-violet-400">0</div></div>
+                    <div class="bg-[#1e103c] p-5 rounded-xl text-center border border-purple-500/30"><div class="text-xs text-purple-300 mb-1 font-bold">TIME</div><div id="dash-time" class="text-4xl font-black text-fuchsia-400">0s</div></div>
                 </div>
                 <div id="detailed-stats-area"></div>
-                <div class="mt-10 bg-[#07020d] p-5 rounded-xl border border-purple-800">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="text-xs font-black text-purple-300">TERMINAL // EXPORT</span>
-                        <button onclick="copyInsights(this)" class="text-xs font-black text-fuchsia-400">📋 Copy</button>
-                    </div>
-                    <textarea id="insight-text" readonly class="w-full bg-transparent text-emerald-400 font-mono h-32 outline-none resize-none"></textarea>
-                </div>
+                <div class="mt-10 bg-black p-5 rounded-xl border border-purple-800"><textarea id="insight-text" readonly class="w-full bg-transparent text-emerald-400 font-mono h-32 outline-none resize-none"></textarea></div>
             </div>
         </main>
     </div>
-
     <div id="cbt-screen" style="display: none; flex-direction: column; height: 100%;">
-        <div class="header">
-            <div class="header-left">
-                <div class="home-icon" onclick="goHomeAlert()">🏠</div>
-                <div style="font-size: 1.2rem; font-weight: bold; margin-left: 10px;" id="cbt-title">Exam Engine</div>
-                <button id="mobile-submit-btn" class="btn btn-green mobile-submit-btn" onclick="submitExamManually()">Submit</button>
-            </div>
-            <div class="timer-container" id="header-timer-area">
-                <div class="timer-module" id="sectional-timer-wrapper" style="display:none;">
-                    <div class="timer-label">Section</div>
-                    <div class="timer-display display-sec" id="sec-timer">15:00</div>
-                </div>
-                <div class="timer-module">
-                    <div class="timer-label" id="global-timer-label">Total</div>
-                    <div class="timer-display display-total" id="timer">00:00</div>
-                </div>
-                <button class="pause-btn-fixed" onclick="pauseTest()" title="Pause Test">⏸</button>
-            </div>
+        <div class="header" style="background: white; padding: 10px 20px; border-bottom: 2px solid #ccc; display: flex; justify-content: space-between; align-items: center;">
+            <button onclick="goHomeAlert()" style="padding: 5px 10px; cursor: pointer;">🏠 Home</button>
+            <div id="timer" style="font-weight: bold; font-size: 1.2rem;">00:00</div>
+            <button onclick="submitExamManually()" class="btn btn-green">Submit</button>
         </div>
-
-        <div class="main-content">
-            <div class="left-panel">
-                <div class="top-action-bar" id="action-bar-test">
-                    <button class="btn btn-outline" onclick="loadPrevious()">Previous</button>
-                    <button class="btn btn-blue" onclick="markForReview()">Mark for Review</button>
-                    <button class="btn btn-blue" onclick="saveAndNext()">Save & Next</button>
-                    <button class="btn btn-green desktop-submit-btn" onclick="submitExamManually()" id="btn-submit">Submit Test</button>
-                </div>
-                
-                <div class="top-action-bar" id="action-bar-review" style="display: none; background: var(--review-bg);">
-                    <button class="btn btn-outline" onclick="showDashboard()">← Back</button>
-                    <button class="btn" style="background:#24292e; color: white;" onclick="editJsonOnGithub()">✏️ Edit JSON</button>
-                    <button class="btn btn-outline" onclick="loadPrevious()">Previous</button>
-                    <button class="btn btn-blue" onclick="loadNext()">Next →</button>
-                </div>
-
-                <div class="filter-bar" id="review-filter-bar" style="display: none; padding: 10px 20px; background: #fff; border-bottom: 1px solid var(--border); overflow-x: auto; gap: 10px; align-items: center; flex-shrink: 0;">
-                    <select id="review-subj-filter" class="filter-chip" onchange="updateReviewTopicDropdown(); applyReviewFilters()" style="width:auto; margin:0; padding:4px 10px;">
-                        <option value="all">All Subjects</option>
-                    </select>
-                    <select id="review-topic-filter" class="filter-chip" onchange="applyReviewFilters()" style="width:auto; margin:0; padding:4px 10px;">
-                        <option value="all">All Topics</option>
-                    </select>
-                    <button class="filter-chip" id="rev-filt-correct" onclick="toggleReviewStatusFilter('correct')">✅ Correct</button>
-                    <button class="filter-chip" id="rev-filt-wrong" onclick="toggleReviewStatusFilter('wrong')">❌ Wrong</button>
-                    <button class="filter-chip" id="rev-filt-skipped" onclick="toggleReviewStatusFilter('skipped')">⏭️ Skipped</button>
-                    <button class="filter-chip" id="rev-filt-sluggish" onclick="toggleReviewSort('sluggish')">⏱️ Sluggish</button>
-                </div>
-
-                <div class="q-header">
-                    <div style="display: flex; align-items: center;">
-                        <div>Question No. <span id="q-num-display">1</span></div>
-                        <div id="q-status-badge"></div>
-                    </div>
-                    
-                    <div id="lang-toggle-container">
-                        <select id="lang-select" onchange="toggleLanguage()" style="padding: 2px 4px; border: 1px solid var(--border); border-radius: 4px; font-size: 0.85rem; outline: none; cursor: pointer; background: #fff; font-weight: bold; color: var(--text); margin: 0; width: max-content;">
-                            <option value="hi">H</option>
-                            <option value="en">E</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="q-body">
-                    <div id="q-text" style="font-weight: bold; margin-bottom: 20px;">Loading...</div>
-                    <div id="options-container"></div>
-                    <div id="solution-container" style="display: none;"></div>
+        <div style="display: flex; flex: 1; overflow: hidden;">
+            <div style="flex: 1; padding: 30px; overflow-y: auto;">
+                <div style="font-weight: bold; margin-bottom: 5px; color: #1664c0;">Question <span id="q-num-display">1</span></div>
+                <div id="q-text" style="font-size: 1.3rem; margin-bottom: 30px;">Loading...</div>
+                <div id="options-container"></div>
+                <div style="margin-top: 40px; display: flex; gap: 15px;">
+                    <button onclick="loadPrevious()" class="btn btn-outline">Previous</button>
+                    <button onclick="saveAndNext()" class="btn btn-blue">Save & Next</button>
                 </div>
             </div>
-
-            <div class="right-panel" id="right-panel-id">
-                <div class="mobile-palette-toggle" onclick="toggleMobilePalette()">
-                    <span id="palette-toggle-text">▲ Show Question Palette</span>
-                </div>
-                <div class="palette-header" id="palette-title">▶ Question Palette</div>
-                
-                <div class="palette-legend" id="legend-test-mode">
-                    <div class="legend-item"><div class="legend-stat-box status-answered" id="count-answered">0</div> Answered</div>
-                    <div class="legend-item"><div class="legend-stat-box status-not-answered" id="count-not-answered">0</div> Unattempted</div>
-                    <div class="legend-item"><div class="legend-stat-box status-review" id="count-review">0</div> Review</div>
-                    <div class="legend-item"><div class="legend-stat-box" style="background: white; color: #333;" id="count-unvisited">0</div> Not Visited</div>
-                </div>
-                
-                <div class="palette-legend" id="legend-review-mode" style="display: none;">
-                    <div class="legend-item"><div class="legend-stat-box rev-correct" id="count-correct">0</div> Correct</div>
-                    <div class="legend-item"><div class="legend-stat-box rev-incorrect" id="count-wrong">0</div> Wrong</div>
-                    <div class="legend-item"><div class="legend-stat-box rev-skipped" id="count-skipped">0</div> Skipped</div>
-                    <div class="legend-item"><div class="legend-stat-box" style="background: white; color: #333;" id="count-rev-unvisited">0</div> Not Visited</div>
-                </div>
-
-                <div class="palette-container-wrapper" id="palette-wrapper"></div>
+            <div style="width: 280px; background: #f9f9f9; border-left: 1px solid #ccc; padding: 15px;">
+                <div style="font-weight: bold; margin-bottom: 15px;">Question Palette</div>
+                <div id="palette-wrapper" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px;"></div>
             </div>
         </div>
     </div>
-
-    <div id="revision-screen" style="display:none;" class="flex-col h-full bg-[#f4f7f6]">
-        <header class="p-4 border-b flex justify-between items-center bg-[#181B2D] text-white">
-            <button onclick="goHomeAlert()" class="bg-white/10 hover:bg-white/20 border border-white/20 px-4 py-1 rounded-lg text-sm font-bold transition-colors">🏠 Dashboard</button>
-            <div class="font-black tracking-widest text-lg">VU REVISION ENGINE</div>
-            <div class="w-20"></div>
+    <div id="revision-screen" style="display:none; height: 100%; flex-direction: column; background: #f4f7f6;">
+        <header style="padding: 15px; background: #181B2D; color: white; display: flex; align-items: center; justify-content: space-between;">
+            <button onclick="goHomeAlert()" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 5px; cursor: pointer;">🏠 Dashboard</button>
+            <div style="font-weight: bold; tracking: 2px;">VU REVISION ENGINE</div>
+            <div style="width: 100px;"></div>
         </header>
-        <div id="revision-feed-container" class="flex-1 overflow-y-auto p-6 max-w-4xl mx-auto w-full"></div>
+        <div id="revision-feed-container" style="flex: 1; overflow-y: auto; padding: 20px; max-width: 900px; margin: 0 auto; width: 100%;"></div>
     </div>
-
-    <div id="revision-slider" class="rev-slider">
-        <div onclick="closeSlider()" style="display: flex; justify-content: center; align-items: center; height: 40px; background: var(--cbt-blue); color: white; font-weight: bold; cursor: pointer; border-radius: 20px 20px 0 0; flex-shrink: 0;">
-            ▼ Hide Solution
-        </div>
-        <div id="slider-content" style="padding: 20px; overflow-y: auto; flex: 1;"></div>
+    <div id="revision-slider" style="position: fixed; bottom: 0; left: 0; right: 0; background: white; border-radius: 20px 20px 0 0; box-shadow: 0 -5px 20px rgba(0,0,0,0.2); transform: translateY(100%); transition: 0.3s; z-index: 10000; max-height: 80vh; overflow-y: auto;">
+        <div onclick="closeSlider()" style="background: #1664c0; color: white; padding: 10px; text-align: center; font-weight: bold; cursor: pointer;">▼ Hide Solution</div>
+        <div id="slider-content" style="padding: 20px;"></div>
     </div>
-
     <script src="app.js"></script>
 </body>
 </html>
