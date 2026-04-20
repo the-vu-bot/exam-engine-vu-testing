@@ -63,7 +63,7 @@
      screens.forEach(s => {
          const el = document.getElementById(s);
          if(el) {
-             el.style.display = (s === 'home-screen') ? 'flex' : 'none';
+             el.style.setProperty('display', (s === 'home-screen') ? 'flex' : 'none', 'important');
          }
      });
      
@@ -222,7 +222,7 @@
      } catch (e) { console.error(e); btn.innerHTML = oT; }
  }
 
- // --- AUTHENTICATION ---
+ // --- AUTHENTICATION & LOGIN ---
  async function checkAuth() {
      const savedKey = localStorage.getItem('vu_unlocked_key');
      if(savedKey) {
@@ -231,9 +231,7 @@
              if(res.ok) { 
                  masterBank = await res.json(); 
                  setupDashboard(); 
-                 if(!restoreSession()) { 
-                    goHomeAlert(); 
-                 } 
+                 if(!restoreSession()) { goHomeAlert(); } 
                  return; 
              }
          } catch(e) {}
@@ -243,19 +241,34 @@
  }
 
  async function verifyPin() {
-     const input = document.getElementById('pin-input').value.trim(); if(!input) return;
-     const btn = document.getElementById('unlock-btn'); btn.innerText = "Verifying...";
+     const input = document.getElementById('pin-input').value.trim();
+     if(!input) return;
+     const btn = document.getElementById('unlock-btn');
+     btn.innerText = "Verifying...";
+     
      try {
          const res = await fetch(input + '.json?t=' + new Date().getTime());
-         if (!res.ok) { alert("❌ File not found! Check your Access Key."); btn.innerText = "Initialize Engine"; return; }
+         if (!res.ok) { 
+             alert("❌ File not found! Check your Access Key."); 
+             btn.innerText = "Initialize Engine"; 
+             return; 
+         }
          masterBank = await res.json(); 
+     } catch (e) { 
+         console.error("Fetch Error:", e);
+         alert("Network Error: Could not fetch exam file."); 
+         btn.innerText = "Initialize Engine"; 
+         return;
+     }
+
+     try {
          localStorage.setItem('vu_unlocked_key', input); 
          setupDashboard();
-         if(!restoreSession()) { goHomeAlert(); }
-     } catch (e) { 
-         console.error(e);
-         alert("Error connecting to server. Please refresh and try again."); 
+         goHomeAlert();
+     } catch(e) {
+         console.error("UI Error:", e);
      }
+     
      btn.innerText = "Initialize Engine";
  }
 
@@ -305,102 +318,7 @@
 
  function editJsonOnGithub() { const k = localStorage.getItem('vu_unlocked_key'); const s = isCalcDrill ? '_calc.json' : '.json'; window.open(`https://github.com/the-vu-bot/exam-engine-vu/edit/main/${k}${s}`, '_blank'); }
 
- // --- EXAM LOGIC & RESTORE ---
- function saveTestState() {
-     if (document.getElementById('rev-subj-filter')) { revSubjectState = document.getElementById('rev-subj-filter').value; revTopicState = document.getElementById('rev-topic-filter').value; }
-     const session = { questions, state, currentQ, totalSeconds, sectionalSeconds, activeSectionIndex, examType, defaultLang, currentLang, mockBoundaries, timeSpentGlobal, currentMode, forcedEn, isCalcDrill, revFilters, revCurrentPage, revSubjectState, revTopicState, globalActiveSubjects };
-     localStorage.setItem(STORAGE_SESSION, JSON.stringify(session));
- }
-
- function restoreSession() {
-     const sStr = localStorage.getItem(STORAGE_SESSION);
-     if(sStr) {
-         const s = JSON.parse(sStr);
-         questions = s.questions; state = s.state; currentQ = s.currentQ; totalSeconds = s.totalSeconds; sectionalSeconds = s.sectionalSeconds; activeSectionIndex = s.activeSectionIndex; examType = s.examType; defaultLang = s.defaultLang; currentLang = s.currentLang; mockBoundaries = s.mockBoundaries; timeSpentGlobal = s.timeSpentGlobal; currentMode = s.currentMode; forcedEn = s.forcedEn || false; isCalcDrill = s.isCalcDrill || false; isPaused = s.isPaused || false;
-         if(s.globalActiveSubjects && s.globalActiveSubjects.length > 0) globalActiveSubjects = s.globalActiveSubjects;
-         if (currentMode === 'home') return false; 
-         
-         document.getElementById('lock-screen').style.display = 'none'; document.getElementById('home-screen').style.display = 'none';
-         fetchPrivateImage(`https://raw.githubusercontent.com/the-vu-bot/exam-engine-vu/main/solutions/VU-logo.jpg`, 'home-logo');
-         
-         if (currentMode === 'revision') { 
-             let oH = `<option value="all">Active Subjects</option>`; globalActiveSubjects.forEach(sub => { oH += `<option value="${sub}">${sub}</option>`; }); 
-             document.getElementById('rev-subj-filter').innerHTML = oH; document.getElementById('rev-subj-filter').value = revSubjectState; updateTopicDropdown(); document.getElementById('rev-topic-filter').value = revTopicState; 
-             if(document.getElementById('exam-screen')) document.getElementById('exam-screen').style.display = 'none';
-             document.getElementById('cbt-screen').style.display = 'none'; document.getElementById('analysis-screen').style.display = 'none'; document.getElementById('revision-screen').style.display = 'flex'; 
-             renderRevisionFeed(); return true; 
-         }
-         
-         if (examType === 'mock') document.getElementById('cbt-title').innerHTML = `Full Mock <span style="font-size:0.8rem; color:#888;">(VU)</span>`; else document.getElementById('cbt-title').innerHTML = `${examType === 'sprint' ? "Sprint" : "Practice"} <span style="font-size:0.8rem; color:#888;">(VU)</span>`;
-         
-         if (currentMode === 'analysis') { renderAnalyticsDisplay(); showDashboard(); return true; }
-         
-         document.getElementById('cbt-screen').style.display = 'flex'; document.getElementById('default-lang-select').value = defaultLang; document.getElementById('lang-select').value = currentLang;
-         if(examType === 'mock') document.getElementById('sectional-timer-wrapper').style.display = 'flex'; else document.getElementById('sectional-timer-wrapper').style.display = 'none';
-         
-         buildPalette();
-         
-         if (currentMode === 'review') { 
-             document.getElementById('header-timer-area').style.display = 'none'; document.getElementById('action-bar-test').style.display = 'none'; document.getElementById('action-bar-review').style.display = 'flex'; document.getElementById('review-filter-bar').style.display = 'flex'; document.getElementById('mobile-submit-btn').classList.add('hide-for-review'); 
-             setupReviewFilters(); 
-         } else { 
-             document.getElementById('review-filter-bar').style.display = 'none'; document.getElementById('mobile-submit-btn').classList.remove('hide-for-review'); loadQuestion(currentQ); 
-             if(isPaused) { document.getElementById('pause-overlay').style.display = 'flex'; } else { startTestTimer(); }
-         }
-         return true;
-     }
-     return false;
- }
-
- function formatTime(s) { return `${Math.floor(Math.max(0, s)/60).toString().padStart(2,'0')}:${(Math.max(0, s)%60).toString().padStart(2,'0')}`; }
- function getSmartSelection(source, count) { 
-     let seen = [], wrongMap = {};
-     try { seen = JSON.parse(localStorage.getItem(STORAGE_SEEN) || '[]'); wrongMap = JSON.parse(localStorage.getItem(STORAGE_WRONG) || '{}'); } catch(e) {}
-     let weighted = source.map(q => ({ ...q, weight: (wrongMap[q.uid] || 0) + (seen.includes(q.uid) ? 0 : 5) }));
-     weighted.sort((a, b) => b.weight - a.weight + (Math.random() - 0.5) * 2);
-     return weighted.slice(0, count);
- }
- function shuffleOptionsForQuestions(qs) { 
-     return qs.map(q => {
-         let qCopy = JSON.parse(JSON.stringify(q));
-         let defaultEng = qCopy.options_en || []; let optionsHi = qCopy.options_hi || defaultEng;
-         if(!optionsHi || optionsHi.length < 4) optionsHi = defaultEng;
-         if(!defaultEng || defaultEng.length < 4) return qCopy; 
-         let indices = [0, 1, 2, 3];
-         for (let i = indices.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [indices[i], indices[j]] = [indices[j], indices[i]]; }
-         qCopy.options_en = indices.map(i => defaultEng[i]); qCopy.options_hi = indices.map(i => optionsHi[i]); qCopy.correct = indices.indexOf(qCopy.correct);
-         return qCopy;
-     });
- }
-
- function pauseTest() { isPaused = true; clearInterval(timerId); document.getElementById('pause-overlay').style.display = 'flex'; saveTestState(); }
- function resumeTest() { isPaused = false; document.getElementById('pause-overlay').style.display = 'none'; startTestTimer(); }
-
- function startTestTimer() {
-     clearInterval(timerId);
-     timerId = setInterval(() => {
-         if(isPaused) return; 
-         timeSpentGlobal++;
-         if(currentMode === 'test' || currentMode === 'practice') {
-             state[currentQ].timeTaken++;
-             if(examType === 'mock') {
-                 totalSeconds--; sectionalSeconds--;
-                 document.getElementById('timer').innerText = formatTime(totalSeconds);
-                 document.getElementById('sec-timer').innerText = formatTime(sectionalSeconds);
-                 if (sectionalSeconds <= 0) { activeSectionIndex++; if (activeSectionIndex < mockBoundaries.length) { sectionalSeconds = mockBoundaries[activeSectionIndex].allocatedTime; loadQuestion(mockBoundaries[activeSectionIndex].start); buildPalette(); } else { submitExam(); } }
-             } else if(examType === 'sprint') {
-                 totalSeconds--;
-                 document.getElementById('timer').innerText = formatTime(totalSeconds);
-                 if(totalSeconds <= 0) submitExam();
-             } else {
-                 document.getElementById('global-timer-label').innerText = 'Stopwatch';
-                 document.getElementById('timer').innerText = formatTime(timeSpentGlobal);
-             }
-         }
-         if(timeSpentGlobal % 5 === 0) saveTestState();
-     }, 1000);
- }
-
+ // --- EXAM LOGIC ---
  function startExam(type, subject, isCalcFlag = false) {
      localStorage.removeItem(STORAGE_SESSION); 
      document.getElementById('mobile-submit-btn').classList.remove('hide-for-review');
@@ -713,9 +631,19 @@
      let slider = document.getElementById('revision-slider'); let content = document.getElementById('slider-content'); let imgSolutions = JSON.parse(localStorage.getItem(STORAGE_IMAGES) || '{}'); let privateImgUrl = imgSolutions[uid] || null; let imgBlock = '';
      if(privateImgUrl) { let imgId = `slider-img-${uid}`; imgBlock = `<div id="${imgId}-wrapper" style="text-align:center; padding:20px; background:#f9f9f9; border-radius:8px; border:1px dashed #ccc; margin-bottom: 15px;">⏳ Decrypting Private Image...</div><img id="${imgId}" style="width:100%; max-width:600px; border-radius:8px; display:none; border:1px solid #ddd; margin:0 auto 15px auto;" />`; setTimeout(() => fetchPrivateImage(privateImgUrl, imgId), 50); }
      content.innerHTML = `<div style="position:relative; padding-top:5px;"><button id="slider-cam-btn" onclick="handleImageUpload('${q.uid}')" title="Upload Photo to GitHub" style="position:absolute; top:0px; right:0px; background:white; border:1px solid #ccc; border-radius:4px; padding:4px 8px; cursor:pointer; font-size:1.1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); z-index: 10;">📷</button><h4 style="margin-top:0; color:var(--cbt-blue); padding-right: 40px;">Solution & Analysis</h4><div style="background:#e8f4f8; padding:15px; border-radius:8px; margin-bottom:15px; font-size:0.95rem; border-left:4px solid var(--cbt-blue);"><strong>Logic:</strong> ${q.logic || 'No text logic provided.'}<br><br><strong>Trap Alert:</strong> ${q.trap || 'None.'}</div>${imgBlock}<button class="uid-tag" onclick="copyUID('${q.uid}', this)" title="Click to Copy" style="margin-top: 5px;">📋 Copy UID: ${q.uid}</button></div>`;
-     slider.classList.add('open');
+     if(slider) slider.classList.add('open');
  }
- function closeSlider() { document.getElementById('revision-slider').classList.remove('open'); activeSliderUid = null; document.querySelectorAll('.sol-toggle-btn').forEach(btn => btn.innerText = 'Solution'); }
- document.addEventListener('click', function(event) { let slider = document.getElementById('revision-slider'); if (slider && slider.classList.contains('open')) { if (!slider.contains(event.target) && !event.target.closest('.sol-toggle-btn') && !event.target.closest('.rev-opt-btn')) { closeSlider(); } } if (window.innerWidth <= 768) { let panel = document.getElementById('right-panel-id'); let toggleBtn = document.querySelector('.mobile-palette-toggle'); if (panel && panel.classList.contains('open')) { if (!panel.contains(event.target) && !toggleBtn.contains(event.target)) { toggleMobilePalette(); } } } });
+ function closeSlider() { 
+     let slider = document.getElementById('revision-slider');
+     if(slider) slider.classList.remove('open'); 
+     activeSliderUid = null; 
+     document.querySelectorAll('.sol-toggle-btn').forEach(btn => btn.innerText = 'Solution'); 
+ }
+ 
+ document.addEventListener('click', function(event) { 
+     let slider = document.getElementById('revision-slider'); 
+     if (slider && slider.classList.contains('open')) { if (!slider.contains(event.target) && !event.target.closest('.sol-toggle-btn') && !event.target.closest('.rev-opt-btn')) { closeSlider(); } } 
+     if (window.innerWidth <= 768) { let panel = document.getElementById('right-panel-id'); let toggleBtn = document.querySelector('.mobile-palette-toggle'); if (panel && panel.classList.contains('open')) { if (!panel.contains(event.target) && !toggleBtn.contains(event.target)) { toggleMobilePalette(); } } } 
+ });
 
  window.onload = () => { checkAuth(); };
