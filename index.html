@@ -274,37 +274,12 @@
     </div>
 
     <div id="revision-screen" style="display:none;" class="flex-col h-full bg-[#f4f7f6]">
-        <div class="rev-fixed-header">
-            <div class="content-wrapper" style="display: flex; flex-direction: column; gap: 10px;">
-                <div class="header" style="margin-bottom: 0;">
-                    <div class="header-left">
-                        <div class="home-icon" onclick="exitRevisionPage()">🏠</div>
-                        <div style="font-size: 1.2rem; font-weight: bold; margin-left: 10px;">The VU Revision <span style="font-size:0.8rem; color:#888;">(vu)</span></div>
-                    </div>
-                </div>
-                <div class="filter-bar">
-                    <select id="rev-subj-filter" class="filter-chip" onchange="updateTopicDropdown(); resetRevPage(); renderRevisionFeed()" style="width:auto; margin:0;">
-                        <option value="all">All Active Subjects</option>
-                    </select>
-                    <select id="rev-topic-filter" class="filter-chip" onchange="resetRevPage(); renderRevisionFeed()" style="width:auto; margin:0;">
-                        <option value="all">All Topics</option>
-                    </select>
-                    <button class="filter-chip" id="filter-wrong" onclick="toggleRevFilter('wrong')">⚠️ Most Wrong</button>
-                    <button class="filter-chip" id="filter-slow" onclick="toggleRevFilter('slow')">⏱️ Slowest</button>
-                    <button class="filter-chip" id="filter-unattended" onclick="toggleRevFilter('unattended')">👀 Unattended</button>
-                    <button class="filter-chip" id="filter-unseen" onclick="toggleRevFilter('unseen')">🙈 Unseen</button>
-                    <div class="toggle-container">
-                        <input type="checkbox" id="rev-auto-show" checked> Auto-Sol
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="revision-feed-scroll-area">
-            <div id="revision-feed-container" class="content-wrapper" style="padding: 0 15px 20px 15px;"></div>
-        </div>
-        <div class="rev-fixed-footer">
-            <div id="rev-pagination-container" class="content-wrapper" style="display:flex; justify-content:center;"></div>
-        </div>
+        <header class="p-4 border-b flex justify-between items-center bg-[#181B2D] text-white">
+            <button onclick="goHomeAlert()" class="bg-white/10 hover:bg-white/20 border border-white/20 px-4 py-1 rounded-lg text-sm font-bold transition-colors">🏠 Dashboard</button>
+            <div class="font-black tracking-widest text-lg">VU REVISION ENGINE</div>
+            <div class="w-20"></div>
+        </header>
+        <div id="revision-feed-container" class="flex-1 overflow-y-auto p-6 max-w-4xl mx-auto w-full"></div>
     </div>
 
     <div id="revision-slider" class="rev-slider">
